@@ -5,7 +5,7 @@
 \usepackage{graphicx}  % for \includegraphics with jpg,png,...
 \usepackage[english,ngerman]{babel}  % ngerman: Neue Rechtschreibung
 \usepackage{url}
-\usepackage{xcolor}  % for \color
+\usepackage[dvipsnames]{xcolor}  % for \color
 \usepackage{listings}  % source code support
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}  % support for symbols like €
@@ -24,10 +24,32 @@
     tabsize=2,
     basicstyle=\small\ttfamily\bfseries,
     postbreak=\kern-5ex\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+    numbers=left,
+    numberstyle=\color{gray},
+    showspaces=false,
+    showstringspaces=false,
+    tabsize=1,
     frame=single,
     rulecolor=\color{white},
     xleftmargin=3pt,
     xrightmargin=3pt,
+}
+% from https://github.com/cansik/kotlin-latex-listing
+\lstdefinelanguage{Kotlin}{
+    comment=[l]{//},
+    commentstyle={\color{gray}\ttfamily},
+    emph={delegate, filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println, return@},
+    emphstyle={\color{OrangeRed}},
+    identifierstyle=\color{black},
+    keywords={abstract, actual, as, as?, break, by, class, companion, continue, data, do, dynamic, else, enum, expect, false, final, for, fun, get, if, import, in, interface, internal, is, null, object, override, package, private, public, return, set, super, suspend, this, throw, true, try, typealias, val, var, vararg, when, where, while},
+    keywordstyle={\color{NavyBlue}\bfseries},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[s]{"""*}{*"""},
+    ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String},
+    ndkeywordstyle={\color{BurntOrange}\bfseries},
+    sensitive=true,
+    stringstyle={\color{ForestGreen}\ttfamily},
 }
 
 \setlength{\parindent}{0cm}  % remove paragraph indentation
@@ -69,6 +91,29 @@ TODO
 
 \pagebreak
 \tableofcontents
+\pagebreak
+
+
+\pagebreak
+
+\begin{lstlisting}[caption={example kotlin code}, captionpos=b, label={lst:example}, language=Kotlin]
+private suspend fun StockbrotQuote.executeSellOrder(quote: Quote) {
+    val depotQuote = accountRepository.depotQuoteBySymbol(id) ?: return
+    if (quote.latestPrice >= minimumSellPrice) {
+        val amount = depotQuote.amount
+        Timber.i("Bot is selling $amount for ${quote.latestPrice}")
+        accountRepository.sell(quote, amount)
+    }
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=10cm,keepaspectratio]{./images/quote_buy_confirmation_dialog.png}
+    \caption{example image}
+    \label{fig:example}
+\end{figure}
+
 \pagebreak
 
 
