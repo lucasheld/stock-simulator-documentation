@@ -1,0 +1,112 @@
+\documentclass[a4paper]{article}
+
+
+% import packages
+\usepackage{graphicx}  % for \includegraphics with jpg,png,...
+\usepackage[english,ngerman]{babel}  % ngerman: Neue Rechtschreibung
+\usepackage{url}
+\usepackage{xcolor}  % for \color
+\usepackage{listings}  % source code support
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}  % support for symbols like €
+\usepackage{lmodern}  % improve font
+\usepackage{float}  % allow H option in \begin{figure}[H]
+\usepackage{caption}
+
+
+% configure packages
+\setlength{\columnsep}{8mm}
+
+\definecolor{codebg}{HTML}{eff0f1}
+\lstset{
+    backgroundcolor=\color{codebg},
+    breaklines=true,
+    tabsize=2,
+    basicstyle=\small\ttfamily\bfseries,
+    postbreak=\kern-5ex\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+    frame=single,
+    rulecolor=\color{white},
+    xleftmargin=3pt,
+    xrightmargin=3pt,
+}
+
+\setlength{\parindent}{0cm}  % remove paragraph indentation
+\setlength{\intextsep}{8pt}  % set space between two float objects
+
+\raggedbottom  % move spacing produced by figures to the bottom of the page
+
+% format abstract
+\renewenvironment{abstract}
+{\normalsize
+    \begin{flushleft}
+        \Large\bfseries\abstractname
+    \end{flushleft}
+    \list{}{
+        \setlength{\leftmargin}{0pt}
+    }
+    \item\relax
+}
+{\endlist}
+
+
+\begin{document}
+
+\title{\textbf{stock-simulator}}
+\author{
+    Jan Müller\\
+    Jonas Thelemann\\
+    Juri Lozowoj\\
+    Lucas Held
+}
+\date{27. März 2020}
+\maketitle
+
+\renewcommand{\abstractname}{Abstract}  % change abstract title
+\begin{abstract}
+% evtl. weglassen?
+TODO
+\end{abstract}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+
+\section{Einleitung}
+% Gute Einleitung ins Thema (was war die Aufgabe, etc.)
+TODO
+
+
+\section{Umsetzung}
+TODO
+
+
+\subsection{Herangehensweise}
+TODO
+
+
+\subsection{Architektur}
+% App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
+TODO
+
+
+\subsection{Hauptfunktionen}
+TODO
+
+
+\subsection{Features}
+% Welche Features habt ihr gebaut?
+TODO
+
+
+\section{Schwierigkeiten}
+% Schwierigkeiten und wie ihr sie gelöst habt
+TODO
+
+
+\section{Ausblick}
+% was kann man noch machen, was habt ihr nicht geschafft,..
+TODO
+
+
+\end{document}
