@@ -57,19 +57,6 @@
 
 \raggedbottom  % move spacing produced by figures to the bottom of the page
 
-% format abstract
-\renewenvironment{abstract}
-{\normalsize
-    \begin{flushleft}
-        \Large\bfseries\abstractname
-    \end{flushleft}
-    \list{}{
-        \setlength{\leftmargin}{0pt}
-    }
-    \item\relax
-}
-{\endlist}
-
 
 \begin{document}
 
@@ -83,17 +70,8 @@
 \date{27. März 2020}
 \maketitle
 
-\renewcommand{\abstractname}{Abstract}  % change abstract title
-\begin{abstract}
-% evtl. weglassen?
-TODO
-\end{abstract}
-
 \pagebreak
 \tableofcontents
-\pagebreak
-
-
 \pagebreak
 
 \begin{lstlisting}[caption={example kotlin code}, captionpos=b, label={lst:example}, language=Kotlin]
@@ -122,30 +100,70 @@ private suspend fun StockbrotQuote.executeSellOrder(quote: Quote) {
 Aufgabe der Veranstaltung "`Code-Camp Context-Awareness 1"' war die Entwickelung eines Börsensimulator Spiels für Android Smartphones. Dabei stellte das Verwenden von echten Aktienkursen, mit aktuellen Daten, eine wichtige Anforderung an das Spiel dar. Diese Daten sollten als Basis für alle weiteren Funktionen dienen. Mithilfe des zur Verfügung stehenden Spielgeldes soll der Benutzer die Möglichkeit haben, Aktien oder Kryptowährungen zu kaufen. Um das Kaufen von bestimmten Aktien und Kryptowährungen zu ermöglichen, wurde eine Suchfunktion gefordert, welche die verfügbaren Elemente filtert und anzeigt. Um das Budget immer im Blick zu behalten, muss es Depotübersicht, sowie eine Anzeige für den aktuellen Kontostand und dessen Verlauf geben. Eine Historie soll die Käufe und Verkäufe in der Vergangenheit darstellen. Als Darstellungsform der Kurse und des Kontoverlaufs sind Graphen zu wählen. Wie auf gängigen Tradingplatformen soll auch der Simulator mit jedem Kauf- oder Verkauf Transaktionskosten berechnen. Ein Bot soll das Traden übernehmen, falls dies vom Benutzer gewünscht wird. Entsprechende Zielwerte sollen für jede Aktie oder Kryptowährung anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, muss die Anwendung eine Option bieten, den Spielstand zurückzusetzen. Zusätzlich zu den bisher genannten Hauptfeatures, wird mindestens ein Zusatzfeature gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, das Startkapital im Laufe der Zeit möglichst stark zu vermehren.
 
 
-\section{Umsetzung}
-TODO
-
-
-\subsection{Herangehensweise}
+\section{Technische Details}
 TODO
 
 
 \subsection{Architektur}
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
-TODO
-
-
-\subsection{Hauptfunktionen}
-TODO
-
-
-\subsection{Features}
-% Welche Features habt ihr gebaut?
-TODO
-
-
-\section{Schwierigkeiten}
 % Schwierigkeiten und wie ihr sie gelöst habt
+TODO
+
+
+\subsection{APIs}
+TODO
+
+
+\subsubsection{IEX Cloud}
+% https://iexcloud.io/
+TODO
+
+
+\subsubsection{CoinGecko}
+% https://www.coingecko.com/
+TODO
+
+
+\subsection{Bibliotheken}
+TODO
+
+
+\subsubsection{Android Jetpack}
+% https://developer.android.com/jetpack/
+TODO
+
+
+\subsubsection{Moshi}
+% https://github.com/square/moshi
+TODO
+
+
+\subsection{Room}
+% https://developer.android.com/jetpack/androidx/releases/room
+TODO
+
+
+\subsubsection{Retrofit}
+% https://github.com/square/retrofit
+TODO
+
+
+\section{Funktionalität}
+% Welche Features habt ihr gebaut?
+% Welche Screens habt ihr gebaut?
+% Warum sehen die Screens so aus? (warum ist button X an Position Y) / was habt ihr euch dabei gedacht?
+TODO
+
+
+\section{Teamwork}
+TODO
+
+
+\section{Zusammenfassung}
+TODO
+
+
+\section{Fazit}
 TODO
 
 
