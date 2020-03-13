@@ -127,14 +127,16 @@ TODO
 \label{subsec:technologies:architecture}
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
 % Schwierigkeiten und wie ihr sie gelöst habt
-Die App-Architektur folgt offiziellen Empfehlungen\autocite{google_recommendations} und basiert auf einer \verb|Activity| sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
+Die App-Architektur folgt offiziellen Empfehlungen\autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden die Präsentation der Benutzeroberfläche und die angebundene Logik voneinander getrennt.
 
-Dazu verwendet die Benutzeroberfläche \textit{Databinding} um die vom \verb|ViewModel| bereitgestellten Daten angepasst anzuzeigen.
-Das \verb|ViewModel| ist für das Verhalten der Benutzeroberfläche verantwortlich und bezieht seine Daten wiederum aus dem \textit{Model}, welches in dieser App in Form von \textit{Repositories} vorliegt.
+Dazu verwenden Benutzeroberflächen \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und Entwicklung beschleunigt werden.
+
+\textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus \textit{Models}, welche in Form von \textit{Repositories} implementiert sind.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
-Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:room}) sowie verschiedene Netzwerkquellen angebunden.
+Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:room}) sowie verschiedene Netzwerkquellen (siehe \autoref{subsec:technologies:apis}) angebunden.
 
 %unfertig, sehr raw
 
