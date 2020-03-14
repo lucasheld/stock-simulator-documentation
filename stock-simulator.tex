@@ -191,7 +191,35 @@ TODO
 % Welche Features habt ihr gebaut?
 % Welche Screens habt ihr gebaut?
 % Warum sehen die Screens so aus? (warum ist button X an Position Y) / was habt ihr euch dabei gedacht?
-TODO
+Im Folgenden werden die 
+
+
+\subsection{Suche}
+\label{subsec:functionality:search}
+Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Screen möglich.
+Zudem können Nutzer dort auswählen, ob sie nur Aktien oder Kryptowährungen sehen möchten.
+
+\autoref{fig:functionality:search:full} zeigt den Aufbau dieses Screens.
+Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand.
+Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt.
+Diese Aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
+Dadurch ist es möglich auf Nutzereingaben unmittelbar zu reagieren und Ergebnisse schnell anzuzeigen.
+Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren.
+
+Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=7cm,keepaspectratio]{./images/search_type.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/search_loading.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/search_done.png}
+	\caption{Suche}
+	\label{fig:functionality:search:full}
+\end{figure}
+
+
+\subsection{Detailansicht}
+\label{subsec:functionality:quote}
 
 
 \section{Teamwork}
