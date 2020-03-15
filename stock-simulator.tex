@@ -11,9 +11,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}  % support for symbols like €
 \usepackage{lmodern}  % improve font
-\usepackage{float}  % allow H option in \begin{figure}[H]
+\usepackage{float}  % allow H option in \begin{subfigure}[H]
 \usepackage{caption}
 \usepackage{hyperref}
+\usepackage{subcaption}
 \usepackage[%
 backend = biber,
 sortlocale=de_DE,
@@ -165,8 +166,7 @@ TODO
 
 \subsubsection{Android Jetpack}
 \label{subsubsec:technologies:bibs:jetpack}
-% https://developer.android.com/jetpack/
-TODO
+Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library an dem Namespace \textit{androidx.*}. Die Libraries sind unabhängig von der Platform API verwendbar. Dadurch wird Abwärtskompatibilität gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in vier Anwendungsgebiete, \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
 
 \subsubsection{Moshi}
@@ -241,7 +241,26 @@ TODO
 
 \subsection{Stockbrot}
 \label{subsec:functionality:stockbrot}
-TODO
+Der Name Stockbrot leitet sich aus den Begriffen stock (deutsch: Aktie) und Bot ab. Mithilfe dieses Bots ist der Benutzer in der Lage das Traden von Aktien oder Kryptowährungen zu automatisieren. Für jedes Anlagegut, welches sich unter der Kontrolle des Bots befindet, wird ein sogenannter Worker alle 15 Minuten ausgeführt. Von dem Worker wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die Worker werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert.
+
+\autoref{fig:functionality:stockbrot:overview} zeigt den Screen, der eine Übersicht über die von dem Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Screen erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Screen keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Aktie/Kryptowährung der Kontrolle des Bots über die Detailansicht eins Anlageguts (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese in als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_list_empty.png}  
+        \caption{Stockbrot Übersicht ohne Eintrag}
+        \label{fig:functionality:stockbrot:overview:empty}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_list.png}  
+        \caption{Stockbrot Übersicht mit Eintrag}
+        \label{fig:functionality:stockbrot:overview:entry}
+    \end{subfigure}
+    \caption{Stockbrot Übersicht}
+    \label{fig:functionality:stockbrot:overview}
+\end{figure}
 
 
 \subsection{Errungenschaften}
@@ -252,6 +271,25 @@ TODO
 \subsection{Detailansicht}
 \label{subsec:functionality:quote}
 TODO
+
+\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen eines Anlageguts zu dem Bot, sowie das Entfernen dieses ermöglicht. In dem Abschnitt, beginnend mit dem Label "`Auto buy/sell"', können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird das Anlagegut nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Preis des Anlageguts überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_before.png}
+        \caption{Anlagegut zum Stockbrot hinzufügen}
+        \label{fig:functionality:stockbrot:add}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_after.png}
+        \caption{Anlagegut vom Stockbrot entfernen}
+        \label{fig:functionality:stockbrot:remove}
+    \end{subfigure}
+    \caption{Anlagegut zum/vom Stockbrot hinzufügen/entfernen}
+    \label{fig:functionality:stockbrot:addremove}
+\end{figure}
 
 
 \subsection{News}
