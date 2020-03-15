@@ -272,6 +272,25 @@ TODO
 \label{subsec:functionality:quote}
 TODO
 
+\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen eines Anlageguts zu dem Bot, sowie das Entfernen dieses ermöglicht. In dem Abschnitt, beginnend mit dem Label "`Auto buy/sell"', können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird das Anlagegut nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Preis des Anlageguts überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_before.png}
+        \caption{Anlagegut zum Stockbrot hinzufügen}
+        \label{fig:functionality:stockbrot:add}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_after.png}
+        \caption{Anlagegut vom Stockbrot entfernen}
+        \label{fig:functionality:stockbrot:remove}
+    \end{subfigure}
+    \caption{Anlagegut zum/vom Stockbrot hinzufügen/entfernen}
+    \label{fig:functionality:stockbrot:addremove}
+\end{figure}
+
 
 \subsection{News}
 \label{subsec:functionality:news}
