@@ -132,7 +132,7 @@ Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche und Logik
 
 Benutzeroberflächen verwenden \textit{Databinding} um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
 Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und Entwicklung beschleunigt werden.
-Die Verwendung von \textit{LiveData} ermöglicht es zudem eine automatische Aktualisierung von aktiven Benutzeroberflächen.
+Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 
 \textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus \textit{Models}, welche in Form von \textit{Repositories} implementiert sind.
 
@@ -195,6 +195,21 @@ TODO
 Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgestellt.
 
 
+\subsection{Navigation}
+\label{subsec:functionality:navigation}
+Über die \textit{Bottom Navigation}\autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
+Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
+
+Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar.
+
+Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist über Bedienelemente in Form von Buttons möglich.
+
+
+\subsection{Account}
+\label{subsec:functionality:account}
+TODO
+
+
 \subsection{Suche}
 \label{subsec:functionality:search}
 Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Screen möglich.
@@ -219,9 +234,47 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 \end{figure}
 
 
+\subsection{Transaktionsverlauf}
+\label{subsec:functionality:history}
+TODO
+
+
+\subsection{Stockbrot}
+\label{subsec:functionality:stockbrot}
+TODO
+
+
+\subsection{Errungenschaften}
+\label{subsec:functionality:achievements}
+TODO
+
+
 \subsection{Detailansicht}
 \label{subsec:functionality:quote}
+TODO
 
+
+\subsection{News}
+\label{subsec:functionality:news}
+TODO
+
+
+\subsection{Einstellungen}
+\label{subsec:functionality:settings}
+Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagegüter sowie Hinzufügen und Entfernen einer Fingerabdruck-Sperre.
+Wie in \autoref{fig:functionality:settings:full} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
+Der Button zum Hinzufügen und Entfernen einer Fingerabdruck-Sperre ist zudem deaktiviert, falls dies nicht möglich ist.
+Ein Informationstext unter diesem Button wei"st Nutzer auf den Zustand hin.
+
+Am unteren Ende des Screens befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
+Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=7cm,keepaspectratio]{./images/settings.png}
+	\caption{Einstellungen}
+	\label{fig:functionality:settings:full}
+\end{figure}
 
 \section{Teamwork}
 \label{sec:teamwork}
