@@ -128,10 +128,11 @@ TODO
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
 % Schwierigkeiten und wie ihr sie gelöst habt
 Die App-Architektur folgt offiziellen Empfehlungen\autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
-Bei diesem Entwurfsmuster werden die Präsentation der Benutzeroberfläche und die angebundene Logik voneinander getrennt.
+Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche und Logik voneinander getrennt.
 
-Dazu verwenden Benutzeroberflächen \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+Benutzeroberflächen verwenden \textit{Databinding} um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
 Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und Entwicklung beschleunigt werden.
+Die Verwendung von \textit{LiveData} ermöglicht es zudem eine automatische Aktualisierung von aktiven Benutzeroberflächen.
 
 \textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus \textit{Models}, welche in Form von \textit{Repositories} implementiert sind.
 
@@ -191,7 +192,7 @@ TODO
 % Welche Features habt ihr gebaut?
 % Welche Screens habt ihr gebaut?
 % Warum sehen die Screens so aus? (warum ist button X an Position Y) / was habt ihr euch dabei gedacht?
-Im Folgenden werden die 
+Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgestellt.
 
 
 \subsection{Suche}
