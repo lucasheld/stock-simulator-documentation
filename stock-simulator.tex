@@ -241,9 +241,9 @@ TODO
 
 \subsection{Stockbrot}
 \label{subsec:functionality:stockbrot}
-Der Name Stockbrot leitet sich aus den Begriffen stock (deutsch: Aktie) und Bot ab. Mithilfe dieses Bots ist der Benutzer in der Lage das Traden von Aktien oder Kryptowährungen zu automatisieren. Für jedes Anlagegut, welches sich unter der Kontrolle des Bots befindet, wird ein sogenannter Worker alle 15 Minuten ausgeführt. Von dem Worker wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die Worker werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert.
+Der Name Stockbrot leitet sich aus den Begriffen stock (deutsch: Aktie) und Bot ab. Mithilfe dieses Bots ist der Benutzer in der Lage das Traden von Aktien oder Kryptowährungen zu automatisieren. Für jede Anlage, welche sich unter der Kontrolle des Bots befindet, wird ein sogenannter Worker alle 15 Minuten ausgeführt. Von dem Worker wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die Worker werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert.
 
-\autoref{fig:functionality:stockbrot:overview} zeigt den Screen, der eine Übersicht über die von dem Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Screen erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Screen keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Aktie/Kryptowährung der Kontrolle des Bots über die Detailansicht eins Anlageguts (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese in als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll.
+\autoref{fig:functionality:stockbrot:overview} zeigt den Screen, der eine Übersicht über die von dem Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Screen erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Screen keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Aktie/Kryptowährung der Kontrolle des Bots über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese in als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -272,22 +272,22 @@ TODO
 \label{subsec:functionality:quote}
 TODO
 
-\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen eines Anlageguts zu dem Bot (\autoref{fig:functionality:stockbrot:add}), sowie das Entfernen dieses (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. In dem Abschnitt, beginnend mit dem Label "`Auto buy/sell"', können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird das Anlagegut nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Preis des Anlageguts überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
+\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zu dem Bot (\autoref{fig:functionality:stockbrot:add}), sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. In dem Abschnitt, beginnend mit dem Label "`Auto buy/sell"', können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Preis der Anlage überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_before.png}
-        \caption{Anlagegut zum Stockbrot hinzufügen}
+        \caption{Anlage zum Stockbrot hinzufügen}
         \label{fig:functionality:stockbrot:add}
     \end{subfigure}
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/stockbrot_add_after.png}
-        \caption{Anlagegut vom Stockbrot entfernen}
+        \caption{Anlage vom Stockbrot entfernen}
         \label{fig:functionality:stockbrot:remove}
     \end{subfigure}
-    \caption{Anlagegut zum/vom Stockbrot hinzufügen/entfernen}
+    \caption{Anlage zum/vom Stockbrot hinzufügen/entfernen}
     \label{fig:functionality:stockbrot:addremove}
 \end{figure}
 
