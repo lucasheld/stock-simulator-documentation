@@ -144,18 +144,24 @@ Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:ro
 
 \subsection{APIs}
 \label{subsec:technologies:apis}
-TODO
-
-
-\subsubsection{IEX Cloud}
-\label{subsubsec:technologies:apis:iex}
-% https://iexcloud.io/
-TODO
+Um eine Simulation mit echten Kursdaten zu ermöglichen wurden zwei Schnittstellen angeschlossen.
+Sie verwenden unterschiedliche Datenstrukturen, weshalb separate Modelle implementiert wurden.
+Die API-spezifischen Antworten der Schnittstellen werden jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
 
 
 \subsubsection{CoinGecko}
 \label{subsubsec:technologies:apis:coingecko}
 % https://www.coingecko.com/
+\textit{CoinGecko} stellt Informationen über Kryptowährungen bereit.
+Dazu zählen Symbol, Name und Wechselkurse.
+Bei letzteren wird nur auf den USD Wechselkurs zurückgegriffen.
+Darüber hinaus sind Marktdiagrammdaten verfügbar, die für Kursgraphen verwendet werden.
+
+Die Verwendung der \textit{CoinGecko} API erfordert eine Zuschreibung, welche im Settings-Screen vorhanden ist (siehe \autoref{subsec:functionality:settings}).
+
+\subsubsection{IEX Cloud}
+\label{subsubsec:technologies:apis:iex}
+% https://iexcloud.io/
 TODO
 
 
