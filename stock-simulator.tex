@@ -115,7 +115,7 @@ private suspend fun StockbrotQuote.executeSellOrder(quote: Quote) {
 \section{Einleitung}
 \label{sec:introduction}
 % Gute Einleitung ins Thema (was war die Aufgabe, etc.)
-Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} des Fachgebiets \textit{Kommunikationstechnik} im Fachbereich \textit{16 - Elektrotechnik/Informatik} der Universität Kassel entwickelten mehrere Teams von drei bis vier Studenten innerhalb einer Woche selbstständig ein Börsensimulatorspiel für Android-Smartphones. Dabei stellte das Verwenden von echten, aktuellen Anlagekursen eine wichtige Anforderung an das Spiel dar. Mithilfe von zur Verfügung stehendem Spielgeld sollte der Benutzer die Möglichkeit haben, mit Anlagen, wie Aktien oder Kryptowährungen, zu handeln. Um das Handeln mit verschiedenen Anlagen zu ermöglichen, wurde eine Suchfunktion gefordert, welche die verfügbaren Anlagen filtert und anzeigt. Um das eigene Budget immer im Blick zu behalten, sollte eine Depotübersicht, sowie eine Anzeige für den aktuellen Kontostand und dessen Verlauf erstellt werden. Die getätigten Käufe und Verkäufe in einer Historie bzw. einem Transaktionsverlauf dargestellt werden. Graphen sollten die Anlagenkurse und den Kontostandsverlauf visualisieren. Wie auf gängigen Tradingplatformen üblich, sollte der Simulator auch mit jedem Kauf- oder Verkauf Transaktionskosten erheben. Das Trading sollte optional durch einen Bot automatisiert werden können. Entsprechende Zielwerte für den automatisierten Handel sollten für jede Anlage individuell anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, sollte die Anwendung eine Option bieten, den Spielstand zurückzusetzen. Zusätzlich zu den bisher genannten Hauptfeatures, wurde mindestens ein Zusatzfeature gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, durch Anlagenhandel Errungenschaften freizuschalten.
+Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} des Fachgebiets \textit{Kommunikationstechnik} im Fachbereich \textit{16 - Elektrotechnik/Informatik} der Universität Kassel entwickelten mehrere Teams von drei bis vier Studenten innerhalb einer Woche selbstständig ein Börsensimulatorspiel für Android-Smartphones. Dabei stellt das Verwenden von echten, aktuellen Anlagekursen eine wichtige Anforderung an das Spiel dar. Mithilfe von zur Verfügung stehendem Spielgeld soll der Benutzer die Möglichkeit haben, mit Anlagen, wie Aktien oder Kryptowährungen, zu handeln. Um das Handeln mit verschiedenen Anlagen zu ermöglichen, wird eine Suchfunktion gefordert, welche die verfügbaren Anlagen filtert und anzeigt. Um das eigene Budget immer im Blick zu behalten, soll eine Depotübersicht sowie eine Anzeige für den aktuellen Kontostand und dessen Verlauf erstellt werden. Die getätigten Käufe und Verkäufe sollen in einer Historie bzw. einem Transaktionsverlauf dargestellt werden. Graphen sollen die Anlagenkurse und den Kontostandsverlauf visualisieren. Wie auf gängigen Tradingplatformen üblich, soll der Simulator auch mit jedem Kauf- oder Verkauf Transaktionskosten erheben. Das Trading soll optional durch einen Bot automatisiert werden können. Entsprechende Zielwerte für den automatisierten Handel sollen für jede Anlage individuell anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, soll die Anwendung eine Option bieten, den Spielstand zurückzusetzen. Zusätzlich zu den bisher genannten Hauptfeatures, wird mindestens ein Zusatzfeature gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, durch den erfolgreichen Handel mit Anlagemöglichkeiten das Startkapital zu vermehren.
 
 
 \section{Technische Details}
@@ -187,8 +187,15 @@ TODO
 \subsubsection{Room}
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
-TODO
+Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite \footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "die volle Leistung von SQLite zu nutzen" \cite{android_room}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
+Room besteht(im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \cite{android_room_data_storage}. Das Beziehung zwischen drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=7cm,keepaspectratio]{./images/Room.png}
+	\caption{Room Architektur}
+	\label{fig:room}
+\end{figure}
 
 \subsubsection{Retrofit}
 \label{subsubsec:technologies:bibs:retrofit}
@@ -372,6 +379,5 @@ TODO
 
 
 \printbibliography[title={Referenzen}]
-
 
 \end{document}
