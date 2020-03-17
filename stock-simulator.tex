@@ -96,26 +96,6 @@ autocite=inline
 \tableofcontents
 \pagebreak
 
-\begin{lstlisting}[caption={example kotlin code}, captionpos=b, label={lst:example}, language=Kotlin]
-private suspend fun StockbrotQuote.executeSellOrder(quote: Quote) {
-    val depotQuote = accountRepository.depotQuoteBySymbol(id) ?: return
-    if (quote.latestPrice >= minimumSellPrice) {
-        val amount = depotQuote.amount
-        Timber.i("Bot is selling $amount for ${quote.latestPrice}")
-        accountRepository.sell(quote, amount)
-    }
-}
-\end{lstlisting}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=10cm,keepaspectratio]{./images/quote_buy_confirmation_dialog.png}
-    \caption{example image}
-    \label{fig:example}
-\end{figure}
-
-\pagebreak
-
 
 \section{Einleitung}
 \label{sec:introduction}
@@ -183,12 +163,6 @@ Im Folgenden werden diese näher vorgestellt und ihre Vorzüge sowie Eigenschaft
 Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library an dem Namespace \textit{androidx.*}. Die Libraries sind unabhängig von der Platform API verwendbar. Dadurch wird Abwärtskompatibilität gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in vier Anwendungsgebiete, \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
 
-\subsubsection{Moshi}
-\label{subsubsec:technologies:bibs:moshi}
-% https://github.com/square/moshi
-TODO
-
-
 \subsubsection{Room}
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
@@ -201,6 +175,20 @@ Room besteht(im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{En
 	\caption{Room Architektur}
 	\label{fig:room}
 \end{figure}
+
+
+\subsubsection{WorkManager}
+\label{subsubsec:technologies:bibs:workmanager}
+% https://developer.android.com/jetpack/androidx/releases/work
+% https://developer.android.com/topic/libraries/architecture/workmanager
+WorkManager ist eine in Android Jetpack enthaltene Bibliothek \autocite{android_workmanager}. Sie vereinfacht das Ausführen von Hintergrundaufgaben, sogenannten Workern. Es existieren zwei verschiedene Arten, einmalige und periodische Worker. Mithilfe des WorkManagers werden die Worker besonders ressourcensparend, vorallem aber energiesparend im Hintergrund ausgeführt. \textit{Constraints} ermöglichen es, Bedingungen an den Worker zu knüpfen, beispielweise das Benötigen einer Internetverbindung. Mittels \textit{Data} werden dem Worker Daten übergeben, welche gegebenenfalls für die Ausführung benötigt werden. Einmalige Worker eignen sich besonders für Aufgaben, die zurückgestellt werden können und nicht im Vordergrund zu Erledigen sind. Periodische Worker können immer dort eingesetzt werden, wo mit den gleichen Einstellungen regelmäßig Arbeit verrichtet werden soll. Das kleinstmögliche Intervall ist bei periodischen Workern auf 15 Minuten beschränkt.
+
+
+\subsubsection{Moshi}
+\label{subsubsec:technologies:bibs:moshi}
+% https://github.com/square/moshi
+TODO
+
 
 \subsubsection{Retrofit}
 \label{subsubsec:technologies:bibs:retrofit}
@@ -384,5 +372,30 @@ TODO
 
 
 \printbibliography[title={Referenzen}]
+
+
+\pagebreak
+Examples:\\
+
+\begin{lstlisting}[caption={example kotlin code}, captionpos=b, label={lst:example}, language=Kotlin]
+private suspend fun StockbrotQuote.executeSellOrder(quote: Quote) {
+    val depotQuote = accountRepository.depotQuoteBySymbol(id) ?: return
+    if (quote.latestPrice >= minimumSellPrice) {
+        val amount = depotQuote.amount
+        Timber.i("Bot is selling $amount for ${quote.latestPrice}")
+        accountRepository.sell(quote, amount)
+    }
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=10cm,keepaspectratio]{./images/quote_buy_confirmation_dialog.png}
+    \caption{example image}
+    \label{fig:example}
+\end{figure}
+
+\pagebreak
+
 
 \end{document}
