@@ -260,22 +260,42 @@ TODO
 Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Screen möglich.
 Zudem können Nutzer dort auswählen, ob sie nur Aktien oder Kryptowährungen sehen möchten.
 
-\autoref{fig:functionality:search:full} zeigt den Aufbau dieses Screens.
-Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand.
-Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt.
+Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:overview:full}).
+Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \autoref{fig:functionality:search:overview:results}).
 Diese Aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
 Dadurch ist es möglich auf Nutzereingaben unmittelbar zu reagieren und Ergebnisse schnell anzuzeigen.
-Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren.
+Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren (siehe \autoref{fig:functionality:search:overview:loading}).
+Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:overview:no-results}).
 
 Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_type.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_loading.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_done.png}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=7cm,keepaspectratio]{./images/search_type.png}
+		\caption{Nutzereingabe}
+		\label{fig:functionality:search:overview:full}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=7cm,keepaspectratio]{./images/search_done.png}
+		\caption{Suchergebnisse}
+		\label{fig:functionality:search:overview:results}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=7cm,keepaspectratio]{./images/search_loading.png}
+		\caption{Fortschrittsindikator}
+		\label{fig:functionality:search:overview:loading}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=7cm,keepaspectratio]{./images/search_no_results.png}
+		\caption{Suche ohne Ergebnisse}
+		\label{fig:functionality:search:overview:no-results}
+	\end{subfigure}
 	\caption{Suche}
-	\label{fig:functionality:search:full}
+	\label{fig:functionality:search:overview}
 \end{figure}
 
 
