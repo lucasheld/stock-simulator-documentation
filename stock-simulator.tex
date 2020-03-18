@@ -254,14 +254,31 @@ Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgeste
 
 \subsection{Navigation}
 \label{subsec:functionality:navigation}
-Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
+Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln (siehe \autoref{fig:functionality:navigation:bottom-navigation}).
 Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
 
-Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar.
+Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar (siehe \autoref{fig:functionality:navigation:settings}).
 
 Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
 
-%TODO Bilder
+%TODO Bilder blurren
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/navigation/bottom_navigation.png}
+		\caption{Bottom Navigation}
+		\label{fig:functionality:navigation:bottom-navigation}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/navigation/settings.png}
+		\caption{Navigation zu Einstellungen}
+		\label{fig:functionality:navigation:settings}
+	\end{subfigure}
+	\caption{Navigation}
+	\label{fig:functionality:navigation}
+\end{figure}
 
 
 \subsection{Account}
@@ -274,12 +291,12 @@ TODO
 Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Screen möglich.
 Zudem können Nutzer dort auswählen, ob sie nur Aktien oder Kryptowährungen sehen möchten.
 
-Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:overview:full}).
-Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \autoref{fig:functionality:search:overview:results}).
+Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:full}).
+Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \autoref{fig:functionality:search:results}).
 Diese Aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
 Dadurch ist es möglich auf Nutzereingaben unmittelbar zu reagieren und Ergebnisse schnell anzuzeigen.
-Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren (siehe \autoref{fig:functionality:search:overview:loading}).
-Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:overview:no-results}).
+Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren (siehe \autoref{fig:functionality:search:loading}).
+Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:no-results}).
 
 Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
 
@@ -288,30 +305,30 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=7cm,keepaspectratio]{./images/search_type.png}
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/type.png}
 		\caption{Nutzereingabe}
-		\label{fig:functionality:search:overview:full}
+		\label{fig:functionality:search:full}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=7cm,keepaspectratio]{./images/search_done.png}
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/done.png}
 		\caption{Suchergebnisse}
-		\label{fig:functionality:search:overview:results}
+		\label{fig:functionality:search:results}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=7cm,keepaspectratio]{./images/search_loading.png}
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/loading.png}
 		\caption{Fortschrittsindikator}
-		\label{fig:functionality:search:overview:loading}
+		\label{fig:functionality:search:loading}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[height=7cm,keepaspectratio]{./images/search_no_results.png}
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/no_results.png}
 		\caption{Suche ohne Ergebnisse}
-		\label{fig:functionality:search:overview:no-results}
+		\label{fig:functionality:search:no-results}
 	\end{subfigure}
 	\caption{Suche}
-	\label{fig:functionality:search:overview}
+	\label{fig:functionality:search}
 \end{figure}
 
 
@@ -416,7 +433,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/settings.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/settings/layout.png}
 	\caption{Einstellungen}
 	\label{fig:functionality:settings:full}
 \end{figure}
