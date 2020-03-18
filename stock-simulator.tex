@@ -112,7 +112,7 @@ TODO
 \label{subsec:technologies:architecture}
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
 % Schwierigkeiten und wie ihr sie gelöst habt
-Die App-Architektur folgt offiziellen Empfehlungen\autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
+Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
 Dadurch ist es möglich die Anwendungslogik separat zu testen.
 Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
@@ -120,7 +120,7 @@ Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=8cm,keepaspectratio]{./images/mvvm-architecture.png}
-	\caption{MVVM-Entwurfsmuster\autocite{mvvm_architecture}}
+	\caption{MVVM-Entwurfsmuster \autocite{mvvm_architecture}}
 	\label{fig:technologies:architecture:mvvm}
 \end{figure}
 
@@ -128,7 +128,7 @@ Benutzeroberflächen, welche in dieser App durch \textit{Fragmente} realisiert w
 Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und Entwicklung beschleunigt werden.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 
-\textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus \textit{Models}, welche in Form von \textit{Repositories} implementiert sind.
+\textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
 Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
@@ -251,7 +251,7 @@ Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgeste
 
 \subsection{Navigation}
 \label{subsec:functionality:navigation}
-Über die \textit{Bottom Navigation}\autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
+Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
 Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
 
 Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar.
