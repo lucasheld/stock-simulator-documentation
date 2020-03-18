@@ -79,6 +79,7 @@ autocite=inline
 \begin{document}
 
 \title{\textbf{Dokumentation\\der Android-Anwendung\\"`stock-simulator"'}}
+
 \author{
     Jan Müller\\
     Jonas Thelemann\\
@@ -176,7 +177,7 @@ Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. 
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
 Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite \footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "die volle Leistung von SQLite zu nutzen" \cite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
-Room besteht(im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \cite{android_room_data_storage}. Das Beziehung zwischen drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
+Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \cite{android_room_data_storage}. Das Beziehung zwischen drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -336,7 +337,17 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionsverlauf}
 \label{subsec:functionality:history}
-TODO
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptocoins, werden im History-Screen dargestellt. Dieser wird über den ''History''-Eintrag der Bottom Navigation erreicht. In \autoref{fig:functionality:history:list} ist der Aufbau des History-Screens zu sehen. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=7cm,keepaspectratio]{./images/history_list.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/history_list_open.png}
+	\caption{History}
+	\label{fig:functionality:history:list}
+\end{figure}
+
+Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen. In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
@@ -447,17 +458,19 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \section{Teamwork}
 \label{sec:teamwork}
-TODO
-
+Eine Startschwierigkeit während der Zusammenarbeit war, dass nicht Entwickler im Team über ähnlich gute Kenntnisse der Android-Architektur und der Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Pair-Programming \footnote{Siehe \url{https://en.wikipedia.org/wiki/Pair_programming}} machten. Durch die räumliche Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten (Layern), wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzem Absprache verständigten wir uns darauf, unser Projekt entsprechend dem Git-Worflow Design (Gitflow) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-Branches um den Verlauf des Projekts aufzuzeichnen. Der main-Branche enthält die offiziellen Release-Versionen des Projekts und der develop-Branche dient dazu, die einzelnen Features in ihrem zeitlichen Verlauf zu integrieren. \newline
+Im Verlauf der Arbeit kristallisierten sich rasch Teamrollen heraus. Der erfahrenste Entwickler wurde schnell zum technischen Lead und Ansprechpartner bei ernsteren Problemen. Ein anderes Teammitglied ging auf den Kunden (die Aufgabenstellenden) zu um bei Unklarheiten die Aufgabenstellung zu präzisieren. Dies hat zu einem guten Arbeitsklima beigetragen. \newline
+Unser Team hatte in der ganzen Woche ein positives Arbeitsklima. Jedes Teammitglied engagierte sich für das gemeinsame Ziel und trug durch kreative Ideen dazu bei, unser Projekt zu verbessern.
 
 \section{Zusammenfassung}
 \label{sec:summary}
-TODO
+Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} entwickelte unser Team ein Börsenhandelsimualtionsspiel für Android. Mit dieser Applikationen können Informationen über Aktien und Kryptowährungen abgerufen werden sowie diese als Anlagen erworben und veräußert werden. Hierbei ermöglichen eine Übersicht über das bestehende Depot, den Kontostand und alle bisherigen Transaktionen, das Spielgeschehen nachzuvollziehen. Der Handel kann durch einen Bot automatisiert werden. \newline
+Bereits im Verlauf der Woche konnten wir alle gestellten Mindestanforderungen an unsere Börsenhandelsimualtion erfüllen und darüber hinaus zahlreiche zusätzliche Funkionalitäten umsetzen.
 
 
 \section{Fazit}
 \label{sec:conclusion}
-TODO
+Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Projekt, wodurch die ''Lernkurve'' zu Beginn recht steil verlief. Durch unsere gute Zusammenarbeit und unseren Einsatz für das Projekt konnten wir diese Veranstaltung dazu nutzen, neue Kenntnisse der Android-Entwicklung zu erwerben und zu vertiefen. Insgesamt waren alle Teammitglieder vom Android-''Ökosystem'' positiv überrascht und fühlen uns für zukünftige App-Entwicklung gerüstet.
 
 
 \section{Ausblick}
