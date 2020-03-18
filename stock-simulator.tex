@@ -112,23 +112,32 @@ TODO
 \label{subsec:technologies:architecture}
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
 % Schwierigkeiten und wie ihr sie gelöst habt
-Die App-Architektur folgt offiziellen Empfehlungen\autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
-Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche und Logik voneinander getrennt.
+Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
+Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
+Dadurch ist es möglich die Anwendungslogik separat zu testen.
+Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
 
-Benutzeroberflächen verwenden \textit{Databinding} um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm,keepaspectratio]{./images/mvvm-architecture.png}
+	\caption{MVVM-Entwurfsmuster \autocite{mvvm_architecture}}
+	\label{fig:technologies:architecture:mvvm}
+\end{figure}
+
+Benutzeroberflächen, welche in dieser App durch \textit{Fragmente} realisiert wurden, verwenden \textit{Databinding} um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
 Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und Entwicklung beschleunigt werden.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 
-\textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus \textit{Models}, welche in Form von \textit{Repositories} implementiert sind.
+\textit{ViewModels} sind für das Verhalten von Benutzeroberflächen verantwortlich und beziehen ihre Daten wiederum aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
+Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
 Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:room}) sowie verschiedene Netzwerkquellen (siehe \autoref{subsec:technologies:apis}) angebunden.
 
-%unfertig, sehr raw
 
 \subsection{APIs}
 \label{subsec:technologies:apis}
-Um eine Simulation mit echten Kursdaten zu ermöglichen wurden zwei Schnittstellen angeschlossen.
+Um eine Simulation mit echten Kursdaten zu ermöglichen wurden zwei Schnittstellen angebunden.
 Sie verwenden unterschiedliche Datenstrukturen, weshalb separate Modelle implementiert wurden.
 Die API-spezifischen Antworten der Schnittstellen werden jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
 
@@ -217,14 +226,17 @@ TODO
 \subsubsection{Material}
 \label{subsubsec:technologies:bibs:material}
 % https://material.io/develop/android/docs/getting-started/
-TODO
+\textit{Material} ist ein Designsystem, welches unter anderem von Google entwickelt wird.
+Mit UI-Elementen der offiziellen \textit{Material}-Bibliothek war es möglich moderne Benutzeroberflächen zu erstellen, ohne Entwicklungszeit für Design und Implementierung dieser zu verwenden
+\textit{Material} wurde für das App-Theme sowie die \textit{Bottom Navigation} (siehe \autoref{subsec:functionality:navigation}) verwendet.
 
 
 \subsubsection{Timber}
 \label{subsubsec:technologies:bibs:timber}
 % https://github.com/JakeWharton/timber
-TODO
-
+\textit{Timber} ist eine Schnittstelle, welche auf der Android \textit{Log}-Klasse aufbaut und das Loggen von Ereignissen vereinfacht.
+Dadurch war es möglich Entwicklungszeit zu sparen und Programmierfehler schnell ausfindig zu machen.
+Durch Verwendung von \textit{Timber} werden Log-Nachrichten zudem nur während der Entwicklung, und nicht in der fertigen App, ausgegeben.
 
 \subsubsection{Dokka}
 \label{subsubsec:technologies:bibs:dokka}
@@ -242,12 +254,31 @@ Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgeste
 
 \subsection{Navigation}
 \label{subsec:functionality:navigation}
-Über die \textit{Bottom Navigation}\autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
+Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln (siehe \autoref{fig:functionality:navigation:bottom-navigation}).
 Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
 
-Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar.
+Das Einstellungsmenü ist über das Zahnrad in der Appbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar (siehe \autoref{fig:functionality:navigation:settings}).
 
-Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist über Bedienelemente in Form von Buttons möglich.
+Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
+
+%TODO Bilder blurren
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/navigation/bottom_navigation.png}
+		\caption{Bottom Navigation}
+		\label{fig:functionality:navigation:bottom-navigation}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/navigation/settings.png}
+		\caption{Navigation zu Einstellungen}
+		\label{fig:functionality:navigation:settings}
+	\end{subfigure}
+	\caption{Navigation}
+	\label{fig:functionality:navigation}
+\end{figure}
 
 
 \subsection{Account}
@@ -260,22 +291,44 @@ TODO
 Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Screen möglich.
 Zudem können Nutzer dort auswählen, ob sie nur Aktien oder Kryptowährungen sehen möchten.
 
-\autoref{fig:functionality:search:full} zeigt den Aufbau dieses Screens.
-Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand.
-Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt.
+Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:full}).
+Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \autoref{fig:functionality:search:results}).
 Diese Aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
 Dadurch ist es möglich auf Nutzereingaben unmittelbar zu reagieren und Ergebnisse schnell anzuzeigen.
-Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren.
+Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand zu informieren (siehe \autoref{fig:functionality:search:loading}).
+Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:no-results}).
 
 Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
 
+%TODO Bilder blurren
+
 \begin{figure}[H]
-	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_type.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_loading.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/search_done.png}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/type.png}
+		\caption{Nutzereingabe}
+		\label{fig:functionality:search:full}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/done.png}
+		\caption{Suchergebnisse}
+		\label{fig:functionality:search:results}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/loading.png}
+		\caption{Fortschrittsindikator}
+		\label{fig:functionality:search:loading}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/search/no_results.png}
+		\caption{Suche ohne Ergebnisse}
+		\label{fig:functionality:search:no-results}
+	\end{subfigure}
 	\caption{Suche}
-	\label{fig:functionality:search:full}
+	\label{fig:functionality:search}
 \end{figure}
 
 
@@ -390,7 +443,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/settings.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/settings/layout.png}
 	\caption{Einstellungen}
 	\label{fig:functionality:settings:full}
 \end{figure}
