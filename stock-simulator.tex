@@ -281,7 +281,17 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionsverlauf}
 \label{subsec:functionality:history}
-TODO
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptocoins, werden im History-Screen dargestellt. Dieser wird über den ''History''-Eintrag der Bottom Navigation erreicht. In \autoref{fig:functionality:history:list} ist der Aufbau des History-Screens zu sehen. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=7cm,keepaspectratio]{./images/history_list.png}
+	\includegraphics[height=7cm,keepaspectratio]{./images/history_list_open.png}
+	\caption{History}
+	\label{fig:functionality:history:list}
+\end{figure}
+
+Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen. In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
