@@ -394,7 +394,7 @@ Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des ak
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=10cm,keepaspectratio]{./images/achievement_reached.png}
+    \includegraphics[height=8cm,keepaspectratio]{./images/achievement_reached.png}
     \caption{Errungenschaft wurde erreicht}
     \label{fig:functionality:achievements:reached}
 \end{figure}
@@ -402,7 +402,62 @@ Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des ak
 
 \subsection{Detailansicht}
 \label{subsec:functionality:quote}
-TODO
+In der Detailansicht sind allgemeine Informationen über ein Anlagegut zu sehen (siehe \autoref{fig:functionality:quote:information}).
+Dazu zählen Symbol, Name, aktueller Kurs und Kursänderung des Anlageguts.
+Sollten keine Informationen über Kursänderungen vorliegen, wird stattdessen "`N/D"' angezeigt.
+
+Darüber wird der Kursverlauf des Anlageguts angezeigt (siehe \autoref{fig:functionality:quote:history}).
+Auch hier werden Platzhalter verwendet, falls keine Daten vorliegen sollten.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/quote/information.png}
+		\caption{Informationen}
+		\label{fig:functionality:quote:information}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/quote/history.png}
+		\caption{Kursverlauf}
+		\label{fig:functionality:quote:history}
+	\end{subfigure}
+	\caption{Detailansicht}
+	\label{fig:functionality:quote}
+\end{figure}
+
+Kaufen und Verkaufen findet über separate Eingabefelder statt (siehe \autoref{fig:functionality:buy-sell:input}).
+Die zugehörigen Buttons sind nur aktiviert, wenn die Eingabe einen Kauf beziehungsweise Verkauf zulässt.
+
+Nach Betätigen eines Buttons müssen Nutzer die Transaktion noch einmal bestätigen.
+Der in \autoref{fig:functionality:buy-sell:dialog} dargestellte Bestätigungsdialog zeigt zudem die Transaktionsinformationen erneut an.
+
+Haben Nutzer ein Anlagegut im Depot wird dies ebenfalls in der Detailansicht vermerkt (siehe \autoref{fig:functionality:buy-sell:in-depot}).
+Es werden sowohl die Menge als auch der Gesamtwert angezeigt.
+Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen Ausverkauf des entsprechenden Anlageguts aus dem Depot durchführt.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/quote/buy_sell.png}
+		\caption{Nutzereingabe}
+		\label{fig:functionality:buy-sell:input}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/quote/buy_dialog.png}
+		\caption{Bestätigungsdialog}
+		\label{fig:functionality:buy-sell:dialog}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/quote/in_depot.png}
+		\caption{Anlage im Depot}
+		\label{fig:functionality:buy-sell:in-depot}
+	\end{subfigure}
+	\caption{Kaufen und Verkaufen}
+	\label{fig:functionality:buy-sell}
+\end{figure}
 
 \autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zu dem Bot (\autoref{fig:functionality:stockbrot:add}), sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. In dem Abschnitt, beginnend mit dem Label "`Auto buy/sell"', können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Preis der Anlage überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
 
