@@ -117,6 +117,7 @@ Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendati
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
 Dadurch ist es möglich die Anwendungslogik separat zu testen.
 Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
+% TODO: Navigation (navigation-fragment-ktx, navigation-ui-ktx) und Lifecycle (lifecycle-extensions, lifecycle-viewmodel-ktx, lifecycle-livedata-ktx) erläutern?
 
 \begin{figure}[H]
 	\centering
@@ -170,6 +171,16 @@ Im Folgenden werden diese näher vorgestellt und ihre Vorzüge sowie Eigenschaft
 \subsubsection{Android Jetpack}
 \label{subsubsec:technologies:bibs:jetpack}
 Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library an dem Namespace \textit{androidx.*}. Die Libraries sind unabhängig von der Platform API verwendbar. Dadurch wird Abwärtskompatibilität gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in vier Anwendungsgebiete, \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
+
+Zusätzlich zu den Libraries, welche in diesem Abschnitt erläutert werden, wurden weitere Libraries aus Android Jetpack verwendet, die im Folgenden vorgestellt werden.
+
+\textit{Android KTX} erweitert die Sprache Kotlin um zusätzliche Funktionen. Diese sind hilfreich, um Kotlin unkompliziert in Kombination mit Android, Jetpack und anderen APIs nutzen zu können \autocite{android_ktx}.
+
+\textit{Appcompat} \autocite{android_appcompat} ermöglicht die Nutzung der \textit{Action Bar} \autocite{android_action_bar} in der Benutzeroberfläche. Außerdem unterstützt diese Library das nachträgliche Hinzufügen von dem \textit{material design} System, welches in \autoref{subsubsec:technologies:bibs:material} beschrieben wurde.
+
+\textit{Fragments} stellen ein Verhalten oder einen Teil der Benutzeroberfläche dar \autocite{android_fragments}. Eine \textit{Activity} ist modular aus mehreren \textit{Fragments} aufgebaut und ermöglicht es zur Laufzeit \textit{Fragments} hinzuzufügen oder zu entfernen.
+
+\textit{Layouts} definieren die Anordnung der Benutzeroberfläche bzw. der \textit{Activities} \autocite{android_layouts}. Die Struktur wird hierarchisch aus allen Elementen aufgebaut, die dem Benutzer angezeigt werden sollen. Um die sichtbaren Elemente zu positionieren, können sogenannte, unsichtbare \textit{ViewGroup} Elemente zu Hilfe genommen werden. Verwendet wurden in dieser Applikation die \textit{ViewGroups} \textit{ConstraintLayout} \autocite{android_constraintlayout} und \textit{SwipeRefreshLayout} \autocite{android_swiperefreshlayout}. \textit{ConstraintLayouts} ermöglichen die Positionierung und Größenanpassung der Elemente in flexibler Weise. \textit{SwipeRefreshLayouts} werden immer dort verwendet, wo der Benutzer den Inhalt der Ansicht durch eine vertikale Wischgeste aktualisieren kann.
 
 
 \subsubsection{Room}
