@@ -141,6 +141,7 @@ Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:ro
 Um eine Simulation mit echten Kursdaten zu ermöglichen wurden zwei Schnittstellen angebunden.
 Sie verwenden unterschiedliche Datenstrukturen, weshalb separate Modelle implementiert wurden.
 Die API-spezifischen Antworten der Schnittstellen werden jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
+Beide APIs erfordern Zuschreibungen, welche im Settings-Screen vorhanden sind (siehe \autoref{subsec:functionality:settings}).
 
 
 \subsubsection{CoinGecko}
@@ -151,15 +152,13 @@ Dazu zählen Symbol, Name und Wechselkurse.
 Bei letzteren wird nur auf den USD Wechselkurs zurückgegriffen.
 Darüber hinaus sind Marktdiagrammdaten verfügbar, die für Kursgraphen verwendet werden.
 
-Die Verwendung der \textit{CoinGecko} API erfordert eine Zuschreibung, welche im Settings-Screen vorhanden ist (siehe \autoref{subsec:functionality:settings}).
-
 \subsubsection{IEX Cloud}
 \label{subsubsec:technologies:apis:iex}
 % https://iexcloud.io/
 \textit{IEX Cloud}\footnote{Siehe \url{https://iexcloud.io/}} stellt allgemeine Finanzdaten zur Verfügung.
 Nicht alle Daten sind kostenlos zugänglich, weshalb nur Aktieninformationen über diese Schnittstelle bezogen werden.
 Analog zu \textit{CoinGecko} liefert \textit{IEX Cloud} Symbole, Namen, aktuelle Preise und Marktdiagrammdaten zu Aktien.
-Darüber hinaus besitzt \textit{IEX Cloud} Informationen über kurzfristige Änderungen von Aktienkursen und bietet Sammlungen von Neuigkeiten zu einzelnen Aktien.
+Des Weiteren besitzt \textit{IEX Cloud} Informationen über kurzfristige Änderungen von Aktienkursen und bietet Sammlungen von Neuigkeiten zu einzelnen Aktien.
 
 
 \subsection{Bibliotheken}
@@ -260,11 +259,9 @@ Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgeste
 Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln (siehe \autoref{fig:functionality:navigation:bottom-navigation}).
 Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
 
-Das Einstellungsmenü ist über das Zahnrad in der Toolbar von allen Screens, au"ser den Einstellungen selbst sowie den News, erreichbar (siehe \autoref{fig:functionality:navigation:settings}).
+Das Einstellungsmenü ist über das Zahnrad in der Toolbar aller Screens, au"ser den Einstellungen selbst, erreichbar (siehe \autoref{fig:functionality:navigation:settings}).
 
 Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
-
-%TODO Bilder blurren
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -302,8 +299,6 @@ Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um N
 Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:no-results}).
 
 Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
-
-%TODO Bilder blurren
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -437,22 +432,30 @@ TODO
 \subsection{Einstellungen}
 \label{subsec:functionality:settings}
 Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagegüter sowie Hinzufügen und Entfernen einer Fingerabdruck-Sperre.
-Wie in \autoref{fig:functionality:settings:full} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
+Wie in \autoref{fig:functionality:settings:buttons} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
 Der Button zum Hinzufügen und Entfernen einer Fingerabdruck-Sperre ist zudem deaktiviert, falls dies nicht möglich ist.
 Ein Informationstext unter diesem Button wei"st Nutzer auf den Zustand hin.
 
-Am unteren Ende des Screens befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
+Am unteren Ende des Screens (siehe \autoref{fig:functionality:settings:attributions}) befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
 Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
 
 %TODO Snackbars "demonstrieren"
 
-%TODO Bilder blurren
-
 \begin{figure}[H]
-	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/settings/layout.png}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/settings/buttons.png}
+		\caption{Optionen}
+		\label{fig:functionality:settings:buttons}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/settings/attribution.png}
+		\caption{Zuschreibungen}
+		\label{fig:functionality:settings:attributions}
+	\end{subfigure}
 	\caption{Einstellungen}
-	\label{fig:functionality:settings:full}
+	\label{fig:functionality:settings}
 \end{figure}
 
 
