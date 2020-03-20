@@ -153,6 +153,7 @@ Dazu zählen Symbol, Name und Wechselkurse.
 Bei letzteren wird nur auf den USD Wechselkurs zurückgegriffen.
 Darüber hinaus sind Marktdiagrammdaten verfügbar, die für Kursgraphen verwendet werden.
 
+
 \subsubsection{IEX Cloud}
 \label{subsubsec:technologies:apis:iex}
 % https://iexcloud.io/
@@ -219,7 +220,7 @@ TODO
 \subsubsection{MPAndroidChart}
 \label{subsubsec:technologies:bibs:mpandroidchart}
 % https://github.com/PhilJay/MPAndroidChart
-TODO
+\textit{MPAndroidChart} \autocite{mpandroidchart} ermöglicht die Darstellung von Diagrammen unter Android. Unterstützt werden alle gängigen Diagrammtypen, sowie Kombinationen von mehreren Typen in einem Diagramm. Durch die vielen Konfigurationsmöglichkeiten können die Diagramme passgenau auf das Anwendungsgebiet abgestimmt werden. In dieser Applikation wurden mithilfe der Library der Verlauf des Kontostands, des Depots und des Aktienkurses visualisiert.
 
 
 \subsubsection{Biometric-Auth}
@@ -248,6 +249,7 @@ Mit UI-Elementen der offiziellen \textit{Material}-Bibliothek war es möglich mo
 \textit{Timber} ist eine Schnittstelle, welche auf der Android \textit{Log}-Klasse aufbaut und das Loggen von Ereignissen vereinfacht.
 Dadurch war es möglich Entwicklungszeit zu sparen und Programmierfehler schnell ausfindig zu machen.
 Durch Verwendung von \textit{Timber} werden Log-Nachrichten zudem nur während der Entwicklung, und nicht in der fertigen App, ausgegeben.
+
 
 \subsubsection{Dokka}
 \label{subsubsec:technologies:bibs:dokka}
@@ -282,9 +284,11 @@ Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist
 	\label{fig:functionality:navigation:screens}
 \end{figure}
 
+
 \subsection{Account}
 \label{subsec:functionality:account}
 TODO
+
 
 \subsection{Suche}
 \label{subsec:functionality:search}
@@ -519,6 +523,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 Eine Startschwierigkeit während der Zusammenarbeit war, dass nicht Entwickler im Team über ähnlich gute Kenntnisse der Android-Architektur und der Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Pair-Programming \footnote{Siehe \url{https://en.wikipedia.org/wiki/Pair_programming}} machten. Durch die räumliche Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten (Layern), wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzem Absprache verständigten wir uns darauf, unser Projekt entsprechend dem Git-Worflow Design (Gitflow) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-Branches um den Verlauf des Projekts aufzuzeichnen. Der main-Branche enthält die offiziellen Release-Versionen des Projekts und der develop-Branche dient dazu, die einzelnen Features in ihrem zeitlichen Verlauf zu integrieren. \newline
 Im Verlauf der Arbeit kristallisierten sich rasch Teamrollen heraus. Der erfahrenste Entwickler wurde schnell zum technischen Lead und Ansprechpartner bei ernsteren Problemen. Ein anderes Teammitglied ging auf den Kunden (die Aufgabenstellenden) zu um bei Unklarheiten die Aufgabenstellung zu präzisieren. Dies hat zu einem guten Arbeitsklima beigetragen. \newline
 Unser Team hatte in der ganzen Woche ein positives Arbeitsklima. Jedes Teammitglied engagierte sich für das gemeinsame Ziel und trug durch kreative Ideen dazu bei, unser Projekt zu verbessern.
+
 
 \section{Zusammenfassung}
 \label{sec:summary}
