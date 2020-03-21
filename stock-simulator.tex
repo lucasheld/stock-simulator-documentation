@@ -287,7 +287,45 @@ Weitere Navigation, wie zu den News oder zur Detailansicht eines Anlageguts, ist
 
 \subsection{Account}
 \label{subsec:functionality:account}
-TODO
+In dem Account-Screen bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Screen wird über den Eintrag "`Account"' in der Bottom Navigation erreicht.
+
+Im oberen Teil des Bildschirms wird der aktuelle Kontostand in US-Dollar angezeigt. Darunter stellt ein Diagramm den Verlauf des Kontostands dar (siehe \autoref{fig:functionality:account:balance}).
+ 
+Unter diesem Abschnitt wird der aktuelle Wert des Depots, sowie ein Diagramm über dessen Verlauf angezeigt (siehe \autoref{fig:functionality:account:depot}).
+Falls keine Daten für die Darstellung der Diagramme vorliegen sollten, werden entsprechende Platzhalter in der verwendet.
+
+Die Performance des Gesamtdepots wird unter den Diagrammen angezeigt (siehe \autoref{fig:functionality:account:performance}). Sie misst, wie gut die Leistung des Investors war, das Startkapital zu vergrößern. Um diesen Wert deutlicher darzustellen, wird eine negative Performance in roter Schrift und einem absteigenden Pfeil, sowie eine positive Performance in grüner Schrift und einem aufsteigenden Pfeil gekennzeichnet.
+
+Im letzten Abschnitt des Screens werden die bereits gekauften Anlagen aufgelistet (siehe \autoref{fig:functionality:account:depot_quotes}). Durch scrollen innerhalb der Ansicht, werden weitere Anlagen sichtbar, falls aus Platzgründen nicht alle unmittelbar sichtbar dargestellt werden können.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/account/balance.png}
+        \caption{Kontostand}
+        \label{fig:functionality:account:balance}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/account/depot.png}
+        \caption{Depot}
+        \label{fig:functionality:account:depot}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/account/performance.png}
+        \caption{Performance}
+        \label{fig:functionality:account:performance}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/account/depot_quotes.png}
+        \caption{Anlagen im Depot}
+        \label{fig:functionality:account:depot_quotes}
+    \end{subfigure}
+    \caption{Account}
+    \label{fig:functionality:account}
+\end{figure}
 
 
 \subsection{Suche}
