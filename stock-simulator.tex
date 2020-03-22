@@ -350,14 +350,21 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptocoins, werden im History-Screen dargestellt. Dieser wird über den ''History''-Eintrag der Bottom Navigation erreicht. In \autoref{fig:functionality:history:list} ist der Aufbau des History-Screens zu sehen. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/history_list.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/history_list_open.png}
-	\caption{History}
-	\label{fig:functionality:history:list}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/history_list.png}
+		\caption{Historie}
+		\label{fig:functionality:history:list}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/history_list_open.png}
+		\caption{Historie - Detailansicht}
+		\label{fig:functionality:history:list_open}
+	\end{subfigure}
 \end{figure}
 
-Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen. In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
+Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list_open}). In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
@@ -602,7 +609,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \section{Demonstration}
 \label{sec:demo}
-Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden einige typische Anwendungsfälle und Transaktion dargestellt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} Zu Beginn verfügt der Nutzer über einen Kontostand von 10.000,- \$ und ohne Anlagevermögen, d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens (Performance) beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
+Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen, d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens (Performance) beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
 
 \begin{figure}[H]
 	\centering
@@ -611,6 +618,39 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden ei
 	\label{fig:demo:start}
 \end{figure}
 
+ Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens Agilent Technologies \footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der Bottom-Navigation den Search-Buttonu nd wechseln zum Search-Bildschirm.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search.png}
+		\caption{Suche}
+		\label{fig:demo:search}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search_a.png}
+		\caption{Suche - Filter nach 'a'}
+		\label{fig:demo:search_a}
+	\end{subfigure}
+\end{figure}
+
+\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen den erste Wertanalge, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/quote.png}
+		\caption{Quote}
+		\label{fig:demo:quote}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/buy_a.png}
+		\caption{Kauf von 12 Aktien}
+		\label{fig:demo:buy_a}
+	\end{subfigure}
+\end{figure}
 
 \section{Teamwork}
 \label{sec:teamwork}
