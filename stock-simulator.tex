@@ -618,7 +618,7 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden ei
 	\label{fig:demo:start}
 \end{figure}
 
- Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens Agilent Technologies \footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der Bottom-Navigation den Search-Buttonu nd wechseln zum Search-Bildschirm.
+ Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens Agilent Technologies\footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der Bottom-Navigation den Search-Button und wechseln zum Search-Bildschirm.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -635,22 +635,49 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden ei
 	\end{subfigure}
 \end{figure}
 
-\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen den erste Wertanalge, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm.
+\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen den erste Wertanalge, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie an und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag.
 
 \begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[height=8cm,keepaspectratio]{./images/demo/quote.png}
-		\caption{Quote}
-		\label{fig:demo:quote}
-	\end{subfigure}
+	\centering
+	\includegraphics[height=8cm,keepaspectratio]{./images/demo/quote.png}
+	\caption{Quote}
+	\label{fig:demo:quote}
+\end{figure}
+
+Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in das vorgesehene Eingabefeld ein, wie in \autoref{fig:demo:buy_a}. Nach Betätigen des BUY-Buttons erscheint ein Dialog, der die Transaktion zusammenfasst und uns auffordert den Kauf zu bestätigen. Dies ist in \autoref{fig:demo:buy_a_confirm} zu sehen.
+
+\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/buy_a.png}
 		\caption{Kauf von 12 Aktien}
 		\label{fig:demo:buy_a}
 	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/buy_a_confirm.png}
+		\caption{Kaufbestätigung}
+		\label{fig:demo:buy_a_confirm}
+	\end{subfigure}
 \end{figure}
+
+Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, fügen wir diese Aktie dem automatischen Handel durch den Bot (stockbrot) hinzu. 
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/add_stockbot.png}
+		\caption{Automatischer Handel}
+		\label{fig:demo:add_stockbot}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/added_stockbot_view.png}
+		\caption{Automatisch gehandelte Anlagen}
+		\label{fig:demo:added}
+	\end{subfigure}
+\end{figure}
+
 
 \section{Teamwork}
 \label{sec:teamwork}
