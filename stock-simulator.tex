@@ -503,11 +503,6 @@ TODO
 \label{subsec:functionality:settings}
 Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagegüter sowie Hinzufügen und Entfernen einer Fingerabdruck-Sperre.
 Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
-Der Button zum Hinzufügen und Entfernen einer Fingerabdruck-Sperre ist zudem deaktiviert, falls dies nicht möglich ist.
-Ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin.
-
-Am unteren Ende des Screens (siehe \autoref{fig:functionality:settings:attributions}) befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
-Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
 
 \begin{figure}[H]
 	\centering
@@ -516,6 +511,8 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 	\label{fig:functionality:settings}
 \end{figure}
 
+
+Über den Button "`REFRESH SYMBOLS"' (\autoref{fig:functionality:settings:refreshsymbols:button}) ist der Benutzer in der Lage, die über die Suche verfügbaren Anlagen, der APIs CoinGecko (siehe \autoref{subsubsec:technologies:apis:coingecko}) und IEX Cloud (siehe \autoref{subsubsec:technologies:apis:iex}), zu aktualisieren. Sobald der Button geklickt wurde, wird dieser deaktiviert und erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:refreshsymbols:requested}), welche über den aktuellen Vorgang informiert. Sobald die Aktualisierung abgeschlossen ist, wird der Button wieder aktiviert und eine Benachrichtigung informiert über den erfolgreichen Abschluss des Vorgangs (\autoref{fig:functionality:settings:refreshsymbols:done}).
 
 \begin{figure}[H]
     \begin{subfigure}{.329\textwidth}
@@ -559,6 +556,9 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 \end{figure}
 
 
+Der Button zum Hinzufügen und Entfernen einer Fingerabdruck-Sperre ist zudem deaktiviert, falls dies nicht möglich ist.
+Ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin.
+
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -588,6 +588,9 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
     \label{fig:functionality:settings:fingerprint}
 \end{figure}
 
+
+Am unteren Ende des Screens (siehe \autoref{fig:functionality:settings:attributions}) befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
+Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
 
 \begin{figure}[H]
     \centering
