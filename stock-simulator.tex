@@ -295,6 +295,11 @@ Im letzten Abschnitt des Screens werden die bereits gekauften Anlagen aufgeliste
     \caption{Account (Fortsetzung)}
 \end{figure}
 
+% TODO: Beschreibung, falls Fingerprint benötigt
+% ./images/settings/fingerprint_required.png
+% ./images/settings/fingerprint_required_cancel.png
+% ./images/settings/fingerprint_required_wrong_finger.png
+
 
 \subsection{Suche}
 \label{subsec:functionality:search}
@@ -497,30 +502,98 @@ TODO
 \subsection{Einstellungen}
 \label{subsec:functionality:settings}
 Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagegüter sowie Hinzufügen und Entfernen einer Fingerabdruck-Sperre.
-Wie in \autoref{fig:functionality:settings:buttons} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
+Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
 Der Button zum Hinzufügen und Entfernen einer Fingerabdruck-Sperre ist zudem deaktiviert, falls dies nicht möglich ist.
-Ein Informationstext unter diesem Button wei"st Nutzer auf den Zustand hin.
+Ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin.
 
 Am unteren Ende des Screens (siehe \autoref{fig:functionality:settings:attributions}) befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
 Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
 
-%TODO Snackbars "demonstrieren"
-
 \begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[height=8cm,keepaspectratio]{./images/settings/buttons.png}
-		\caption{Optionen}
-		\label{fig:functionality:settings:buttons}
-	\end{subfigure}
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[height=8cm,keepaspectratio]{./images/settings/attribution.png}
-		\caption{Zuschreibungen}
-		\label{fig:functionality:settings:attributions}
-	\end{subfigure}
+	\centering
+	\includegraphics[width=.5\textwidth,height=8cm,keepaspectratio]{./images/settings/raw.png}
 	\caption{Einstellungen}
 	\label{fig:functionality:settings}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/refresh_symbols_button.png}
+        \caption{Button}
+        \label{fig:functionality:settings:refreshsymbols:button}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/refresh_symbols_requested.png}
+        \caption{Aktualisierung gestartet}
+        \label{fig:functionality:settings:refreshsymbols:requested}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/refresh_symbols_done.png}
+        \caption{Aktualisierung beendet}
+        \label{fig:functionality:settings:refreshsymbols:done}
+    \end{subfigure}
+    \caption{Symbole aktualisieren}
+    \label{fig:functionality:settings:refreshsymbols}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/data_reset_button.png}
+        \caption{Button}
+        \label{fig:functionality:settings:datareset:button}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/data_reset_done.png}
+        \caption{Benachrichtigung}
+        \label{fig:functionality:settings:datareset:notification}
+    \end{subfigure}
+    \caption{Daten zurücksetzen}
+    \label{fig:functionality:settings:datareset}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_not_registered.png}
+        \caption{Authentifizierung nicht möglich}
+        \label{fig:functionality:settings:fingerprint:notregistered}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_button.png}
+        \caption{Button}
+        \label{fig:functionality:settings:fingerprint:button}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_requested.png}
+        \caption{Authentifizierung gestartet}
+        \label{fig:functionality:settings:fingerprint:requested}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_done.png}
+        \caption{Authentifizierung abgeschlossen}
+        \label{fig:functionality:settings:fingerprint:done}
+    \end{subfigure}
+    \caption{Fingerabdruck-Authentifizierung}
+    \label{fig:functionality:settings:fingerprint}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth,height=8cm,keepaspectratio]{./images/settings/attribution.png}
+    \caption{Zuschreibungen}
+    \label{fig:functionality:settings:attributions}
 \end{figure}
 
 
