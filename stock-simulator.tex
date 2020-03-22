@@ -505,7 +505,24 @@ Im unteren Teil des Screens befindet sich ein News Button (siehe \autoref{fig:fu
 
 \subsection{News}
 \label{subsec:functionality:news}
-TODO
+Der News-Screen zeigt alle aktuellen Nachrichten an, die mit einer Anlage zusammenhängen (siehe \autoref{fig:functionality:news}). Dadurch, dass nur über die Detailansicht einer Anlage auf die News zugegriffen wird, wird die Anlage damit spezifiziert. Abgerufen werden die Nachrichten über die API von IEX Cloud (siehe \autoref{subsubsec:technologies:apis:iex}). Der Screen listet, wie in \autoref{fig:functionality:news:closed} sichtbar, vorerst nur alle Nachrichtentitel auf. Falls über den Titel hinaus auch der dazugehörige Text gelesen werden möchte, lässt sich jedes der Elemente durch den Pfeil auf der rechten Seite ausklappen. Anschließend wird, wie in \autoref{fig:functionality:news:open} zu sehen, zusätzlich zu dem Titel auch, falls vorhanden, das Bild, das Datum, die Quelle und die Beschreibung des Artikels angezeigt. Alle verfügbaren News sind in englischer Sprache verfasst.
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/news/news.png}
+        \caption{geschlossen}
+        \label{fig:functionality:news:closed}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/news/news_open.png}
+        \caption{geöffnet}
+        \label{fig:functionality:news:open}
+    \end{subfigure}
+    \caption{News Übersicht}
+    \label{fig:functionality:news}
+\end{figure}
 
 
 \subsection{Einstellungen}
