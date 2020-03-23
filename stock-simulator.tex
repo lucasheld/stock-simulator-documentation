@@ -364,13 +364,23 @@ Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkä
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[height=7cm,keepaspectratio]{./images/history_list.png}
-	\includegraphics[height=7cm,keepaspectratio]{./images/history_list_open.png}
-	\caption{History}
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/history_list.png}
+        \caption{geschlossen}
+        \label{fig:functionality:history:list:closed}
+    \end{subfigure}
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/history_list_open.png}
+        \caption{geöffnet}
+        \label{fig:functionality:history:list:open}
+    \end{subfigure}
+	\caption{Historie}
 	\label{fig:functionality:history:list}
 \end{figure}
 
-Die Karten sind absteigend nach dem Zeitpunkt ihrer Durchführung geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, das anzeigt, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann die jeweilige Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen. In der Detailansicht wird angezeigt, wie viele Anlagen bei dieser Transaktion ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
+Die Karten sind absteigend nach dem Zeitpunkt ihrer Durchführung geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, das anzeigt, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt (siehe \autoref{fig:functionality:history:list:closed}). Durch Klick auf den Pfeil kann die jeweilige Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list:open}). In der Detailansicht wird angezeigt, wie viele Anlagen bei dieser Transaktion ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
