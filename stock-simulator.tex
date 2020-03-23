@@ -143,9 +143,7 @@ Im Folgenden werden die verwendeten Bibliotheken näher vorgestellt und ihre Vor
 \subsubsection{Android Jetpack}
 \label{subsubsec:technologies:bibs:jetpack}
 % TODO: was für "Elemente" werden dem Entwickler vorgegeben?
-% TODO: was ist die "Platform API"? "Android Platform API" reicht evtl. schon
-% TODO: Abwärtskompatibilität zu was? Älteren Android-Versionen?
-Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library in Code am Namespace \textit{androidx.*}. Die in Jetpack enthaltenen Libraries sind unabhängig von der Platform API verwendbar. Dadurch wird Abwärtskompatibilität gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
+Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library in Code am Namespace \textit{androidx.*}. Die in Jetpack enthaltenen Libraries sind unabhängig von der Android Platform API verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
 Zusätzlich zu den Libraries, welche in diesem Abschnitt erläutert werden, wurden weitere Libraries aus Android Jetpack verwendet, die im Folgenden vorgestellt werden.
 
@@ -267,7 +265,7 @@ Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist üb
 Im Account-Screen bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Screen wird über den Eintrag "`Account"' in der Bottom Navigation erreicht.
 
 Im oberen Teil des Bildschirms wird der aktuelle Kontostand in US-Dollar angezeigt. Darunter stellt ein Diagramm den Verlauf des Kontostands dar (siehe \autoref{fig:functionality:account:balance}).
- 
+
 Unter diesem Abschnitt wird der aktuelle Wert des Depots, sowie ein Diagramm über dessen Verlauf angezeigt (siehe \autoref{fig:functionality:account:depot}).
 Falls keine Daten für die Darstellung der Diagramme vorliegen sollten, werden entsprechende Platzhalter verwendet.
 %TODO: was sind "entsprechende" Platzhalter? Bei "Suche" (unten) wird ein Bild dazu gezeigt.
@@ -365,18 +363,19 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag ``History'' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[height=8cm,keepaspectratio]{./images/history_list.png}
-		\caption{Transaktionen in der Historie}
-		\label{fig:functionality:history:list_closed}
-	\end{subfigure}
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[height=8cm,keepaspectratio]{./images/history_list_open.png}
-		\caption{Detailansicht}
-		\label{fig:functionality:history:list_open}
-	\end{subfigure}
+	\centering
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/history_list.png}
+        \caption{geschlossen}
+        \label{fig:functionality:history:list:closed}
+    \end{subfigure}
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[height=8cm,keepaspectratio]{./images/history_list_open.png}
+        \caption{geöffnet}
+        \label{fig:functionality:history:list:open}
+    \end{subfigure}
 	\caption{Historie}
 	\label{fig:functionality:history:list}
 \end{figure}
@@ -388,7 +387,7 @@ Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, soda
 \label{subsec:functionality:stockbrot}
 Der Name Stockbrot ist ein Wortspiel aus den Begriffen stock (deutsch: Aktie) und Bot, die Kurzform von robot (deutsch: Roboter). Mithilfe dieses Bots ist der Benutzer in der Lage das Traden von Aktien oder Kryptowährungen zu automatisieren. Für jede Anlage, welche sich unter der Kontrolle des Bots befindet, wird alle 15 Minuten ein sogenannter \textit{Worker} ausgeführt (siehe \autoref{subsubsec:technologies:bibs:workmanager}). Vom Worker wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des jeweiligen aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die Worker werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert (siehe \autoref{subsubsec:technologies:bibs:workmanager}).
 
-\autoref{fig:functionality:stockbrot:overview} zeigt den Screen, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Screen erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Screen keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des Bots über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll.
+\autoref{fig:functionality:stockbrot:overview} zeigt den Screen, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Screen erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Screen keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des Bots über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll. Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt. Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -406,7 +405,7 @@ Der Name Stockbrot ist ein Wortspiel aus den Begriffen stock (deutsch: Aktie) un
     \caption{Stockbrot Übersicht}
     \label{fig:functionality:stockbrot:overview}
 \end{figure}
-% TODO: Beim Ansehen der Screenshots fragt man sich vielleicht, wieso keine Anzahl an Verkäufen zu sehen ist (wie "2" bei Käufen). Das sollte noch kurz erklärt werden.
+
 
 \subsection{Errungenschaften}
 \label{subsec:functionality:achievements}
@@ -608,32 +607,42 @@ Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{f
 \end{figure}
 
 
-Der unterste Button "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung mit jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der Button deaktiviert und ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein Popup, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche den Benutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}).
-Wird die Bestätigung abgebrochen, so wird der Benutzer auch darüber informiert.
-% TODO: Screenshot zur Abbruch-Benachrichtigung hinzufügen.
+Der unterste Button "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung mit jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der Button deaktiviert und ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein Popup, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche den Benutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den Button "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
 
 \begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_not_registered.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_not_registered.png}
         \caption{Authentifizierung nicht möglich}
         \label{fig:functionality:settings:fingerprint:notregistered}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_button.png}
-        \caption{Button}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_button.png}
+        \caption{Button\linebreak}
         \label{fig:functionality:settings:fingerprint:button}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_requested.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_requested.png}
         \caption{Authentifizierung gestartet}
         \label{fig:functionality:settings:fingerprint:requested}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_done.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_canceled.png}
+        \caption{Authentifizierung abgebrochen}
+        \label{fig:functionality:settings:fingerprint:canceled}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_failed.png}
+        \caption{Authentifizierung fehlgeschlagen}
+        \label{fig:functionality:settings:fingerprint:failed}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_done.png}
         \caption{Authentifizierung abgeschlossen}
         \label{fig:functionality:settings:fingerprint:done}
     \end{subfigure}
