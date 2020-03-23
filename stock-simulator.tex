@@ -635,7 +635,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \section{Demonstration}
 \label{sec:demo}
-Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen, d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens (Performance) beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
+Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der als Performance ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
 
 \begin{figure}[H]
 	\centering
@@ -661,7 +661,7 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden ei
 	\end{subfigure}
 \end{figure}
 
-\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen den erste Wertanalge, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie an und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag.
+\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
 
 \begin{figure}[H]
 	\centering
@@ -670,7 +670,7 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden ei
 	\label{fig:demo:quote}
 \end{figure}
 
-Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in das vorgesehene Eingabefeld ein, wie in \autoref{fig:demo:buy_a}. Nach Betätigen des BUY-Buttons erscheint ein Dialog, der die Transaktion zusammenfasst und uns auffordert den Kauf zu bestätigen. Dies ist in \autoref{fig:demo:buy_a_confirm} zu sehen.
+Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in das vorgesehene Eingabefeld ein, wie in \autoref{fig:demo:buy_a} dargestellt. Nach Betätigen des BUY-Buttons erscheint ein Dialog, der die Transaktion zusammenfasst und uns auffordert den Kauf zu bestätigen. Dies ist in \autoref{fig:demo:buy_a_confirm} zu sehen.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -714,7 +714,7 @@ Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktien
 	\label{fig:demo:news}
 \end{figure}
 
-Als nächstes wollen wir drei Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl 3 im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen.
+Als nächstes wollen wir drei Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl drei im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -748,8 +748,8 @@ Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bil
 	\end{subfigure}
 \end{figure}
 
-Wie in \autoref{fig:demo:history} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Der das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
-Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Diese sehen wir in \autoref{fig:demo:achievements} nach wir über die Bottom-Navigation zum Achievements-Bildschirm wechseln. So haben wir bereits die Errungenschaften eine Aktie im Depot, zwei Aktien im Depot und zehn Aktien im Depot freigespielt. Durch öffnen der einzelnen Karten, wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen.
+Wie in \autoref{fig:demo:history} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
+Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements} zu sehen. So haben wir bereits die Errungenschaften ''Eine Aktie im Depot'', ''Zwei Aktien im Depot'' und ''Zehn Aktien im Depot'' freigespielt. Durch öffnen der einzelnen Karten, wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -773,8 +773,8 @@ Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaft
 	\label{fig:demo:end}
 \end{figure}
 
-Um das Ergebnis unserer Aktiengeschäfte zu ermitteln wechseln wir über die Bottom-Navigation erneut zum Account-Bildschirm. Darin wird unser der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Wertdepot in Höhe von 616,95 \$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \% Prozent. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
-Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechselen wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Anlagedaten erneut anzufordern, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung zu aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings} zu sehen. Nachdem wir den Rest Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset}.
+Um das Ergebnis unserer Aktiengeschäfte zu ermitteln wechseln wir über die Bottom-Navigation erneut zum Account-Bildschirm. Darin wird unser der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95 \$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \% Prozent. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
+Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechselen wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Anlagedaten erneut anfordern, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings} zu sehen. Nachdem wir den Reset Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset}.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
