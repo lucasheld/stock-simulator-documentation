@@ -308,10 +308,30 @@ Im letzten Abschnitt des Screens werden die bereits gekauften Anlagen aufgeliste
     \caption{Account (Fortsetzung)}
 \end{figure}
 
-% TODO: Beschreibung, falls Fingerprint benötigt
-% ./images/settings/fingerprint_required.png
-% ./images/settings/fingerprint_required_cancel.png
-% ./images/settings/fingerprint_required_wrong_finger.png
+Falls der Benutzer in den Einstellungen die Fingerabdrucks-Sperre aktiviert hat (siehe \autoref{fig:functionality:settings:fingerprint}), muss der Fingerabdruck nach dem Start der Anwendung bestätigt werden (siehe \autoref{fig:functionality:account:fingerprint:dialog}). Ohne diese Bestätigung ist es nicht möglich die Anwendung zu benutzen. Ein Abbruch des Authentifizierungsprozesses führt zum Schließen der App und zu einer Benachrichtigung über den entsprechenden Fehler (siehe \autoref{fig:functionality:account:fingerprint:cancel}). Selbiges gilt für die Durchführung der Authentifizierung mit einem nicht im Android-System hinterlegten Fingerabdruck (siehe \autoref{fig:functionality:account:fingerprint:failed}).
+
+\begin{figure}[H]
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/account/fingerprint_required.png}
+        \caption{Authentifizierung benötigt}
+        \label{fig:functionality:account:fingerprint:dialog}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/account/fingerprint_required_cancel.png}
+        \caption{Authentifizierung abgebrochen}
+        \label{fig:functionality:account:fingerprint:cancel}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/account/fingerprint_required_wrong_finger.png}
+        \caption{Authentifizierung fehlgeschlagen}
+        \label{fig:functionality:account:fingerprint:failed}
+    \end{subfigure}
+    \caption{Fingerabdruck-Authentifizierung beim Anwendungsstart}
+    \label{fig:functionality:account:fingerprint}
+\end{figure}
 
 
 \subsection{Suche}
