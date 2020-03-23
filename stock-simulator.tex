@@ -599,32 +599,42 @@ Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{f
 \end{figure}
 
 
-Der unterste Button "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung mit jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der Button deaktiviert und ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein Popup, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche den Benutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}).
-Wird die Bestätigung abgebrochen, so wird der Benutzer auch darüber informiert.
-% TODO: Screenshot zur Abbruch-Benachrichtigung hinzufügen.
+Der unterste Button "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung mit jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der Button deaktiviert und ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein Popup, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche den Benutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den Button "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
 
 \begin{figure}[H]
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_not_registered.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_not_registered.png}
         \caption{Authentifizierung nicht möglich}
         \label{fig:functionality:settings:fingerprint:notregistered}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_button.png}
-        \caption{Button}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_button.png}
+        \caption{Button\linebreak}
         \label{fig:functionality:settings:fingerprint:button}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_requested.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_requested.png}
         \caption{Authentifizierung gestartet}
         \label{fig:functionality:settings:fingerprint:requested}
     \end{subfigure}
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.329\textwidth}
         \centering
-        \includegraphics[height=8cm,keepaspectratio]{./images/settings/fingerprint_add_done.png}
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_canceled.png}
+        \caption{Authentifizierung abgebrochen}
+        \label{fig:functionality:settings:fingerprint:canceled}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_failed.png}
+        \caption{Authentifizierung fehlgeschlagen}
+        \label{fig:functionality:settings:fingerprint:failed}
+    \end{subfigure}
+    \begin{subfigure}{.329\textwidth}
+        \centering
+        \includegraphics[height=6cm,keepaspectratio]{./images/settings/fingerprint_add_done.png}
         \caption{Authentifizierung abgeschlossen}
         \label{fig:functionality:settings:fingerprint:done}
     \end{subfigure}
