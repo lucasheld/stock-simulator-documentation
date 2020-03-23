@@ -652,7 +652,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \section{Demonstration}
 \label{sec:demo}
-Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der als Performance ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
+Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der App als Performance ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
 
 \begin{figure}[H]
 	\centering
@@ -667,8 +667,8 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search.png}
-		\caption{Suche}
-		\label{fig:demo:search}
+		\caption{Search-Bildschirm}
+		\label{fig:demo:search_screen}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -676,9 +676,11 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im
 		\caption{Suche - Filter nach 'a'}
 		\label{fig:demo:search_a}
 	\end{subfigure}
+	\caption{Suche}
+	\label{fig:demo:search}
 \end{figure}
 
-\autoref{fig:demo:search} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, die mit 'A' oder 'a' beginnen. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch 'A' dargestellt ist und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
+\autoref{fig:demo:search_screen} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit 'A' oder 'a' beginnt oder deren Namen eine 'A' bzw. 'a' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch 'A' dargestellt ist aus und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
 
 \begin{figure}[H]
 	\centering
@@ -702,6 +704,8 @@ Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in da
 		\caption{Kaufbestätigung}
 		\label{fig:demo:buy_a_confirm}
 	\end{subfigure}
+	\caption{Kauf}
+	\label{fig:demo:buy}
 \end{figure}
 
 Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, fügen wir diese Aktie dem automatischen Handel durch den Bot (stockbrot) hinzu. 
@@ -719,6 +723,8 @@ Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, f�
 		\caption{Automatisch gehandelte Anlagen}
 		\label{fig:demo:added}
 	\end{subfigure}
+	\caption{Stockbrot}
+	\label{fig:demo:bot}
 \end{figure}
 
 Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der Stockbrot-Bildschirm, den wir über die Bottom-Navigation erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
@@ -731,14 +737,14 @@ Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktien
 	\label{fig:demo:news}
 \end{figure}
 
-Als nächstes wollen wir drei Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl drei im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen.
+Als nächstes wollen wir drei Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl drei im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/sell.png}
 		\caption{Verkauf von drei Aktien}
-		\label{fig:demo:sell_a}
+		\label{fig:demo:sell_a_three}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -746,6 +752,8 @@ Als nächstes wollen wir drei Aktien manuell wieder verkaufen, um über mehr ung
 		\caption{Verkaufsbestätigung}
 		\label{fig:demo:sell_a_confirmation}
 	\end{subfigure}
+	\caption{Verkauf}
+	\label{fig:demo:sell_a}
 \end{figure}
 
 Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bildschirm, den wir über die Bottom-Navigation erreichen. 
@@ -754,33 +762,37 @@ Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bil
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/history_closed.png}
-		\caption{Transaktionshistorie}
-		\label{fig:demo:history}
+		\caption{Bisheriger Kauf und Verkauf}
+		\label{fig:demo:history_closed}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/history_open.png}
-		\caption{Transaktionshistorie - Detailansicht}
+		\caption{ Detailansicht}
 		\label{fig:demo:history_open}
 	\end{subfigure}
+	\caption{Transaktionshistorie}
+	\label{fig:demo:history}
 \end{figure}
 
-Wie in \autoref{fig:demo:history} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
-Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements} zu sehen. So haben wir bereits die Errungenschaften ''Eine Aktie im Depot'', ''Zwei Aktien im Depot'' und ''Zehn Aktien im Depot'' freigespielt. Durch öffnen der einzelnen Karten, wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen.
+Wie in \autoref{fig:demo:history_closed} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
+Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften ''Eine Aktie im Depot'', ''Zwei Aktien im Depot'' und ''Zehn Aktien im Depot'' freigespielt. Durch öffnen der einzelnen Karten, wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/achievements_closed.png}
-		\caption{Errungenschaften}
-		\label{fig:demo:achievements}
+		\caption{Erreichte Errungenschaften}
+		\label{fig:demo:achievements_closed}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/achievements_open.png}
-		\caption{Errungenschaften - Detailansicht}
+		\caption{Detailansicht}
 		\label{fig:demo:achievements_open}
 	\end{subfigure}
+	\caption{Errungenschaften}
+	\label{fig:demo:achievements}
 \end{figure}
 
 \begin{figure}[H]
@@ -790,22 +802,24 @@ Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaft
 	\label{fig:demo:end}
 \end{figure}
 
-Um das Ergebnis unserer Aktiengeschäfte zu ermitteln wechseln wir über die Bottom-Navigation erneut zum Account-Bildschirm. Darin wird unser der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95 \$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \% Prozent. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
-Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechselen wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Anlagedaten erneut anfordern, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings} zu sehen. Nachdem wir den Reset Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset}.
+Um das Ergebnis unserer Aktiengeschäfte zu ermitteln wechseln wir über die Bottom-Navigation erneut zum Account-Bildschirm. Darin wird unser der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95 \$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
+Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen. Nachdem wir den Reset Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/settings.png}
-		\caption{Einstellungen}
-		\label{fig:demo:settings}
+		\caption{Spieldaten zurücksetzen}
+		\label{fig:demo:settings_data_reset}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/settings_data_reset.png}
-		\caption{Einstellungen - Bestätigung}
-		\label{fig:demo:settings_data_reset}
+		\caption{Bestätigung des Zurücksetzens}
+		\label{fig:demo:settings_data_reset_confirmation}
 	\end{subfigure}
+		\caption{Einstellungen}
+		\label{fig:demo:settings}
 \end{figure}
 
 
