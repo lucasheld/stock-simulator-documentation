@@ -380,7 +380,7 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionshistorie}
 \label{subsec:functionality:history}
-Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag ``History'' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag ``History'' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -400,7 +400,7 @@ Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkä
 	\label{fig:functionality:history:list}
 \end{figure}
 
-Die Karten sind absteigend nach dem Zeitpunkt ihrer Durchführung geordnet, sodass die älteste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, das anzeigt, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt (siehe \autoref{fig:functionality:history:list:closed}). Durch Klick auf den Pfeil kann die jeweilige Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list:open}). In der Detailansicht wird angezeigt, wie viele Anlagen bei dieser Transaktion ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
+Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die jüngste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list_open}). In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
@@ -681,11 +681,182 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
     \label{fig:functionality:settings:attributions}
 \end{figure}
 
+\section{Demonstration}
+\label{sec:demo}
+Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der App als \textit{Performance} ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.5\textwidth,height=8cm,keepaspectratio]{./images/demo/start.png}
+	\caption{Account}
+	\label{fig:demo:start}
+\end{figure}
+
+ Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens Agilent Technologies\footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der Bottom-Navigation den Search-Button und wechseln zum Search-Bildschirm.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search.png}
+		\caption{Search-Bildschirm}
+		\label{fig:demo:search_screen}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search_a.png}
+		\caption{Suche - Filter nach 'a'}
+		\label{fig:demo:search_a}
+	\end{subfigure}
+	\caption{Suche}
+	\label{fig:demo:search}
+\end{figure}
+
+\autoref{fig:demo:search_screen} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit 'A' oder 'a' beginnt oder deren Namen eine 'A' bzw. 'a' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch 'A' dargestellt ist, aus und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm,keepaspectratio]{./images/demo/quote.png}
+	\caption{Quote}
+	\label{fig:demo:quote}
+\end{figure}
+
+Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in das vorgesehene Eingabefeld ein, wie in \autoref{fig:demo:buy_a} dargestellt. Nach Betätigen des BUY-Buttons erscheint ein Dialog, der die Transaktion zusammenfasst und uns auffordert den Kauf zu bestätigen. Dies ist in \autoref{fig:demo:buy_a_confirm} zu sehen.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/buy_a.png}
+		\caption{Kauf von 12 Aktien}
+		\label{fig:demo:buy_a}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/buy_a_confirm.png}
+		\caption{Kaufbestätigung}
+		\label{fig:demo:buy_a_confirm}
+	\end{subfigure}
+	\caption{Kauf}
+	\label{fig:demo:buy}
+\end{figure}
+
+Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, fügen wir diese Aktie dem automatischen Handel durch den Bot (stockbrot) hinzu. 
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/add_stockbot.png}
+		\caption{Automatischer Handel}
+		\label{fig:demo:add_stockbot}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/added_stockbot_view.png}
+		\caption{Automatisch gehandelte Anlagen}
+		\label{fig:demo:added}
+	\end{subfigure}
+	\caption{Stockbrot}
+	\label{fig:demo:bot}
+\end{figure}
+
+Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der Stockbrot-Bildschirm, den wir über die Bottom-Navigation erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
+Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktienwert und dem jeweiligen Unternehmen anzeigen lassen. Diese sehen wir in \autoref{fig:demo:news}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm,keepaspectratio]{./images/demo/news.png}
+	\caption{Nachrichten}
+	\label{fig:demo:news}
+\end{figure}
+
+Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl '3' im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen ist.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/sell.png}
+		\caption{Verkauf von drei Aktien}
+		\label{fig:demo:sell_a_three}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/sell_a_confirmation.png}
+		\caption{Verkaufsbestätigung}
+		\label{fig:demo:sell_a_confirmation}
+	\end{subfigure}
+	\caption{Verkauf}
+	\label{fig:demo:sell_a}
+\end{figure}
+
+Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bildschirm, den wir über die Bottom-Navigation erreichen. 
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/history_closed.png}
+		\caption{Bisheriger Kauf und Verkauf}
+		\label{fig:demo:history_closed}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/history_open.png}
+		\caption{ Detailansicht}
+		\label{fig:demo:history_open}
+	\end{subfigure}
+	\caption{Transaktionshistorie}
+	\label{fig:demo:history}
+\end{figure}
+
+Wie in \autoref{fig:demo:history_closed} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
+Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften ''Eine Aktie im Depot'', ''Zwei Aktien im Depot'' und ''Zehn Aktien im Depot'' freigespielt. Durch Öffnen der einzelnen Karten wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen ist.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/achievements_closed.png}
+		\caption{Erreichte Errungenschaften}
+		\label{fig:demo:achievements_closed}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/achievements_open.png}
+		\caption{Detailansicht}
+		\label{fig:demo:achievements_open}
+	\end{subfigure}
+	\caption{Errungenschaften}
+	\label{fig:demo:achievements}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=8cm,keepaspectratio]{./images/demo/end.png}
+	\caption{Account nach Kauf und Verkauf von Aktien}
+	\label{fig:demo:end}
+\end{figure}
+
+Um das Ergebnis unserer Aktiengeschäfte zu ermitteln, wechseln wir über die Bottom-Navigation erneut zum Account-Bildschirm. Darin wird der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95\,\$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
+Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist. Nachdem wir den Reset Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/settings.png}
+		\caption{Spieldaten zurücksetzen}
+		\label{fig:demo:settings_data_reset}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[height=8cm,keepaspectratio]{./images/demo/settings_data_reset.png}
+		\caption{Bestätigung des Zurücksetzens}
+		\label{fig:demo:settings_data_reset_confirmation}
+	\end{subfigure}
+		\caption{Einstellungen}
+		\label{fig:demo:settings}
+\end{figure}
+
 
 \section{Teamwork}
 \label{sec:teamwork}
-Eine Startschwierigkeit während der Zusammenarbeit war, dass die Entwickler im Team nicht über ähnlich gute Kenntnisse der Android-Architektur und der Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Pair-Programming \footnote{Siehe \url{https://en.wikipedia.org/wiki/Pair_programming}} betrieben. Durch die räumlich nahe Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten (Layern), wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzer Absprache verständigten wir uns darauf, unser Projekt entsprechend dem Git-Worflow Design (Gitflow) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-Branches um den Verlauf des Projekts aufzuzeichnen. Der main-Branch enthält die offiziellen Release-Versionen des Projekts und der develop-Branch dient dazu, die einzelnen Features in ihrem zeitlichen Verlauf zu integrieren. \newline
-% TODO: was heißt "in ihrem zeitlichen Verlauf zu integrieren"?
+Eine Startschwierigkeit während der Zusammenarbeit war, dass die Entwickler im Team nicht über ähnlich gute Kenntnisse der Android-Architektur und der Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Pair-Programming \footnote{Siehe \url{https://en.wikipedia.org/wiki/Pair_programming}} betrieben. Durch die räumlich nahe Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten (Layern), wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzer Absprache verständigten wir uns darauf, unser Projekt entsprechend dem Git-Worflow Design (Gitflow) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-Branches um den Verlauf des Projekts aufzuzeichnen. Der main-Branch enthält die offiziellen Release-Versionen des Projekts und der develop-Branch dient dazu, die einzelnen Features zu integrieren, sobald sie fertig gestellt sind. \newline
 Im Verlauf der Arbeit kristallisierten sich rasch Teamrollen heraus. Der erfahrenste Entwickler wurde schnell zum technischen Lead und Ansprechpartner bei ernsteren Problemen. Ein anderes Teammitglied ging auf den Kunden (die Aufgabenstellenden) zu, um bei Unklarheiten die Aufgabenstellung zu präzisieren. Dies hat zu einem guten Arbeitsklima beigetragen. \newline
 Unser Team hatte in der ganzen Woche ein positives Arbeitsklima. Jedes Teammitglied engagierte sich für das gemeinsame Ziel und trug durch kreative Ideen dazu bei, unser Projekt zu verbessern.
 
