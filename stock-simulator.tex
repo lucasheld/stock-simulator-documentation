@@ -82,10 +82,12 @@ In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anw
 Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
 Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragmente} realisiert und ihre Logik in \textit{ViewModels} implementiert.
-Von benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
+Benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
 Durch diese Trennung es möglich Schichten separat voneinander zu testen.
-Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
-% TODO: Navigation (navigation-fragment-ktx, navigation-ui-ktx) und Lifecycle (lifecycle-extensions, lifecycle-viewmodel-ktx, lifecycle-livedata-ktx) erläutern?
+Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
+
+Die Navigation zwischen den einzelnen \textit{Fragments}, innerhalb der \textit{Activity}, wird durch die \textit{Navigation} Libraries \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren, zwischen welchen Fragmenten, in welche Richtung navigiert werden kann.
+
 
 \begin{figure}[H]
 	\centering
