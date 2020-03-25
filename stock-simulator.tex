@@ -72,7 +72,7 @@ Am 18.11.2019, drei Monate vor Beginn des Code-Camps selbst, fand die Vorbesprec
 
 \section{Technische Details}
 \label{sec:technologies}
-In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung ``stock simulator'' eingegangen. Die verwendete App-Architektur wird erklärt und die eingesetzten APIs und Bibliotheken werden vorgestellt.
+In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung "`stock simulator"' eingegangen. Die verwendete App-Architektur wird erklärt und die eingesetzten APIs und Bibliotheken werden vorgestellt.
 
 
 \subsection{Architektur}
@@ -108,7 +108,7 @@ Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:ro
 
 \subsection{APIs}
 \label{subsec:technologies:apis}
-Um eine Simulation mit echten Kursdaten zu ermöglichen, wurden zwei Applikationsschnittstellen als Datenquellen in ``stock simulator'' eingebunden.
+Um eine Simulation mit echten Kursdaten zu ermöglichen, wurden zwei Applikationsschnittstellen als Datenquellen in "`stock simulator"' eingebunden.
 Sie verwenden, trotz ähnlicher Semantik, unterschiedlich repräsentierte Datenstrukturen, weshalb auch in unserem Code separate Modelle für diese Datenstrukturen implementiert werden mussten.
 Die API-spezifischen Antworten der Schnittstellen werden dann jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
 Beide APIs erfordern Zuschreibungen, welche im Settings-Screen eingesehen werden können (siehe \autoref{subsec:functionality:settings}).
@@ -158,7 +158,7 @@ Zusätzlich zu den Libraries, welche in diesem Abschnitt erläutert werden, wurd
 \subsubsection{Room}
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
-Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite\footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "die volle Leistung von SQLite zu nutzen" \autocite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
+Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite\footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "`die volle Leistung von SQLite zu nutzen"' \autocite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
 Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank, um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \autocite{android_room_data_storage}. Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
 
 \begin{figure}[H]
@@ -375,7 +375,7 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionshistorie}
 \label{subsec:functionality:history}
-Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag ``History'' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag "`History"' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -864,7 +864,7 @@ Bereits im Verlauf der Woche konnten wir alle gestellten Mindestanforderungen an
 
 \section{Fazit}
 \label{sec:conclusion}
-Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Projekt, wodurch die ''Lernkurve'' zu Beginn recht steil verlief. Durch unsere gute Zusammenarbeit und unseren Einsatz für das Projekt konnten wir diese Veranstaltung dazu nutzen, neue Kenntnisse der Android-Entwicklung zu erwerben und zu vertiefen. Insgesamt waren alle Teammitglieder vom Android-''Ökosystem'' positiv überrascht. Wir fühlen uns gut für zukünftige Android-App-Entwicklung gerüstet.
+Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Projekt, wodurch die "`Lernkurve"' zu Beginn recht steil verlief. Durch unsere gute Zusammenarbeit und unseren Einsatz für das Projekt konnten wir diese Veranstaltung dazu nutzen, neue Kenntnisse der Android-Entwicklung zu erwerben und zu vertiefen. Insgesamt waren alle Teammitglieder vom Android-"`Ökosystem"' positiv überrascht. Wir fühlen uns gut für zukünftige Android-App-Entwicklung gerüstet.
 
 
 \section{Ausblick}
