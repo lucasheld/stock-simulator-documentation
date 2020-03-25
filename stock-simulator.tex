@@ -81,9 +81,9 @@ In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anw
 % Schwierigkeiten und wie ihr sie gelöst habt
 Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
-% TODO: wo finde ich die Begriffe Benutzeroberfläche und Logik in der Grafik? Die Datenquellen sind glaube ich ausreichend erkennbar.
-Dadurch ist es möglich die Anwendungslogik separat zu testen.
-% TODO: separat zu was?
+Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragmente} realisiert und ihre Logik in \textit{ViewModels} implementiert.
+Von benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
+Durch diese Trennung es möglich Schichten separat voneinander zu testen.
 Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
 % TODO: Navigation (navigation-fragment-ktx, navigation-ui-ktx) und Lifecycle (lifecycle-extensions, lifecycle-viewmodel-ktx, lifecycle-livedata-ktx) erläutern?
 
@@ -94,13 +94,12 @@ Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{
 	\label{fig:technologies:architecture:mvvm}
 \end{figure}
 
-Benutzeroberflächen, welche in dieser App durch \textit{Fragmente} realisiert wurden, verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
-% TODO: was ist Databinding?
-Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
+\textit{Fragmente} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+Dabei handelt es sich um ein Feature des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
-% TODO: was ist LiveData? Sowas wie ein Wrapper-Datentyp, aber grobe interne Funktion ist interessant.
+\textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
 
-\textit In {ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
+In {ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
 Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
