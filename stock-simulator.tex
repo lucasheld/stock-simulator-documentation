@@ -67,7 +67,7 @@ autocite=inline
 % Gute Einleitung ins Thema (was war die Aufgabe, etc.)
 Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} des Fachgebiets \textit{Kommunikationstechnik} im Fachbereich \textit{16 - Elektrotechnik/Informatik} der Universität Kassel entwickelten mehrere Teams von drei bis vier Studenten innerhalb einer Woche selbstständig ein Börsensimulationsspiel für Android-Smartphones. Dabei stellt die Verwendung von \textbf{echten, aktuellen Anlagekursen} eine wichtige Anforderung an das Spiel dar. Mithilfe von zur Verfügung stehendem \textbf{Spielgeld} soll der Benutzer die Möglichkeit haben, mit Anlagen, wie Aktien oder Kryptowährungen, zu handeln. Um den Handel mit verschiedenen Anlagen zu ermöglichen, wird eine \textbf{Suchfunktion} gefordert, welche die verfügbaren Anlagen filtert und anzeigt. Um das eigene Budget immer im Blick zu behalten, sollen eine \textbf{Depotübersicht} sowie eine Anzeige für den aktuellen \textbf{Kontostand} und dessen Verlauf erstellt werden. Die getätigten Käufe und Verkäufe sollen in einer \textbf{Historie} bzw. einem Transaktionsverlauf dargestellt werden. \textbf{Graphen} sollen die Anlagenkurse und den Verlauf des Kontostands visualisieren. Wie auf gängigen Handelsplattformen üblich, soll der Simulator auch mit jedem Kauf- oder Verkauf \textbf{Transaktionskosten} erheben. Das Handeln soll optional durch einen \textbf{Bot} automatisiert werden können. Entsprechende Zielwerte für den automatisierten Handel sollen für jede Anlage individuell anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, soll die Anwendung eine Option bieten, den \textbf{Spielstand zurückzusetzen}. Zusätzlich zu den bisher genannten Hauptfeatures, wird mindestens ein \textbf{Zusatzfeature} gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, durch den erfolgreichen Handel mit Anlagemöglichkeiten das Startkapital zu vermehren.
 
-Am 18.11.2019, drei Monate vor Beginn des Code-Camps selbst, fand die Vorbesprechung zur Veranstaltung statt. Neben allgemeinen Informationen zum Ablauf, wurden die Teilnehmer angewiesen, sich in die Software-Entwicklung für Android einzuarbeiten. Neben den dort vorgestellten Verweisen auf Lehrmaterial, arbeiteten sich die meisten Mitglieder unseres Teams mithilfe des Kurses \textit{Developing Android Apps with Kotlin} der Plattform \textit{Udacity}\footnote{Siehe \url{https://classroom.udacity.com/courses/ud9012}} in die App-Entwicklung für Android-Smartphones ein. Zu Beginn wird in diesem Kurs das Erstellen einer ersten, einfachen Android-App erklärt. Dann werden Konzepte wie Layouts, App-Navigation sowie der Activity- und Fragment-Lebenszyklus erläutert. Nach weiteren Kapiteln zur Benutzeroberfläche und Datenspeicherung, wird der \textit{RecyclerView} vorgestellt. Mit Retrofit wird beispielhaft das Beziehen von Daten aus Web-APIs umgesetzt. Nach einem Blick auf Android-Hintergrunddienste stellt der Kurs zuletzt Möglichkeiten zur Internationalisierung und barrierefreien Gestaltung vor.
+Am 18.11.2019, drei Monate vor Beginn des \textit{Code-Camps} selbst, fand die Vorbesprechung zur Veranstaltung statt. Neben allgemeinen Informationen zum Ablauf, wurden die Teilnehmer angewiesen, sich in die Software-Entwicklung für Android einzuarbeiten. Neben den dort vorgestellten Verweisen auf Lehrmaterial, arbeiteten sich die meisten Mitglieder unseres Teams mithilfe des Kurses \textit{Developing Android Apps with Kotlin} der Plattform \textit{Udacity}\footnote{Siehe \url{https://classroom.udacity.com/courses/ud9012}} in die App-Entwicklung für Android-Smartphones ein. Zu Beginn wird in diesem Kurs das Erstellen einer ersten, einfachen Android-App erklärt. Dann werden Konzepte wie \textit{Layouts}, Navigation sowie der \textit{Activity}- und \textit{Fragment}-Lebenszyklus erläutert. Nach weiteren Kapiteln zur Benutzeroberfläche und Datenspeicherung, wird der \textit{RecyclerView} vorgestellt. Mit \textit{Retrofit} wird beispielhaft das Beziehen von Daten aus Web-APIs umgesetzt. Nach einem Blick auf Android-Hintergrunddienste stellt der Kurs zuletzt Möglichkeiten zur Internationalisierung und barrierefreien Gestaltung vor.
 
 
 \section{Technische Details}
@@ -86,9 +86,9 @@ Logik, welche von Benutzeroberflächen unabhängig ist, residiert in \textit{Rep
 Durch diese Trennung ist es möglich die MVVM-Schichten separat voneinander zu testen.
 Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen \textit{Fragments}, da sie keine Informationen über spezifische UI-Elemente halten.
 
-Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
+Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im \textit{Navigation Graph}, einem graphischen Editor, werden zwischen Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
 
-Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer Life\-cycle-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den Lifecycle-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
+Mithilfe von \textit{Lifecycle}-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer \textit{Life\-cycle}-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den \textit{Lifecycle}-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
 
 
 \begin{figure}[H]
@@ -122,7 +122,7 @@ Die nun folgenden individuellen API-Beschreibungen nennen nur von uns genutzte E
 \subsubsection{CoinGecko}
 \label{subsubsec:technologies:apis:coingecko}
 % https://www.coingecko.com/
-\textit{CoinGecko}\footnote{Siehe \url{https://www.coingecko.com/}} stellt Informationen über Kryptowährungen bereit, die nicht kostenfrei über die IEX-Cloud API bezogen werden können (siehe \autoref{subsubsec:technologies:apis:iex}).
+\textit{CoinGecko}\footnote{Siehe \url{https://www.coingecko.com/}} stellt Informationen über Kryptowährungen bereit, die nicht kostenfrei über die \textit{IEX Cloud} API bezogen werden können (siehe \autoref{subsubsec:technologies:apis:iex}).
 Dazu zählen Symbol, Name und Wechselkurse.
 Bei Wechselkursen wird nur auf den USD-Wechselkurs zurückgegriffen.
 Darüber hinaus sind Marktdiagrammdaten verfügbar, die für Kursgraphen verwendet werden.
@@ -145,7 +145,7 @@ Im Folgenden werden die verwendeten Bibliotheken näher vorgestellt und ihre Vor
 
 \subsubsection{Android Jetpack}
 \label{subsubsec:technologies:bibs:jetpack}
-Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem Entwicklern Komponenten vorgegeben werden, unter deren Verwendung weniger Boilerplate-Code geschrieben werden muss. Somit werden komplizierte Prozesse stark vereinfacht \autocite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Bibliothek in Code am Import \textit{androidx.*}. Die in Jetpack enthaltenen Bibliotheken sind unabhängig von der Android Schnittstelle verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Bibliotheken. Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Foundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Foundation} Komponenten stellen beispielsweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomponenten für diesen Anwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
+Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem Entwicklern Komponenten vorgegeben werden, unter deren Verwendung weniger \textit{Boilerplate}-Code geschrieben werden muss. Somit werden komplizierte Prozesse stark vereinfacht \autocite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Bibliothek in Code am Import \textit{androidx.*}. Die in Jetpack enthaltenen Bibliotheken sind unabhängig von der Android Schnittstelle verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Bibliotheken. Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Foundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Foundation} Komponenten stellen beispielsweise die Abwärtskompatibilität sicher, beinhalten ein \textit{Testframework} und ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomponenten für diesen Anwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
 Zusätzlich zu den Bibliotheken, welche in diesem Abschnitt erläutert werden, wurden weitere Bibliotheken aus Android Jetpack verwendet, die im Folgenden vorgestellt werden.
 
@@ -161,8 +161,8 @@ Zusätzlich zu den Bibliotheken, welche in diesem Abschnitt erläutert werden, w
 \subsubsection{Room}
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
-Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite\footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "`die volle Leistung von SQLite zu nutzen"' \autocite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten können Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
-Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank, um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \autocite{android_room_data_storage}. Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
+Die \textit{Room}-Persistenzbibliothek stellt eine Abstraktionsschicht über \textit{SQLite}\footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "`die volle Leistung von \textit{SQLite} zu nutzen"' \autocite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als \textit{Single Source of Truth} und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten können Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
+\textit{Room} besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die \textit{Room}-Datenbank, um an die \textit{Data-Access-Objects} (\textit{DAOs}) zu gelangen. Anschließend werden die einzelnen \textit{DAOs} verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \autocite{android_room_data_storage}. Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -176,20 +176,20 @@ Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{En
 \label{subsubsec:technologies:bibs:workmanager}
 % https://developer.android.com/jetpack/androidx/releases/work
 % https://developer.android.com/topic/libraries/architecture/workmanager
-WorkManager ist eine in Android Jetpack enthaltene Bibliothek \autocite{android_workmanager}. Sie vereinfacht das Ausführen von Hintergrundaufgaben, sogenannten \textit{Workern}. Es existieren einmalige und periodische Worker. Mithilfe des WorkManagers werden Worker besonders ressourcensparend, vor allem aber energiesparend, im Hintergrund ausgeführt. \textit{Constraints} ermöglichen es Bedingungen, wie eine aktive Internetverbindung, an den Worker zu knüpfen. Mittels \textit{Data} werden Daten an Worker Daten, welche gegebenenfalls für die Ausführung benötigt werden. Einmalige Worker eignen sich besonders für Aufgaben, die zurückgestellt werden können und nicht im Vordergrund zu erledigen sind. Periodische Worker können immer dort eingesetzt werden, wo mit den gleichen Einstellungen regelmäßig Arbeit verrichtet werden soll. Das kleinstmögliche Intervall ist bei periodischen Workern auf 15 Minuten beschränkt.
+\textit{WorkManager} ist eine in Android Jetpack enthaltene Bibliothek \autocite{android_workmanager}. Sie vereinfacht das Ausführen von Hintergrundaufgaben, sogenannten \textit{Workern}. Es existieren einmalige und periodische \textit{Worker}. Mithilfe des \textit{WorkManagers} werden \textit{Worker} besonders ressourcensparend, vor allem aber energiesparend, im Hintergrund ausgeführt. \textit{Constraints} ermöglichen es Bedingungen, wie eine aktive Internetverbindung, an den \textit{Worker} zu knüpfen. Mittels \textit{Data} werden Daten an \textit{Worker} übergeben, welche gegebenenfalls für die Ausführung benötigt werden. Einmalige \textit{Worker} eignen sich besonders für Aufgaben, die zurückgestellt werden können und nicht im Vordergrund zu erledigen sind. Periodische \textit{Worker} können immer dort eingesetzt werden, wo mit den gleichen Einstellungen regelmäßig Arbeit verrichtet werden soll. Das kleinstmögliche Intervall ist bei periodischen \textit{Workern} auf 15 Minuten beschränkt.
 
 
 \subsubsection{Moshi}
 \label{subsubsec:technologies:bibs:moshi}
 % https://github.com/square/moshi
-\textit{Moshi}, eine moderne JSON-Bibliothek für Kotlin und Java, erlaubt es ohne großen Aufwand, JSON zu Java-Objekten zu parsen und Java-Objekte zu JSON zu serialisieren \autocite{moshi}. Mit eingebauten Typadaptern können Javas Kerndatentypen, wie primitive Datentypen, Arrays, Strings und Enums, direkt von JSON gelesen und in JSON geschrieben werden. Über Annotationen können eigene Typadapter definiert werden. Moshi unterstützt die Kotlin Reflection Bibliothek\footnote{Siehe \url{https://kotlinlang.org/docs/reference/reflection.html}}, um Kotlin-Klassen von und zu JSON zu konvertieren.
-In unserer Anwendung wird eine \textit{MoshiConverterFactory} von der Moshi-Instanz erzeugt und in Retrofit (siehe \autoref{subsubsec:technologies:bibs:retrofit}) verwendet.
+\textit{Moshi}, eine moderne JSON-Bibliothek für Kotlin und Java, erlaubt es ohne großen Aufwand, JSON zu Java-Objekten zu parsen und Java-Objekte zu JSON zu serialisieren \autocite{moshi}. Mit eingebauten Typadaptern können Javas Kerndatentypen, wie primitive Datentypen, Arrays, Strings und Enums, direkt von JSON gelesen und in JSON geschrieben werden. Über Annotationen können eigene Typadapter definiert werden. \textit{Moshi} unterstützt die \textit{Kotlin Reflection} Bibliothek\footnote{Siehe \url{https://kotlinlang.org/docs/reference/reflection.html}}, um Kotlin-Klassen von und zu JSON zu konvertieren.
+In unserer Anwendung wird eine \textit{MoshiConverterFactory} von der \textit{Moshi}-Instanz erzeugt und in \textit{Retrofit} (siehe \autoref{subsubsec:technologies:bibs:retrofit}) verwendet.
 
 
 \subsubsection{Retrofit}
 \label{subsubsec:technologies:bibs:retrofit}
 % https://github.com/square/retrofit
-Mit \textit{Retrofit}, einem typsicheren HTTP-Client für Android und Java, können HTTP APIs in Java-Interfaces verwandelt werden \autocite{retrofit}. Unter Angabe einer Basis-URL wird eine Retrofit-Instanz für eine Klasse angelegt, in der sich annotierte Methoden befinden, anhand derer die API-Endpunkte definiert werden. Pfad-, Query-, Body- und Header-Parameter werden vollständig unterstützt. Mit dem Moshi-Converter\footnote{Siehe \texttt{com.squareup.retrofit2:converter-moshi}} können Server-Antworten direkt zu Java-Objekten deserialisiert werden (siehe \autoref{subsubsec:technologies:bibs:moshi}).
+Mit \textit{Retrofit}, einem typsicheren HTTP-Client für Android und Java, können HTTP APIs in Java-Interfaces verwandelt werden \autocite{retrofit}. Unter Angabe einer Basis-URL wird eine \textit{Retrofit}-Instanz für eine Klasse angelegt, in der sich annotierte Methoden befinden, anhand derer die API-Endpunkte definiert werden. \textit{Path}-, \textit{Query}-, \textit{Body}- und \textit{Header}-Parameter werden vollständig unterstützt. Mit dem \textit{Moshi-Converter}\footnote{Siehe \texttt{com.squareup.retrofit2:converter-moshi}} können Server-Antworten direkt zu Java-Objekten deserialisiert werden (siehe \autoref{subsubsec:technologies:bibs:moshi}).
 
 
 \subsubsection{MPAndroidChart}
@@ -201,7 +201,7 @@ Mit \textit{Retrofit}, einem typsicheren HTTP-Client für Android und Java, kön
 \subsubsection{Biometric-Auth}
 \label{subsubsec:technologies:bibs:biometricauth}
 % https://github.com/anitaa1990/Biometric-Auth-Sample
-Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Finger\-abdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige Boilerplate-Code für den Entwickler. Mithilfe dieser Bibliothek wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
+Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Finger\-abdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige \textit{Boilerplate}-Code für den Entwickler. Mithilfe dieser Bibliothek wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
 
 
 \subsubsection{Picasso}
@@ -222,16 +222,16 @@ Mit UI-Elementen der offiziellen \textit{Material}-Bibliothek ist es möglich, m
 \label{subsubsec:technologies:bibs:timber}
 % https://github.com/JakeWharton/timber
 \textit{Timber} ist eine Schnittstelle, welche auf der Android \textit{Log}-Klasse aufbaut und das Loggen von Ereignissen vereinfacht.
-Durch Logging mit Timber ist es möglich, Entwicklungszeit zu sparen und Programmierfehler schnell ausfindig zu machen.
-Log-Nachrichten werden von Timber nur während der Entwicklung und nicht in der fertigen App ausgegeben.
+Durch \textit{Logging} mit \textit{Timber} ist es möglich, Entwicklungszeit zu sparen und Programmierfehler schnell ausfindig zu machen.
+\textit{Log}-Nachrichten werden von \textit{Timber} nur während der Entwicklung und nicht in der fertigen App ausgegeben.
 
 
 \subsubsection{Dokka}
 \label{subsubsec:technologies:bibs:dokka}
 % https://github.com/Kotlin/dokka
-\textit{Dokka} ist eine "`documentation engine"' \autocite{dokka} und wird zum Generieren von Quelltextdokumentationen verwendet.
+\textit{Dokka} ist eine \textit{"`documentation engine"'} \autocite{dokka} und wird zum Generieren von Quelltextdokumentationen verwendet.
 Es handelt sich also nicht um eine Bibliothek, die von der App verwendet wird, sondern um ein Entwicklungswerkzeug.
-Mit \textit{Dokka}  wird die Dokumentation des Quelltextes dieser App generiert\footnote{Siehe \url{https://deryeger.github.io/stock-simulator/app/}}.
+Mit \textit{Dokka} wird die Dokumentation des Quelltextes dieser App generiert\footnote{Siehe \url{https://deryeger.github.io/stock-simulator/app/}}.
 
 
 \section{Funktionalität}
@@ -251,7 +251,7 @@ Das Einstellungsmenü ist über das Zahnrad in der \textit{Toolbar} aller Bildsc
 
 Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
 
-\autoref{fig:functionality:navigation:screens} stellt den Navigationsgraph zwischen den einzelnen Bildschirmen dar.
+\autoref{fig:functionality:navigation:screens} stellt den Navigationsgraph für die einzelnen Bildschirme dar.
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=12cm]{./images/navigation_screens/navigation_screens.png}
@@ -262,13 +262,13 @@ Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist üb
 
 \subsection{Account}
 \label{subsec:functionality:account}
-Im Account-Bildschirm bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Bildschirm wird über den Eintrag "`Account"' in der Bottom Navigation erreicht.
+Im Account-Bildschirm bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Bildschirm wird über den Eintrag "`Account"' in der \textit{Bottom Navigation} erreicht.
 
 Im oberen Teil des Bildschirms wird der aktuelle Kontostand in US-Dollar angezeigt. Darunter stellt ein Diagramm den Verlauf des Kontostands dar (siehe \autoref{fig:functionality:account:balance}).
 
 Unter diesem Abschnitt wird der aktuelle Wert des Depots, sowie ein Diagramm über dessen Verlauf angezeigt (siehe \autoref{fig:functionality:account:depot}).
 
-Die Performance des Gesamtdepots wird unter den Diagrammen angezeigt (siehe \autoref{fig:functionality:account:performance}). Sie misst, wie gut die Leistung des Investors war, das Startkapital zu vergrößern. Um diesen Wert deutlicher darzustellen, wird eine negative Performance in roter Schrift und einem absteigenden Pfeil, sowie eine positive Performance in grüner Schrift und einem aufsteigenden Pfeil gekennzeichnet.
+Die Performanz des Gesamtdepots wird unter den Diagrammen angezeigt (siehe \autoref{fig:functionality:account:performance}). Sie misst, wie gut die Leistung des Investors war, das Startkapital zu vergrößern. Um diesen Wert deutlicher darzustellen, wird eine negative Performanz in roter Schrift und einem absteigenden Pfeil, sowie eine positive Performanz in grüner Schrift und einem aufsteigenden Pfeil gekennzeichnet.
 
 Im letzten Abschnitt des Bildschirms werden die bereits gekauften Anlagen aufgelistet (siehe \autoref{fig:functionality:account:depot_quotes}). Durch scrollen innerhalb der Ansicht, werden weitere Anlagen sichtbar, falls aus Platzgründen nicht alle unmittelbar darstellbar sind.
 
@@ -334,10 +334,10 @@ Falls der Benutzer in den Einstellungen die Fingerabdrucks-Sperre aktiviert hat 
 
 \subsection{Suche}
 \label{subsec:functionality:search}
-Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im Search-Bildschirm möglich.
+Das Suchen von Aktien und Kryptowährungen nach Name und Symbol ist im \textit{Search}-Bildschirm möglich.
 Zudem können Nutzer dort auswählen, ob sie nur Aktien, nur Kryptowährungen oder beide Anlagetypen sehen möchten.
 
-Das Eingabefeld für Suchanfragen und die Dropdown-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:full}).
+Das Eingabefeld für Suchanfragen und die \textit{Dropdown}-Liste zum Filtern befinden sich am oberen Bildschirmrand (siehe \autoref{fig:functionality:search:full}).
 Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \autoref{fig:functionality:search:results}).
 Diese aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
 Dadurch ist es möglich, unmittelbar auf Nutzereingaben zu reagieren und Ergebnisse schnell anzuzeigen.
@@ -378,7 +378,7 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionshistorie}
 \label{subsec:functionality:history}
-Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Kryptowährungen, werden im History-Bildschirm dargestellt. Dieser wird über den Eintrag "`History"' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Bildschirms. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Kryptowährungen, werden im \textit{History}-Bildschirm dargestellt. Dieser wird über den Eintrag \textit{"`History"'} der \textit{Bottom Navigatio}n erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des \textit{History}-Bildschirms. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -398,14 +398,14 @@ Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkä
 	\label{fig:functionality:history:list}
 \end{figure}
 
-Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die jüngste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list_open}). In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (Cashflow) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
+Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, sodass die jüngste Transaktion zu Beginn positioniert ist. Eine Karte beinhaltet das Symbol der jeweiligen Anlage und ein Icon, mit dem angezeigt wird, ob es sich bei der Transaktion um einen Kauf (Einkaufswagen) oder einen Verkauf (Dollar-Symbol) handelt. Durch Klick auf den Pfeil kann eine Transaktionskarte ausgeklappt werden, um die Details der jeweiligen Transaktion anzuzeigen (siehe \autoref{fig:functionality:history:list_open}). In der Detailansicht wird angezeigt, wie viele Anlagen ge- oder verkauft wurden, der Preis dieser Anlage zum Zeitpunkt der Transaktion, die Transaktionskosten, der dadurch bewirkte Geldfluss (\textit{Cashflow}) sowie das Datum und die Uhrzeit, zu der die Transaktion durchgeführt wurde. Zusätzlich wird bei einem Verkauf angezeigt, wie hoch der Gewinn bzw. Verlust durch diesen Verkauf war.
 
 
 \subsection{Stockbrot}
 \label{subsec:functionality:stockbrot}
-Der Name Stockbrot ist ein Wortspiel aus den Begriffen stock (deutsch: Aktie) und Bot, die Kurzform von robot (deutsch: Roboter). Mithilfe dieses Bots sind Nutzer in der Lage das Handeln von Aktien oder Kryptowährungen zu automatisieren. Für jede Anlage, welche sich unter der Kontrolle des Bots befindet, wird alle 15 Minuten ein sogenannter \textit{Worker} ausgeführt (siehe \autoref{subsubsec:technologies:bibs:workmanager}). Vom Worker wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des jeweiligen aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die Worker werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert (siehe \autoref{subsubsec:technologies:bibs:workmanager}).
+Der Name Stockbrot ist ein Wortspiel aus den Begriffen \textit{stock} (deutsch: Aktie) und \textit{Bot}, die Kurzform von \textit{robot} (deutsch: Roboter). Mithilfe dieses \textit{Bots} sind Nutzer in der Lage das Handeln von Aktien oder Kryptowährungen zu automatisieren. Für jede Anlage, welche sich unter der Kontrolle des \textit{Bots} befindet, wird alle 15 Minuten ein sogenannter \textit{Worker} ausgeführt (siehe \autoref{subsubsec:technologies:bibs:workmanager}). Vom \textit{Worker} wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des jeweiligen aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die \textit{Worker} werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert (siehe \autoref{subsubsec:technologies:bibs:workmanager}).
 
-\autoref{fig:functionality:stockbrot:overview} zeigt den Bildschirm, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Bildschirm erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der Bottom Navigation. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Bildschirm keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des Bots über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll. Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt. Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
+\autoref{fig:functionality:stockbrot:overview} zeigt den Bildschirm, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Bildschirm erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der \textit{Bottom Navigation}. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Bildschirm keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des \textit{Bots} über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll. Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt. Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -427,7 +427,7 @@ Der Name Stockbrot ist ein Wortspiel aus den Begriffen stock (deutsch: Aktie) un
 
 \subsection{Errungenschaften}
 \label{subsec:functionality:achievements}
-Um den Benutzer des Spiels vor Herausforderungen zu stellen und damit den Spielspaß zu erhöhen, sind verschiedene Errungenschaften erreichbar. Eine Übersicht über diese Erfolge, sind im Achievements-Bildschirm einsehbar, welcher über den Eintrag "`Achievements"' in der Bottom Navigation zu erreichen ist. Dieser Bildschirm listet, wie in \autoref{fig:functionality:achievements:overview:closed} sichtbar, alle bereits erreichten und noch freizuschaltenden Errungenschaften auf. Die Hintergrundfarben der noch nicht freigeschalteten Errungenschaften, werden in der Liste ausgegraut. Jedes der Elemente besteht aus einem Titel und einer Beschreibung. Die Beschreibung ist für alle bereits erreichten Errungenschaften, mittels Pfeil auf der rechten Seite des Elements, aufklappbar (\autoref{fig:functionality:achievements:overview:open}).
+Um den Benutzer des Spiels vor Herausforderungen zu stellen und damit den Spielspaß zu erhöhen, sind verschiedene Errungenschaften erreichbar. Eine Übersicht über diese Erfolge, sind im \textit{Achievements}-Bildschirm einsehbar, welcher über den Eintrag \textit{"`Achievements"'} in der \textit{Bottom Navigation} zu erreichen ist. Dieser Bildschirm listet, wie in \autoref{fig:functionality:achievements:overview:closed} sichtbar, alle bereits erreichten und noch freizuschaltenden Errungenschaften auf. Die Hintergrundfarben der noch nicht freigeschalteten Errungenschaften, werden in der Liste ausgegraut. Jedes der Elemente besteht aus einem Titel und einer Beschreibung. Die Beschreibung ist für alle bereits erreichten Errungenschaften, mittels Pfeil auf der rechten Seite des Elements, aufklappbar (\autoref{fig:functionality:achievements:overview:open}).
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -446,7 +446,7 @@ Um den Benutzer des Spiels vor Herausforderungen zu stellen und damit den Spiels
     \label{fig:functionality:achievements:overview}
 \end{figure}
 
-Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des aktuellen Bildschirms eine Toast-Benachrichtigung \autocite{android_toasts} (siehe \autoref{fig:functionality:achievements:reached}). Diese zeigt den Titel der Errungenschaft an. Beim nächsten Aufruf der Übersicht der Errungenschaften ist dieser soeben erreichte Erfolg nicht mehr ausgegraut und die Beschreibung lässt sich einsehen. Sollten mehrere Errungenschaften direkt hintereinander freigeschaltet werden, werden auch die Benachrichtigungen nacheinander angezeigt. Intern wird sichergestellt, dass kein Erfolgt mehrfach angezeigt wird, selbst wenn die Kriterien zur Freischaltung eines Erfolgs öfter erfüllt werden.
+Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des aktuellen Bildschirms eine \textit{Toast}-Benachrichtigung \autocite{android_toasts} (siehe \autoref{fig:functionality:achievements:reached}). Diese zeigt den Titel der Errungenschaft an. Beim nächsten Aufruf der Übersicht der Errungenschaften ist dieser soeben erreichte Erfolg nicht mehr ausgegraut und die Beschreibung lässt sich einsehen. Sollten mehrere Errungenschaften direkt hintereinander freigeschaltet werden, werden auch die Benachrichtigungen nacheinander angezeigt. Intern wird sichergestellt, dass kein Erfolgt mehrfach angezeigt wird, selbst wenn die Kriterien zur Freischaltung eines Erfolgs öfter erfüllt werden.
 
 \begin{figure}[H]
     \centering
@@ -460,7 +460,7 @@ Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des ak
 \label{subsec:functionality:quote}
 In der Detailansicht sind allgemeine Informationen über ein Anlagegut zu sehen (siehe \autoref{fig:functionality:quote:information}).
 Dazu zählen Symbol, Name, aktueller Kurs und Kursänderung des Anlageguts.
-Sollten keine Informationen über Kursänderungen vorliegen, wird stattdessen "`N/D"' angezeigt.
+Sollten keine Informationen über Kursänderungen vorliegen, wird stattdessen \textit{"`N/D"'} angezeigt.
 
 Darüber wird der Kursverlauf des Anlageguts angezeigt (siehe \autoref{fig:functionality:quote:history}).
 Auch hier werden Platzhalter verwendet, falls keine Daten vorliegen.
@@ -483,9 +483,9 @@ Auch hier werden Platzhalter verwendet, falls keine Daten vorliegen.
 \end{figure}
 
 Kaufen und Verkaufen findet über separate Eingabefelder statt (siehe \autoref{fig:functionality:buy-sell:input}).
-Die zugehörigen Buttons sind nur aktiviert, wenn die Eingabe einen Kauf beziehungsweise Verkauf zulässt.
+Die zugehörigen \textit{Buttons} sind nur aktiviert, wenn die Eingabe einen Kauf beziehungsweise Verkauf zulässt.
 
-Nach Betätigen eines Buttons müssen Nutzer die Transaktion noch einmal bestätigen.
+Nach Betätigen eines \textit{Buttons} müssen Nutzer die Transaktion noch einmal bestätigen.
 Dafür wird ein Bestätigungsdialog geöffnet (siehe \autoref{fig:functionality:buy-sell:dialog}), der die Transaktionsinformationen zudem erneut anzeigt.
 
 Haben Nutzer ein Anlagegut im Depot, wird dies ebenfalls in der Detailansicht vermerkt (siehe \autoref{fig:functionality:buy-sell:in-depot}).
@@ -515,7 +515,7 @@ Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen kompletten Aus
 	\label{fig:functionality:buy-sell}
 \end{figure}
 
-\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zum Bot (\autoref{fig:functionality:stockbrot:add}) sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. Im Abschnitt, der mit dem Label "`Auto buy/sell"' beginnt, können Kauf- und Verkaufsoptionen für den Bot festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom Bot gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des Bots kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Anlagenkurs überschreiten muss, damit der Bot einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem Bot kontrolliert, kann diese mittels Klick auf den Button "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des Bots entzogen werden.
+\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zum Bot (\autoref{fig:functionality:stockbrot:add}) sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. Im Abschnitt, der mit dem Label "`Auto buy/sell"' beginnt, können Kauf- und Verkaufsoptionen für den \textit{Bot} festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom \textit{Bot} gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des \textit{Bots} kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Anlagenkurs überschreiten muss, damit der \textit{Bot} einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem \textit{Bot} kontrolliert, kann diese mittels Klick auf den \textit{Button} "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des \textit{Bots} entzogen werden.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -534,7 +534,7 @@ Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen kompletten Aus
     \label{fig:functionality:stockbrot:addremove}
 \end{figure}
 
-Im unteren Teil des Bildschirms befindet sich ein News Button (siehe \autoref{fig:functionality:news:button}). Wenn dieser betätigt wird, werden die aktuellen Nachrichten zu der entsprechenden Anlage angezeigt. Dargestellt werden diese in einem neuen Bildschirm, welcher in \autoref{subsec:functionality:news} beschrieben wird.
+Im unteren Teil des Bildschirms befindet sich ein \textit{News} Button (siehe \autoref{fig:functionality:news:button}). Wenn dieser betätigt wird, werden die aktuellen Nachrichten zu der entsprechenden Anlage angezeigt. Dargestellt werden diese in einem neuen Bildschirm, welcher in \autoref{subsec:functionality:news} beschrieben wird.
 
 \begin{figure}[H]
     \centering
@@ -546,7 +546,7 @@ Im unteren Teil des Bildschirms befindet sich ein News Button (siehe \autoref{fi
 
 \subsection{News}
 \label{subsec:functionality:news}
-Der News-Bildschirm zeigt alle aktuellen Nachrichten an, die mit einer Anlage zusammenhängen (siehe \autoref{fig:functionality:news}). Dadurch, dass nur über die Detailansicht einer Anlage auf die News zugegriffen wird, wird die Anlage darüber spezifiziert. Abgerufen werden Nachrichten über die IEX Cloud API (siehe \autoref{subsubsec:technologies:apis:iex}). Der Bildschirm listet, wie in \autoref{fig:functionality:news:closed} sichtbar, vorerst nur alle Nachrichtentitel auf. Falls der dazugehörige Artikel angezeigt werden soll, lässt sich jedes der Elemente durch den Pfeil auf der rechten Seite ausklappen. Anschließend wird, wie in \autoref{fig:functionality:news:open} zu sehen, zusätzlich zum Titel auch, falls vorhanden, das Bild, das Datum, die Quelle und die Beschreibung des Artikels angezeigt. Alle verfügbaren News sind in englischer Sprache verfasst.
+Der \textit{News}-Bildschirm zeigt alle aktuellen Nachrichten an, die mit einer Anlage zusammenhängen (siehe \autoref{fig:functionality:news}). Dadurch, dass nur über die Detailansicht einer Anlage auf die \textit{News} zugegriffen wird, wird die Anlage darüber spezifiziert. Abgerufen werden Nachrichten über die \textit{IEX Cloud} API (siehe \autoref{subsubsec:technologies:apis:iex}). Der Bildschirm listet, wie in \autoref{fig:functionality:news:closed} sichtbar, vorerst nur alle Nachrichtentitel auf. Falls der dazugehörige Artikel angezeigt werden soll, lässt sich jedes der Elemente durch den Pfeil auf der rechten Seite ausklappen. Anschließend wird, wie in \autoref{fig:functionality:news:open} zu sehen, zusätzlich zum Titel auch, falls vorhanden, das Bild, das Datum, die Quelle und die Beschreibung des Artikels angezeigt. Alle verfügbaren \textit{News} sind in englischer Sprache verfasst.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -568,7 +568,7 @@ Der News-Bildschirm zeigt alle aktuellen Nachrichten an, die mit einer Anlage zu
 
 \subsection{Einstellungen}
 \label{subsec:functionality:settings}
-Der Settings-Bildschirm beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagen sowie Hinzufügen und Entfernen einer Fin\-ger\-abdruck-Sperre.
+Der \textit{Settings}-Bildschirm beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagen sowie Hinzufügen und Entfernen einer Fin\-ger\-abdruck-Sperre.
 Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
 
 \begin{figure}[H]
@@ -579,7 +579,7 @@ Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor besc
 \end{figure}
 
 
-Über den Button "`REFRESH SYMBOLS"' (\autoref{fig:functionality:settings:refreshsymbols:button}) sind Nutzer in der Lage, die über die Suche verfügbaren Anlagen der CoinGecko und IEX Cloud API (siehe \autoref{subsubsec:technologies:apis:coingecko} bzw. \autoref{subsubsec:technologies:apis:iex}), zu aktualisieren. Sobald der Button geklickt wurde, wird dieser deaktiviert und es erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:refreshsymbols:requested}), welche über den aktuellen Vorgang informiert. Sobald die Aktualisierung abgeschlossen ist, wird der Button wieder aktiviert und eine weitere Benachrichtigung informiert über den erfolgreichen Abschluss des Vorgangs (\autoref{fig:functionality:settings:refreshsymbols:done}).
+Über den Button "`REFRESH SYMBOLS"' (\autoref{fig:functionality:settings:refreshsymbols:button}) sind Nutzer in der Lage, die verfügbaren Anlagen der \textit{CoinGecko} und \textit{IEX Cloud} APIs (siehe \autoref{subsubsec:technologies:apis:coingecko} bzw. \autoref{subsubsec:technologies:apis:iex}) zu aktualisieren. Sobald der \textit{Button} geklickt wurde, wird dieser deaktiviert und es erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:refreshsymbols:requested}), welche über den aktuellen Vorgang informiert. Sobald die Aktualisierung abgeschlossen ist, wird der \textit{Button} wieder aktiviert und eine weitere Benachrichtigung informiert über den erfolgreichen Abschluss des Vorgangs (\autoref{fig:functionality:settings:refreshsymbols:done}).
 
 \begin{figure}[H]
     \begin{subfigure}{.329\textwidth}
@@ -605,7 +605,7 @@ Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor besc
 \end{figure}
 
 
-Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{fig:functionality:settings:datareset:button}). Dieser ermöglicht das Zurücksetzen des Spielstands. Sobald der Button betätigt und die Daten zurückgesetzt wurden, erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:datareset:notification}), welche den Abschluss des Prozesses ankündigt.
+Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{fig:functionality:settings:datareset:button}). Dieser ermöglicht das Zurücksetzen des Spielstands. Sobald der \textit{Button} betätigt und die Daten zurückgesetzt wurden, erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:datareset:notification}), welche den Abschluss des Prozesses ankündigt.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -625,7 +625,7 @@ Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{f
 \end{figure}
 
 
-Der unterste Button "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung bei jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der Button deaktiviert und ein Informationstext unter diesem Button weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein Popup, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche Nutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den Button "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
+Der unterste \textit{Button} "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung bei jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der \textit{Button} deaktiviert und ein Informationstext unter diesem \textit{Button} weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein \textit{Popup}, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche Nutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den Button "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
 
 \begin{figure}[H]
     \begin{subfigure}{.329\textwidth}
@@ -679,6 +679,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
     \label{fig:functionality:settings:attributions}
 \end{figure}
 
+
 \section{Demonstration}
 \label{sec:demo}
 Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der App als \textit{Performance} ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
@@ -690,7 +691,7 @@ Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Fol
 	\label{fig:demo:start}
 \end{figure}
 
- Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens Agilent Technologies\footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der Bottom Navigation den Search-Button und wechseln zum Search-Bildschirm.
+ Um von den steigenden Aktienkursen zu profitieren, wollen wir uns eine Aktie des Unternehmens \textit{Agilent Technologies}\footnote{Ein amerikanisches Technologieunternehmen mit Sitz in Santa Clara, Kalifornien, das analytische Messgeräte herstellt.} kaufen. Dazu klicken wir in der \textit{Bottom Navigation} den \textit{Search-Button} und wechseln zum \textit{Search}-Bildschirm.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -709,7 +710,7 @@ Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Fol
 	\label{fig:demo:search}
 \end{figure}
 
-\autoref{fig:demo:search_screen} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben "`a"' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit "`A"' oder "`a"' beginnt oder deren Namen eine "`A"' bzw. "`a"' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch "`A"' dargestellt ist, aus und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
+\autoref{fig:demo:search_screen} zeigt den \textit{Search}-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben "`a"' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit "`A"' oder "`a"' beginnt oder deren Namen eine "`A"' bzw. "`a"' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch "`A"' dargestellt ist, aus und gelangen zum \textit{Quote}-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
 
 \begin{figure}[H]
 	\centering
@@ -737,7 +738,7 @@ Um Aktien dieses Unternehmens zu erwerben, geben wir eine Kaufmenge von 12 in da
 	\label{fig:demo:buy}
 \end{figure}
 
-Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, fügen wir diese Aktie dem automatischen Handel durch den Bot (Stockbrot) hinzu. 
+Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, fügen wir diese Aktie dem automatischen Handel durch den \textit{Bot} (Stockbrot) hinzu. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -756,8 +757,8 @@ Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, f�
 	\label{fig:demo:bot}
 \end{figure}
 
-Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der Stockbrot-Bildschirm, den wir über die Bottom Navigation erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
-Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktienwert und dem jeweiligen Unternehmen anzeigen lassen. Diese sehen wir in \autoref{fig:demo:news}.
+Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der Stockbrot-Bildschirm, den wir über die \textit{Bottom Navigation} erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
+Des Weiteren können wir uns im \textit{Quote}-Bildschirm aktuelle Nachrichten zum Aktienwert und dem jeweiligen Unternehmen anzeigen lassen. Diese sehen wir in \autoref{fig:demo:news}.
 
 \begin{figure}[H]
 	\centering
@@ -766,7 +767,7 @@ Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktien
 	\label{fig:demo:news}
 \end{figure}
 
-Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl "`3"' im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen ist.
+Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im \textit{Quote}-Bildschirm die Zahl "`3"' im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen ist.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -785,7 +786,7 @@ Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um
 	\label{fig:demo:sell_a}
 \end{figure}
 
-Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bildschirm, den wir über die Bottom Navigation erreichen. 
+Einen Überblick über alle bisherigen Transaktionen erhalten wir im \textit{History}-Bildschirm, den wir über die \textit{Bottom Navigation} erreichen. 
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -805,7 +806,7 @@ Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bil
 \end{figure}
 
 Wie in \autoref{fig:demo:history_closed} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
-Durch die bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften "`Eine Aktie im Depot"', "`Zwei Aktien im Depot"' und "`Zehn Aktien im Depot"' freigespielt. Durch Öffnen der einzelnen Karten wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen ist.
+Durch die bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die \textit{Bottom Navigation} zum \textit{Achievements}-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften "`Eine Aktie im Depot"', "`Zwei Aktien im Depot"' und "`Zehn Aktien im Depot"' freigespielt. Durch Öffnen der einzelnen Karten wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen ist.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -831,8 +832,8 @@ Durch die bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften 
 	\label{fig:demo:end}
 \end{figure}
 
-Um das Ergebnis unserer Aktiengeschäfte zu ermitteln, wechseln wir über die Bottom Navigation erneut zum Account-Bildschirm. Darin wird der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95\,\$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma Agilent Technologies.\newline
-Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den Settings-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist. Nachdem wir den Reset Data-Button betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
+Um das Ergebnis unserer Aktiengeschäfte zu ermitteln, wechseln wir über die \textit{Bottom Navigation} erneut zum Account-Bildschirm. Darin wird der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95\,\$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma \textit{Agilent Technologies}.\newline
+Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den \textit{Settings}-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist. Nachdem wir den \textit{Reset Data-Button} betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -854,7 +855,7 @@ Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle 
 
 \section{Teamwork}
 \label{sec:teamwork}
-Eine Startschwierigkeit während der Zusammenarbeit war, dass die Entwickler im Team nicht über ähnlich gute Kenntnisse der Android-Architektur und Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Paarprogrammierung \footnote{Siehe \url{https://de.wikipedia.org/wiki/Paarprogrammierung}} betrieben. Durch die räumlich nahe Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten, wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzer Absprache verständigten wir uns darauf, unser Projekt entsprechend dem Git-Workflow Design (Gitflow) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-Branches um den Verlauf des Projekts aufzuzeichnen. Der \textit{main}-Branch enthält die offiziellen Release-Versionen des Projekts und der \textit{develop}-Branch dient dazu, die einzelnen Features zu integrieren, sobald sie fertig gestellt sind. \newline
+Eine Startschwierigkeit während der Zusammenarbeit war, dass die Entwickler im Team nicht über ähnlich gute Kenntnisse der Android-Architektur und Kotlin-Syntax verfügten. Dieses Problem wurde zum einen dadurch bewältigt, dass sich erfahrenere Entwickler mit den weniger erfahrenen austauschten und zu Beginn Paarprogrammierung \footnote{Siehe \url{https://de.wikipedia.org/wiki/Paarprogrammierung}} betrieben. Durch die räumlich nahe Zusammenarbeit und ein hohes Maß an Teamfähigkeit bei allen Teammitgliedern, konnten Probleme von Einzelnen meist schnell in der Gruppe gelöst werden. Nachdem zu Beginn Aufgaben nach technischen Schichten, wie APIs und Datenbanken vergeben wurden, gingen wir schnell dazu über, die Aufgaben nach Funktionalitäten, wie Suche, Historie, Stockbrot usw. zu vergeben. Diese Aufgabenverteilung kapselte einzelne Aufgaben wesentlich besser als die vorherige nach Schichten orientierte Aufteilung. Wir verständigten uns darauf, im Sinne der agilen Softwareentwicklung in kleinschrittigem Vorgehen Erweiterungen an einem bereits in der Frühphase funktionierenden Produkt vorzunehmen. Nach kurzer Absprache verständigten wir uns darauf, unser Projekt entsprechend dem \textit{Git-Workflow Design} (\textit{Gitflow}) \footnote{Siehe \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}} zu versionieren. Demnach verfügte unser Projekt über zwei Haupt-\textit{Branches} um den Verlauf des Projekts aufzuzeichnen. Der \textit{main-Branch} enthält die offiziellen \textit{Release}-Versionen des Projekts und der \textit{develop-Branch} dient dazu, die einzelnen Funktionalitäten zu integrieren, sobald sie fertig gestellt sind. \newline
 Im Verlauf der Arbeit kristallisierten sich rasch Rollen heraus. Der erfahrenste Entwickler wurde schnell zum technischen Leiter und Ansprechpartner bei ernsteren Problemen. Ein anderes Teammitglied ging auf den Kunden (die Aufgabenstellenden) zu, um bei Unklarheiten die Aufgabenstellung zu präzisieren. Dies hat zu einem guten Arbeitsklima beigetragen. \newline
 Unser Team hatte in der ganzen Woche ein positives Arbeitsklima. Jedes Teammitglied engagierte sich für das gemeinsame Ziel und trug durch kreative Ideen dazu bei, unser Projekt zu verbessern.
 
