@@ -72,39 +72,39 @@ Am 18.11.2019, drei Monate vor Beginn des \textit{Code-Camps} selbst, fand die V
 
 \section{Technische Details}
 \label{sec:technologies}
-In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung "`stock simulator"' eingegangen. Die verwendete App-Architektur wird erklärt und die eingesetzten APIs und Bibliotheken werden vorgestellt.
+In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung "`stock simulator"' eingegangen. Dazu wird die verwendete App-Architektur erklärt und die eingesetzten APIs und Bibliotheken vorgestellt.
 
 
 \subsection{Architektur}
 \label{subsec:technologies:architecture}
 % App Architektur (Welches Pattern habt ihr benutzt? MVVM? Livedata?) Was ist das und warum ist das cool?
 % Schwierigkeiten und wie ihr sie gelöst habt
-Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
+Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sogenannten \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
 Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragments} realisiert und ihre Logik in \textit{ViewModels} implementiert.
 Logik, welche von Benutzeroberflächen unabhängig ist, residiert in \textit{Repositories}.
 Durch diese Trennung ist es möglich die MVVM-Schichten separat voneinander zu testen.
-Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen \textit{Fragments}, da sie keine Informationen über spezifische UI-Elemente halten.
+Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen \textit{Fragments}, da sie keine Informationen über spezifische \textit{UI}-Elemente halten.
 
 Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im \textit{Navigation Graph}, einem graphischen Editor, werden zwischen Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
 
-Mithilfe von \textit{Lifecycle}-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer \textit{Life\-cycle}-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den \textit{Lifecycle}-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
+Mithilfe von \textit{Lifecycle}-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer \textit{Lifecycle}-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den \textit{Lifecycle}-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=8cm,keepaspectratio]{./images/mvvm-architecture.png}
-	\caption{MVVM-Entwurfsmuster \autocite{mvvm_architecture}}
+	\caption{\textit{MVVM}-Entwurfsmuster \autocite{mvvm_architecture}}
 	\label{fig:technologies:architecture:mvvm}
 \end{figure}
 
 \textit{Fragments} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
 Bei \textit{Databinding} handelt es sich um ein Funktion des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
-\textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
+\textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sogenannte \textit{Observer} über Änderungen informieren.
 
 In \textit{ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
-Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
+Einem \textit{ViewModel} ist das besitzende \textit{Fragment} nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
 Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:room}) sowie verschiedene Netzwerkquellen (siehe \autoref{subsec:technologies:apis}) angebunden.
@@ -122,7 +122,7 @@ Die nun folgenden individuellen API-Beschreibungen nennen nur von uns genutzte E
 \subsubsection{CoinGecko}
 \label{subsubsec:technologies:apis:coingecko}
 % https://www.coingecko.com/
-\textit{CoinGecko}\footnote{Siehe \url{https://www.coingecko.com/}} stellt Informationen über Kryptowährungen bereit, die nicht kostenfrei über die \textit{IEX Cloud} API bezogen werden können (siehe \autoref{subsubsec:technologies:apis:iex}).
+\textit{CoinGecko}\footnote{Siehe \url{https://www.coingecko.com/}} stellt Informationen über Kryptowährungen bereit, die nur kostenpflichtig über die \textit{IEX-Cloud} API bezogen werden können (siehe \autoref{subsubsec:technologies:apis:iex}).
 Dazu zählen Symbol, Name und Wechselkurse.
 Bei Wechselkursen wird nur auf den USD-Wechselkurs zurückgegriffen.
 Darüber hinaus sind Marktdiagrammdaten verfügbar, die für Kursgraphen verwendet werden.
@@ -139,7 +139,7 @@ Des Weiteren besitzt \textit{IEX Cloud} Informationen über kurzfristige Änderu
 
 \subsection{Bibliotheken}
 \label{subsec:technologies:bibs}
-Im Laufe der Entwicklung wurden verschiedene Bibliotheken von Drittherstellern verwendet, um den notwendigen Programmierungsaufwand für unsere Anwendung zu reduzieren.
+Im Laufe der Entwicklung wurden verschiedene Bibliotheken von Drittherstellern verwendet, um den notwendigen Programmierungsaufwand für die Anwendung zu reduzieren.
 Im Folgenden werden die verwendeten Bibliotheken näher vorgestellt und ihre Vorzüge sowie Eigenschaften werden erläutert.
 
 
@@ -147,9 +147,9 @@ Im Folgenden werden die verwendeten Bibliotheken näher vorgestellt und ihre Vor
 \label{subsubsec:technologies:bibs:jetpack}
 Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem Entwicklern Komponenten vorgegeben werden, unter deren Verwendung weniger \textit{Boilerplate}-Code geschrieben werden muss. Somit werden komplizierte Prozesse stark vereinfacht \autocite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Bibliothek in Code am Import \textit{androidx.*}. Die in Jetpack enthaltenen Bibliotheken sind unabhängig von der Android Schnittstelle verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Bibliotheken. Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Foundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Foundation} Komponenten stellen beispielsweise die Abwärtskompatibilität sicher, beinhalten ein \textit{Testframework} und ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomponenten für diesen Anwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
-Zusätzlich zu den Bibliotheken, welche in diesem Abschnitt erläutert werden, wurden weitere Bibliotheken aus Android Jetpack verwendet, die im Folgenden vorgestellt werden.
+Zusätzlich zu den Bibliotheken, welche in diesem Abschnitt erläutert werden, wurden weitere Bibliotheken aus \textit{Android Jetpack} verwendet, die im Folgenden vorgestellt werden.
 
-\textit{Android KTX} erweitert die Sprache Kotlin um zusätzliche Funktionen, die hilfreich sind, um Kotlin unkompliziert in Kombination mit Android, Jetpack und anderen APIs nutzen zu können \autocite{android_ktx}.
+\textit{Android KTX} erweitert die Sprache Kotlin um zusätzliche Funktionen, die hilfreich sind, um Kotlin unkompliziert in Kombination mit Android, \textit{Jetpack} und anderen APIs nutzen zu können \autocite{android_ktx}.
 
 \textit{Appcompat} \autocite{android_appcompat} ermöglicht die Nutzung der \textit{Action Bar} \autocite{android_action_bar} in der Benutzeroberfläche. Außerdem unterstützt diese Bibliothek das nachträgliche Hinzufügen vom \textit{material design} System, welches in \autoref{subsubsec:technologies:bibs:material} beschrieben ist.
 
@@ -214,7 +214,7 @@ Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die 
 \label{subsubsec:technologies:bibs:material}
 % https://material.io/develop/android/docs/getting-started/
 \textit{Material} ist ein Designsystem, welches unter anderem von Google entwickelt wird.
-Mit UI-Elementen der offiziellen \textit{Material}-Bibliothek ist es möglich, moderne Benutzeroberflächen zu erstellen ohne Entwicklungszeit für Design und Implementierung dieser aufwenden zu müssen.
+Mit \textit{UI}-Elementen der offiziellen \textit{Material}-Bibliothek ist es möglich, moderne Benutzeroberflächen zu erstellen ohne Entwicklungszeit für Design und Implementierung dieser aufwenden zu müssen.
 \textit{Material} wurde für das App-Design sowie die \textit{Bottom Navigation} (siehe \autoref{subsec:functionality:navigation}) verwendet.
 
 
