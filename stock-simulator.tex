@@ -81,12 +81,12 @@ In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anw
 % Schwierigkeiten und wie ihr sie gelöst habt
 Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
-Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragmente} realisiert und ihre Logik in \textit{ViewModels} implementiert.
+Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragments} realisiert und ihre Logik in \textit{ViewModels} implementiert.
 Benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
-Durch diese Trennung es möglich Schichten separat voneinander zu testen.
+Durch diese Trennung ist es möglich Schichten separat voneinander zu testen.
 Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
 
-Die Navigation zwischen den einzelnen \textit{Fragments}, innerhalb der \textit{Activity}, wird durch die \textit{Navigation} Libraries \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren, zwischen welchen Fragmenten, in welche Richtung navigiert werden kann.
+Die Navigation zwischen den einzelnen \textit{Fragments}, innerhalb der \textit{Activity}, wird durch die \textit{Navigation} Libraries \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren, zwischen welchen \textit{Fragments}, in welche Richtung navigiert werden kann.
 
 Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche von Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) bereitgestellt werden, wurden Aktionen ausgeführt, um auf Statusänderungen anderer Lifecycle-Komponenten zu reagieren. Durch diese Komponenten wird strukturierterer und somit besser zu wartender Quellcode geschrieben.
 
@@ -103,7 +103,7 @@ Dabei handelt es sich um ein Feature des Compilers, welches benötigten Quelltex
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 \textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
 
-In {ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
+In \textit{ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
 Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
