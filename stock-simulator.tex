@@ -367,12 +367,6 @@ Durch scrollen innerhalb der Ansicht, werden weitere Anlagen sichtbar, falls aus
         \caption{Depot und Verlauf}
         \label{fig:functionality:account:depot}
     \end{subfigure}
-    \caption{Account}
-    \label{fig:functionality:account}
-\end{figure}
-
-\begin{figure}[H]
-    \ContinuedFloat
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/account/performance.png}
@@ -385,7 +379,8 @@ Durch scrollen innerhalb der Ansicht, werden weitere Anlagen sichtbar, falls aus
         \caption{Anlagen im Depot}
         \label{fig:functionality:account:depot_quotes}
     \end{subfigure}
-    \caption{Account (Fortsetzung)}
+    \caption{Account}
+    \label{fig:functionality:account}
 \end{figure}
 
 Falls der Benutzer in den Einstellungen die Fingerabdrucks-Sperre aktiviert hat (siehe \autoref{fig:functionality:settings:fingerprint}), muss der Fingerabdruck nach dem Start der Anwendung bestätigt werden (siehe \autoref{fig:functionality:account:fingerprint:dialog}).
@@ -427,7 +422,7 @@ Darunter werden Suchergebnisse in einem scrollbaren Raster angezeigt (siehe \aut
 Diese aktualisieren sich automatisch, sobald sich ein Suchkriterium verändert.
 Dadurch ist es möglich, unmittelbar auf Nutzereingaben zu reagieren und Ergebnisse schnell anzuzeigen.
 Während eine Suche stattfindet wird ein Fortschritts\-indikator angezeigt, um Nutzer über den aktuellen Zustand der Suche zu informieren (siehe \autoref{fig:functionality:search:loading}).
-Sollte eine Suche keine Ergebnisse liefern wird eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:no-results}).
+Sollte eine Suche keine Ergebnisse liefern wird, eine entsprechende Meldung angezeigt (siehe \autoref{fig:functionality:search:no-results}).
 
 Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlageguts navigieren (siehe \autoref{subsec:functionality:quote}).
 
@@ -506,7 +501,7 @@ Die \textit{Worker} werden im Hintergrund mithilfe des \textit{WorkManagers} ges
 Die Navigation zu diesem Bildschirm erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der \textit{Bottom Navigation}.
 Wenn zuvor keine Aktien oder Kryptowährungen zu dem \textit{Bot} hinzugefügt wurden, werden in diesem Bildschirm keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}).
 Sobald eine Anlage der Kontrolle des \textit{Bots} über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}).
-Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der \textit{Bot} einen Kauf- oder Verkauf veranlassen soll.
+Jedes dieser Elemente besteht aus der \textit{Id}, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der \textit{Bot} einen Kauf- oder Verkauf veranlassen soll.
 Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt.
 Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
 
@@ -533,7 +528,7 @@ Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen au
 Um den Benutzer des Spiels vor Herausforderungen zu stellen und damit den Spielspaß zu erhöhen, sind verschiedene Errungenschaften erreichbar.
 Eine Übersicht über diese Erfolge, sind im \textit{Achievements}-Bildschirm einsehbar, welcher über den Eintrag \textit{"`Achievements"'} in der \textit{Bottom Navigation} zu erreichen ist.
 Dieser Bildschirm listet, wie in \autoref{fig:functionality:achievements:overview:closed} sichtbar, alle bereits erreichten und noch freizuschaltenden Errungenschaften auf.
-Die Hintergrundfarben der noch nicht freigeschalteten Errungenschaften, werden in der Liste ausgegraut.
+Die Elemente der noch nicht freigeschalteten Errungenschaften, werden in der Liste ausgegraut.
 Jedes der Elemente besteht aus einem Titel und einer Beschreibung.
 Die Beschreibung ist für alle bereits erreichten Errungenschaften, mittels Pfeil auf der rechten Seite des Elements, aufklappbar (\autoref{fig:functionality:achievements:overview:open}).
 
@@ -679,13 +674,13 @@ Alle verfügbaren \textit{News} sind in englischer Sprache verfasst.
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/news/news.png}
-        \caption{geschlossen}
+        \caption{Übersicht geschlossen}
         \label{fig:functionality:news:closed}
     \end{subfigure}
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/news/news_open.png}
-        \caption{geöffnet}
+        \caption{Übersicht geöffnet}
         \label{fig:functionality:news:open}
     \end{subfigure}
     \caption{\textit{News} Übersicht}
@@ -821,7 +816,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 \label{sec:demo}
 Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt.
 Nach dem Start der Applikation wird dem Nutzer der \textit{Account}-Bildschirm angezeigt.
-Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot.
+Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), das heißt ein leeres (Wertpapier-) Depot.
 Die Wertentwicklung seines Gesamtvermögens, in der App als \textit{Performance} ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
 
 \begin{figure}[H]
@@ -852,7 +847,7 @@ Dazu klicken wir in der \textit{Bottom Navigation} den \textit{Search-Button} un
 \end{figure}
 
 \autoref{fig:demo:search_screen} zeigt den \textit{Search}-Bildschirm.
-In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt.
+In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, das heißt Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt.
 Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben "`a"' ein.
 Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit "`A"' oder "`a"' beginnt oder deren Namen eine "`A"' bzw. "`a"' enthalten.
 Dies wird in \autoref{fig:demo:search_a} dargestellt.
@@ -1002,7 +997,7 @@ Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%.
 Unser Aktiendepot besteht aus neun Aktien der Firma \textit{Agilent Technologies}.\newline
 Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen.
 Dazu wechseln wir in den \textit{Settings}-Bildschirm über den dazugehörigen \textit{Button} in der Kopfzeile.
-Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist.
+Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruck-Authentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist.
 Nachdem wir den \textit{Reset Data-Button} betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
 
 \begin{figure}[H]
