@@ -65,7 +65,7 @@ autocite=inline
 \section{Einleitung}
 \label{sec:introduction}
 % Gute Einleitung ins Thema (was war die Aufgabe, etc.)
-Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} des Fachgebiets \textit{Kommunikationstechnik} im Fachbereich \textit{16 - Elektrotechnik/Informatik} der Universität Kassel entwickelten mehrere Teams von drei bis vier Studenten innerhalb einer Woche selbstständig ein Börsensimulationsspiel für Android-Smartphones. Dabei stellt die Verwendung von \textit{echten, aktuellen Anlagekursen} eine wichtige Anforderung an das Spiel dar. Mithilfe von zur Verfügung stehendem \textit{Spielgeld} soll der Benutzer die Möglichkeit haben, mit Anlagen, wie Aktien oder Kryptowährungen, zu handeln. Um den Handel mit verschiedenen Anlagen zu ermöglichen, wird eine \textit{Suchfunktion} gefordert, welche die verfügbaren Anlagen filtert und anzeigt. Um das eigene Budget immer im Blick zu behalten, sollen eine \textit{Depotübersicht} sowie eine Anzeige für den aktuellen \textit{Kontostand} und dessen Verlauf erstellt werden. Die getätigten Käufe und Verkäufe sollen in einer \textit{Historie} bzw. einem Transaktionsverlauf dargestellt werden. \textit{Graphen} sollen die Anlagenkurse und den Verlauf des Kontostands visualisieren. Wie auf gängigen Handelsplattformen üblich, soll der Simulator auch mit jedem Kauf- oder Verkauf \textit{Transaktionskosten} erheben. Das Handeln soll optional durch einen \textit{Bot} automatisiert werden können. Entsprechende Zielwerte für den automatisierten Handel sollen für jede Anlage individuell anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, soll die Anwendung eine Option bieten, den \textit{Spielstand zurückzusetzen}. Zusätzlich zu den bisher genannten Hauptfeatures, wird mindestens ein \textit{Zusatzfeature} gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, durch den erfolgreichen Handel mit Anlagemöglichkeiten das Startkapital zu vermehren.
+Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} des Fachgebiets \textit{Kommunikationstechnik} im Fachbereich \textit{16 - Elektrotechnik/Informatik} der Universität Kassel entwickelten mehrere Teams von drei bis vier Studenten innerhalb einer Woche selbstständig ein Börsensimulationsspiel für Android-Smartphones. Dabei stellt die Verwendung von \textit{echten, aktuellen Anlagekursen} eine wichtige Anforderung an das Spiel dar. Mithilfe von zur Verfügung stehendem \textit{Spielgeld} soll der Benutzer die Möglichkeit haben, mit Anlagen, wie Aktien oder Kryptowährungen, zu handeln. Um den Handel mit verschiedenen Anlagen zu ermöglichen, wird eine \textit{Suchfunktion} gefordert, welche die verfügbaren Anlagen filtert und anzeigt. Um das eigene Budget immer im Blick zu behalten, sollen eine \textit{Depotübersicht} sowie eine Anzeige für den aktuellen \textit{Kontostand} und dessen Verlauf erstellt werden. Die getätigten Käufe und Verkäufe sollen in einer \textit{Historie} bzw. einem Transaktionsverlauf dargestellt werden. \textit{Graphen} sollen die Anlagenkurse und den Verlauf des Kontostands visualisieren. Wie auf gängigen Handelsplattformen üblich, soll der Simulator auch mit jedem Kauf- oder Verkauf \textit{Transaktionskosten} erheben. Das Handeln soll optional durch einen \textit{Bot} automatisiert werden können. Entsprechende Zielwerte für den automatisierten Handel sollen für jede Anlage individuell anpassbar sein. Damit der Benutzer die Möglichkeit hat, das Spiel neu zu beginnen, soll die Anwendung eine Option bieten, den \textit{Spielstand zurückzusetzen}. Zusätzlich zu den bisher genannten Hauptfunktionalitäten, wird mindestens eine \textit{Zusatzfunktionalität} gefordert, welches eine nützliche Erweiterung für die Anwendung darstellt. Ziel des Spiels ist es, durch den erfolgreichen Handel mit Anlagemöglichkeiten das Startkapital zu vermehren.
 
 Am 18.11.2019, drei Monate vor Beginn des \textit{Code-Camps} selbst, fand die Vorbesprechung zur Veranstaltung statt. Neben allgemeinen Informationen zum Ablauf, wurden die Teilnehmer angewiesen, sich in die Software-Entwicklung für Android einzuarbeiten. Neben den dort vorgestellten Verweisen auf Lehrmaterial, arbeiteten sich die meisten Mitglieder unseres Teams mithilfe des Kurses \textit{Developing Android Apps with Kotlin} der Plattform \textit{Udacity}\footnote{Siehe \url{https://classroom.udacity.com/courses/ud9012}} in die App-Entwicklung für Android-Smartphones ein. Zu Beginn wird in diesem Kurs das Erstellen einer ersten, einfachen Android-App erklärt. Dann werden Konzepte wie \textit{Layouts}, Navigation sowie der \textit{Activity}- und \textit{Fragment}-Lebenszyklus erläutert. Nach weiteren Kapiteln zur Benutzeroberfläche und Datenspeicherung, wird der \textit{RecyclerView} vorgestellt. Mit \textit{Retrofit} wird beispielhaft das Beziehen von Daten aus Web-APIs umgesetzt. Nach einem Blick auf Android-Hintergrunddienste stellt der Kurs zuletzt Möglichkeiten zur Internationalisierung und barrierefreien Gestaltung vor.
 
@@ -99,7 +99,7 @@ Mithilfe von \textit{Lifecycle}-Komponenten \autocite{android_lifecycle}, welche
 \end{figure}
 
 \textit{Fragments} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
-Bei \textit{Databinding} handelt es sich um ein Feature des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
+Bei \textit{Databinding} handelt es sich um ein Funktion des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 \textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
 
@@ -115,7 +115,7 @@ Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:ro
 Um eine Simulation mit echten Kursdaten zu ermöglichen, wurden zwei Applikationsschnittstellen als Datenquellen in "`stock simulator"' eingebunden.
 Sie verwenden, trotz ähnlicher Semantik, unterschiedlich repräsentierte Datenstrukturen, weshalb auch in separate Modelle für diese Applikationsschnittstellen implementiert werden mussten.
 Die API-spezifischen Antworten der Schnittstellen werden dann jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
-Beide APIs erfordern Zuschreibungen, welche im Settings-Bildschirm eingesehen werden können (siehe \autoref{subsec:functionality:settings}).
+Beide APIs erfordern Zuschreibungen, welche im \textit{Settings}-Bildschirm eingesehen werden können (siehe \autoref{subsec:functionality:settings}).
 Die nun folgenden individuellen API-Beschreibungen nennen nur von uns genutzte Endpunkte. Darüber hinaus bieten die APIs noch viele weitere Endpunkte.
 
 
@@ -207,7 +207,7 @@ Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die 
 \subsubsection{Picasso}
 \label{subsubsec:technologies:bibs:picasso}
 % https://github.com/square/picasso
-\textit{Picasso} \autocite{picasso} ist eine Bibliothek, die das Herunterladen und Zwischenspeichern von Bildern ermöglicht. Durch die Zwischenspeicherung wird zum einen Datenvolumen gespart und zum anderen die Performance der Benutzeroberfläche bei mehrmaligen Aufrufen erhöht. In der Applikation wurde die Bibliothek bei der Anzeige von News verwendet, welche mit Bildern ausgeliefert werden (siehe \autoref{subsec:functionality:news}).
+\textit{Picasso} \autocite{picasso} ist eine Bibliothek, die das Herunterladen und Zwischenspeichern von Bildern ermöglicht. Durch die Zwischenspeicherung wird zum einen Datenvolumen gespart und zum anderen die Performance der Benutzeroberfläche bei mehrmaligen Aufrufen erhöht. In der Applikation wurde die Bibliothek bei der Anzeige von \textit{News} verwendet, welche mit Bildern ausgeliefert werden (siehe \autoref{subsec:functionality:news}).
 
 
 \subsubsection{Material}
@@ -249,7 +249,7 @@ Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen \aut
 
 Das Einstellungsmenü ist über das Zahnrad in der \textit{Toolbar} aller Bildschirme, au"ser den Einstellungen selbst, erreichbar.
 
-Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
+Weitere Navigation, wie zu den \textit{News} oder zur Detailansicht einer Anlage, ist über Bedienelemente in Form von \textit{Buttons} an entsprechenden Stellen möglich.
 
 \autoref{fig:functionality:navigation:screens} stellt den Navigationsgraph für die einzelnen Bildschirme dar.
 \begin{figure}[H]
@@ -262,7 +262,7 @@ Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist üb
 
 \subsection{Account}
 \label{subsec:functionality:account}
-Im Account-Bildschirm bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Bildschirm wird über den Eintrag "`Account"' in der \textit{Bottom Navigation} erreicht.
+Im \textit{Account}-Bildschirm bekommt der Benutzer alle Informationen angezeigt, welche seinen Kontostand und sein Depot betreffen (siehe \autoref{fig:functionality:account}). Dieser Bildschirm wird über den Eintrag "`Account"' in der \textit{Bottom Navigation} erreicht.
 
 Im oberen Teil des Bildschirms wird der aktuelle Kontostand in US-Dollar angezeigt. Darunter stellt ein Diagramm den Verlauf des Kontostands dar (siehe \autoref{fig:functionality:account:balance}).
 
@@ -405,7 +405,7 @@ Die Karten sind nach dem Zeitpunkt ihrer Durchführung absteigend geordnet, soda
 \label{subsec:functionality:stockbrot}
 Der Name Stockbrot ist ein Wortspiel aus den Begriffen \textit{stock} (deutsch: Aktie) und \textit{Bot}, die Kurzform von \textit{robot} (deutsch: Roboter). Mithilfe dieses \textit{Bots} sind Nutzer in der Lage das Handeln von Aktien oder Kryptowährungen zu automatisieren. Für jede Anlage, welche sich unter der Kontrolle des \textit{Bots} befindet, wird alle 15 Minuten ein sogenannter \textit{Worker} ausgeführt (siehe \autoref{subsubsec:technologies:bibs:workmanager}). Vom \textit{Worker} wird geprüft, ob die zuvor in der Detailansicht (\autoref{subsec:functionality:quote}) festgelegten Schwellwerte des jeweiligen aktuellen Kurses erreicht wurden. Falls dies der Fall ist, wird eine entsprechende Transaktion ausgeführt. Die \textit{Worker} werden im Hintergrund mithilfe des \textit{WorkManagers} gesteuert (siehe \autoref{subsubsec:technologies:bibs:workmanager}).
 
-\autoref{fig:functionality:stockbrot:overview} zeigt den Bildschirm, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Bildschirm erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der \textit{Bottom Navigation}. Wenn zuvor keine Aktien oder Kryptowährungen zu dem Bot hinzugefügt wurden, werden in diesem Bildschirm keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des \textit{Bots} über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der Bot einen Kauf- oder Verkauf veranlassen soll. Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt. Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
+\autoref{fig:functionality:stockbrot:overview} zeigt den Bildschirm, der eine Übersicht über die von Stockbrot verwalteten Aktien und Kryptowährungen liefert. Die Navigation zu diesem Bildschirm erfolgt über einen Klick auf den Eintrag "`Stockbrot"' in der \textit{Bottom Navigation}. Wenn zuvor keine Aktien oder Kryptowährungen zu dem \textit{Bot} hinzugefügt wurden, werden in diesem Bildschirm keine Einträge aufgelistet (\autoref{fig:functionality:stockbrot:overview:empty}). Sobald eine Anlage der Kontrolle des \textit{Bots} über die Detailansicht einer Anlage (\autoref{subsec:functionality:quote}) übergeben wurde, wird diese als Element der Liste angezeigt (\autoref{fig:functionality:stockbrot:overview:entry}). Jedes dieser Elemente besteht aus der Id, sowie den Schwellwerten, bei deren Unter- oder Überschreitung der \textit{Bot} einen Kauf- oder Verkauf veranlassen soll. Zusätzlich zu dem Schwellwert für automatische Käufe, wird die Anzahl der maximal zu kaufenden Anlagen dargestellt. Für Verkäufe existiert ein solches Limit nicht, weshalb es in den Elementen auch nicht dargestellt wird.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -490,7 +490,7 @@ Dafür wird ein Bestätigungsdialog geöffnet (siehe \autoref{fig:functionality:
 
 Haben Nutzer ein Anlagegut im Depot, wird dies ebenfalls in der Detailansicht vermerkt (siehe \autoref{fig:functionality:buy-sell:in-depot}).
 Es werden sowohl die Menge als auch der Gesamtwert angezeigt.
-Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen kompletten Ausverkauf des entsprechenden Anlageguts aus dem Depot durchführt.
+Zusätzlich wird der \textit{Button} "`SELL ALL"' aktiviert, welcher einen kompletten Ausverkauf des entsprechenden Anlageguts aus dem Depot durchführt.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -515,7 +515,7 @@ Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen kompletten Aus
 	\label{fig:functionality:buy-sell}
 \end{figure}
 
-\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zum Bot (\autoref{fig:functionality:stockbrot:add}) sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. Im Abschnitt, der mit dem Label "`Auto buy/sell"' beginnt, können Kauf- und Verkaufsoptionen für den \textit{Bot} festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom \textit{Bot} gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der Button "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des \textit{Bots} kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Anlagenkurs überschreiten muss, damit der \textit{Bot} einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem \textit{Bot} kontrolliert, kann diese mittels Klick auf den \textit{Button} "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des \textit{Bots} entzogen werden.
+\autoref{fig:functionality:stockbrot:addremove} zeigt einen Abschnitt aus der Detailansicht, welcher das Hinzufügen einer Anlage zum \textit{Bot} (\autoref{fig:functionality:stockbrot:add}) sowie das Entfernen dieser (\autoref{fig:functionality:stockbrot:remove}) ermöglicht. Im Abschnitt, der mit dem Label "`Auto buy/sell"' beginnt, können Kauf- und Verkaufsoptionen für den \textit{Bot} festgelegt werden. Ohne Spezifikation der Kaufoptionen, wird die Anlage nicht vom \textit{Bot} gekauft und ohne Spezifikation der Verkaufsoption, nicht verkauft. Wenn weder Kauf- noch Verkaufsoptionen korrekt spezifiziert wurden, bleibt der \textit{Button} "`ADD TO STOCKBROT"' ausgegraut. Das Kaufverhalten des \textit{Bots} kann mittels Textfeld "`Buy amount"' und "`Maximum Buy Price"' festgelegt werden. Mit diesen Optionen wird die maximale Anzahl der zu kaufenden Aktien oder Kryptowährungen, sowie der Schwellwert des Preises festgelegt, unter dem ein Kauf stattfinden soll. Mittels der Textfelder "`Minimum Sell Price"' kann festgelegt werden, welche Grenze der Anlagenkurs überschreiten muss, damit der \textit{Bot} einen Verkauf durchführt. Wird eine Aktie oder Kryptowährung bereits von dem \textit{Bot} kontrolliert, kann diese mittels Klick auf den \textit{Button} "`REMOVE QUOTE FROM STOCKBROT"' wieder der Kontrolle des \textit{Bots} entzogen werden.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -534,12 +534,12 @@ Zusätzlich wird der Button "`SELL ALL"' aktiviert, welcher einen kompletten Aus
     \label{fig:functionality:stockbrot:addremove}
 \end{figure}
 
-Im unteren Teil des Bildschirms befindet sich ein \textit{News} Button (siehe \autoref{fig:functionality:news:button}). Wenn dieser betätigt wird, werden die aktuellen Nachrichten zu der entsprechenden Anlage angezeigt. Dargestellt werden diese in einem neuen Bildschirm, welcher in \autoref{subsec:functionality:news} beschrieben wird.
+Im unteren Teil des Bildschirms befindet sich ein \textit{News} \textit{Button} (siehe \autoref{fig:functionality:news:button}). Wenn dieser betätigt wird, werden die aktuellen Nachrichten zu der entsprechenden Anlage angezeigt. Dargestellt werden diese in einem neuen Bildschirm, welcher in \autoref{subsec:functionality:news} beschrieben wird.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=8cm,keepaspectratio]{./images/news/news_button.png}
-    \caption{News Button}
+    \caption{\textit{News Button}}
     \label{fig:functionality:news:button}
 \end{figure}
 
@@ -561,7 +561,7 @@ Der \textit{News}-Bildschirm zeigt alle aktuellen Nachrichten an, die mit einer 
         \caption{geöffnet}
         \label{fig:functionality:news:open}
     \end{subfigure}
-    \caption{News Übersicht}
+    \caption{\textit{News} Übersicht}
     \label{fig:functionality:news}
 \end{figure}
 
@@ -569,7 +569,7 @@ Der \textit{News}-Bildschirm zeigt alle aktuellen Nachrichten an, die mit einer 
 \subsection{Einstellungen}
 \label{subsec:functionality:settings}
 Der \textit{Settings}-Bildschirm beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagen sowie Hinzufügen und Entfernen einer Fin\-ger\-abdruck-Sperre.
-Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
+Wie in \autoref{fig:functionality:settings} zu sehen sind \textit{Buttons} der zuvor beschriebenen Optionen vertikal angeordnet.
 
 \begin{figure}[H]
 	\centering
@@ -579,7 +579,7 @@ Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor besc
 \end{figure}
 
 
-Über den Button "`REFRESH SYMBOLS"' (\autoref{fig:functionality:settings:refreshsymbols:button}) sind Nutzer in der Lage, die verfügbaren Anlagen der \textit{CoinGecko} und \textit{IEX Cloud} APIs (siehe \autoref{subsubsec:technologies:apis:coingecko} bzw. \autoref{subsubsec:technologies:apis:iex}) zu aktualisieren. Sobald der \textit{Button} geklickt wurde, wird dieser deaktiviert und es erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:refreshsymbols:requested}), welche über den aktuellen Vorgang informiert. Sobald die Aktualisierung abgeschlossen ist, wird der \textit{Button} wieder aktiviert und eine weitere Benachrichtigung informiert über den erfolgreichen Abschluss des Vorgangs (\autoref{fig:functionality:settings:refreshsymbols:done}).
+Über den \textit{Button} "`REFRESH SYMBOLS"' (\autoref{fig:functionality:settings:refreshsymbols:button}) sind Nutzer in der Lage, die verfügbaren Anlagen der \textit{CoinGecko} und \textit{IEX Cloud} APIs (siehe \autoref{subsubsec:technologies:apis:coingecko} bzw. \autoref{subsubsec:technologies:apis:iex}) zu aktualisieren. Sobald der \textit{Button} geklickt wurde, wird dieser deaktiviert und es erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:refreshsymbols:requested}), welche über den aktuellen Vorgang informiert. Sobald die Aktualisierung abgeschlossen ist, wird der \textit{Button} wieder aktiviert und eine weitere Benachrichtigung informiert über den erfolgreichen Abschluss des Vorgangs (\autoref{fig:functionality:settings:refreshsymbols:done}).
 
 \begin{figure}[H]
     \begin{subfigure}{.329\textwidth}
@@ -605,7 +605,7 @@ Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor besc
 \end{figure}
 
 
-Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{fig:functionality:settings:datareset:button}). Dieser ermöglicht das Zurücksetzen des Spielstands. Sobald der \textit{Button} betätigt und die Daten zurückgesetzt wurden, erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:datareset:notification}), welche den Abschluss des Prozesses ankündigt.
+Darunter befindet sich der \textit{Button} mit dem Titel "`RESET DATA"' (siehe \autoref{fig:functionality:settings:datareset:button}). Dieser ermöglicht das Zurücksetzen des Spielstands. Sobald der \textit{Button} betätigt und die Daten zurückgesetzt wurden, erscheint eine Benachrichtigung (\autoref{fig:functionality:settings:datareset:notification}), welche den Abschluss des Prozesses ankündigt.
 
 \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -625,7 +625,7 @@ Darunter befindet sich der Button mit dem Titel "`RESET DATA"' (siehe \autoref{f
 \end{figure}
 
 
-Der unterste \textit{Button} "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung bei jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der \textit{Button} deaktiviert und ein Informationstext unter diesem \textit{Button} weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten Button gestartet wurde, erscheint ein \textit{Popup}, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche Nutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den Button "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
+Der unterste \textit{Button} "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das Schützen der Applikation durch eine Fingerabdruck-Authentifizierung (siehe \autoref{fig:functionality:settings:fingerprint:button}). Wenn diese aktiviert wurde, muss die Anwendung bei jedem Start mit dem im Android-System hinterlegten Fingerabdruck entsperrt werden. Falls kein Fingerabdruck im System hinterlegt wurde, bleibt der \textit{Button} deaktiviert und ein Informationstext unter diesem \textit{Button} weißt Nutzer auf den Zustand hin (siehe \autoref{fig:functionality:settings:fingerprint:notregistered}). Wenn das Hinzufügen der Fingerabdruck-Authentifizierung durch einen Klick auf den aktivierten \textit{Button} gestartet wurde, erscheint ein \textit{Popup}, welches den Benutzer auffordert seinen Fingerabdruck zu bestätigen (siehe \autoref{fig:functionality:settings:fingerprint:requested}). Nach der Bestätigung erscheint eine Benachrichtigung, welche Nutzer über den Erfolgszustand informiert (siehe \autoref{fig:functionality:settings:fingerprint:done}). Wird die Bestätigung über den \textit{Button} "`CANCEL"' abgebrochen, bestätigt eine Benachrichtigung den Abbruch (siehe \autoref{fig:functionality:settings:fingerprint:canceled}). Falls der Fingerabdruck nicht mit dem im System hinterlegten Abdruck übereinstimmt, wird der Benutzer darüber ebenfalls informiert (siehe \autoref{fig:functionality:settings:fingerprint:failed}).
 
 \begin{figure}[H]
     \begin{subfigure}{.329\textwidth}
@@ -682,7 +682,7 @@ Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schni
 
 \section{Demonstration}
 \label{sec:demo}
-Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der Account-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der App als \textit{Performance} ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
+Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Folgenden einige typische Anwendungsfälle und Transaktionen durchgespielt. Nach dem Start der Applikation wird dem Nutzer der \textit{Account}-Bildschirm angezeigt. Wie in \autoref{fig:demo:start} zu sehen, verfügt der Nutzer zu Beginn über einen Kontostand von 10.000,- \$ und kein Anlagevermögen (0,00 \$), d. h. ein leeres (Wertpapier-) Depot. Die Wertentwicklung seines Gesamtvermögens, in der App als \textit{Performance} ausgewiesen, beträgt zu Beginn des Spiels ebenfalls 0.00 \%.
 
 \begin{figure}[H]
 	\centering
@@ -697,7 +697,7 @@ Um die Funktionen und Handhabung der Applikation zu demonstrieren, werden im Fol
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search.png}
-		\caption{Search-Bildschirm}
+		\caption{\textit{Search}-Bildschirm}
 		\label{fig:demo:search_screen}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
@@ -757,7 +757,7 @@ Da wir nicht jeden Aktienkauf und -verkauf persönlich durchführen möchten, f�
 	\label{fig:demo:bot}
 \end{figure}
 
-Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der Stockbrot-Bildschirm, den wir über die \textit{Bottom Navigation} erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
+Hierzu geben wir 60,00 \$ als Höchstkaufpreis an. Bis zu diesem Kaufpreis soll diese Aktie automatisch gekauft werden. Als Verkaufspreis geben wir 70,00 \$ an. Ab diesem Wert wird die Aktie automatisch für uns verkauft, so wie in \autoref{fig:demo:add_stockbot} zu sehen. Einen Überblick über alle automatisch gehandelten Anlagen bietet der \textit{Stockbrot}-Bildschirm, den wir über die \textit{Bottom Navigation} erreichen. Hier sind die Kauf- und Verkaufspreise für den automatischen Handel nochmals aufgeführt, zu sehen in  \autoref{fig:demo:added}.\newline
 Des Weiteren können wir uns im \textit{Quote}-Bildschirm aktuelle Nachrichten zum Aktienwert und dem jeweiligen Unternehmen anzeigen lassen. Diese sehen wir in \autoref{fig:demo:news}.
 
 \begin{figure}[H]
@@ -832,8 +832,8 @@ Durch die bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften 
 	\label{fig:demo:end}
 \end{figure}
 
-Um das Ergebnis unserer Aktiengeschäfte zu ermitteln, wechseln wir über die \textit{Bottom Navigation} erneut zum Account-Bildschirm. Darin wird der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95\,\$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma \textit{Agilent Technologies}.\newline
-Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den \textit{Settings}-Bildschirm über den dazugehörigen Button in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist. Nachdem wir den \textit{Reset Data-Button} betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
+Um das Ergebnis unserer Aktiengeschäfte zu ermitteln, wechseln wir über die \textit{Bottom Navigation} erneut zum \textit{Account}-Bildschirm. Darin wird der aktuelle Kontostand von 9.396,48 \$ und der Wert unseres Depots in Höhe von 616,95\,\$ angezeigt. Die Wertentwicklung unseres Gesamtvermögens beträgt +0,13 \%. Unser Aktiendepot besteht aus neun Aktien der Firma \textit{Agilent Technologies}.\newline
+Zuletzt wollen wir unseren bisherigen Spielfortschritt löschen, indem wir alle Spieldaten zurücksetzen. Dazu wechseln wir in den \textit{Settings}-Bildschirm über den dazugehörigen \textit{Button} in der Kopfzeile. Darin können wir alle Informationen über die verfügbaren Anlagemöglichkeiten aktualisieren, die bisher gespeicherten Spieldaten zurückzusetzen und eine Fingerabdruckauthentifizierung aktivieren, falls ein Fingerabdrucksensor verfügbar ist, wie in \autoref{fig:demo:settings_data_reset} zu sehen ist. Nachdem wir den \textit{Reset Data-Button} betätigt haben, wird uns eine Bestätigung der erfolgreichen Zurücksetzung aller Daten angezeigt, siehe \autoref{fig:demo:settings_data_reset_confirmation}.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -862,7 +862,7 @@ Unser Team hatte in der ganzen Woche ein positives Arbeitsklima. Jedes Teammitgl
 
 \section{Zusammenfassung}
 \label{sec:summary}
-Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} entwickelte unser Team ein Börsenhandelssimulationsspiel für Android. Mit dieser Applikationen können Informationen über Aktien und Kryptowährungen abgerufen sowie Anlagen erworben und veräußert werden. Hierbei ermöglichen Übersichten über das bestehende Depot, den Kontostand und alle bisherigen Transaktionen, das Spielgeschehen nachzuvollziehen. Der Handel kann durch einen Bot automatisiert werden. \newline
+Im Rahmen der Blockveranstaltung \textit{Code-Camp Context-Awareness 1} entwickelte unser Team ein Börsenhandelssimulationsspiel für Android. Mit dieser Applikationen können Informationen über Aktien und Kryptowährungen abgerufen sowie Anlagen erworben und veräußert werden. Hierbei ermöglichen Übersichten über das bestehende Depot, den Kontostand und alle bisherigen Transaktionen, das Spielgeschehen nachzuvollziehen. Der Handel kann durch einen \textit{Bot} automatisiert werden. \newline
 Bereits im Verlauf der Woche konnten wir alle gestellten Mindestanforderungen an unsere Börsenhandelssimulation erfüllen und darüber hinaus zahlreiche zusätzliche Funktionalitäten umsetzen.
 
 
