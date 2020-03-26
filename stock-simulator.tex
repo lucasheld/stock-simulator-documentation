@@ -15,7 +15,7 @@
 \usepackage{subcaption}
 \usepackage[%
 backend=biber,
-sortlocale=de_DE,
+sorting=none,
 natbib=true,
 style=numeric,
 autocite=inline
@@ -31,7 +31,7 @@ autocite=inline
 \addto\extrasngerman{
 	\renewcommand{\sectionautorefname}{Kapitel}
 	\renewcommand{\subsectionautorefname}{Abschnitt}
-	\renewcommand{\subsubsectionautorefname}{Unterabschnitt}
+	\renewcommand{\subsubsectionautorefname}{Abschnitt}
 }
 
 \setlength{\parindent}{0cm}  % remove paragraph indentation
@@ -72,7 +72,7 @@ Am 18.11.2019, drei Monate vor Beginn des Code-Camps selbst, fand die Vorbesprec
 
 \section{Technische Details}
 \label{sec:technologies}
-In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung ``stock simulator'' eingegangen. Die verwendete App-Architektur wird erklärt und die eingesetzten APIs und Bibliotheken werden vorgestellt.
+In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anwendung "`stock simulator"' eingegangen. Die verwendete App-Architektur wird erklärt und die eingesetzten APIs und Bibliotheken werden vorgestellt.
 
 
 \subsection{Architektur}
@@ -81,11 +81,15 @@ In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anw
 % Schwierigkeiten und wie ihr sie gelöst habt
 Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
-% TODO: wo finde ich die Begriffe Benutzeroberfläche und Logik in der Grafik? Die Datenquellen sind glaube ich ausreichend erkennbar.
-Dadurch ist es möglich die Anwendungslogik separat zu testen.
-% TODO: separat zu was?
-Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
-% TODO: Navigation (navigation-fragment-ktx, navigation-ui-ktx) und Lifecycle (lifecycle-extensions, lifecycle-viewmodel-ktx, lifecycle-livedata-ktx) erläutern?
+Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragments} realisiert und ihre Logik in \textit{ViewModels} implementiert.
+Benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
+Durch diese Trennung ist es möglich die MVVM-Schichten separat voneinander zu testen.
+Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
+
+Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Libraries \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} in welche Richtung navigiert werden kann.
+
+Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer Life\-cycle-Komponenten zu reagieren. Dadurch wird strukturierterer und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den Lifecycle-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
+
 
 \begin{figure}[H]
 	\centering
@@ -94,13 +98,12 @@ Das MVVM-Entwurfsmuster ermöglicht au"serdem eine Wiederverwendung von \textit{
 	\label{fig:technologies:architecture:mvvm}
 \end{figure}
 
-Benutzeroberflächen, welche in dieser App durch \textit{Fragmente} realisiert wurden, verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
-% TODO: was ist Databinding?
-Der dafür notwendige Quelltext wird automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
+\textit{Fragmente} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+Dabei handelt es sich um ein Feature des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
-% TODO: was ist LiveData? Sowas wie ein Wrapper-Datentyp, aber grobe interne Funktion ist interessant.
+\textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
 
-\textit In {ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
+In \textit{ViewModels} ist das Verhalten von Benutzeroberflächen definiert. Sie beziehen ihre Daten aus Datenquellen, welche in Form von \textit{Repositories} implementiert sind.
 Einem \textit{ViewModel} ist das besitzende Fragment nicht bekannt, wodurch es unabhängig von Benutzeroberflächen verwendbar ist.
 
 \textit{Repositories} dienen als \textit{Single Point of Truth}, wodurch fehlerhafte oder inkonsistente Datenbestände vermieden werden.
@@ -109,7 +112,7 @@ Sie sind an die interne Datenbank (siehe \autoref{subsubsec:technologies:bibs:ro
 
 \subsection{APIs}
 \label{subsec:technologies:apis}
-Um eine Simulation mit echten Kursdaten zu ermöglichen, wurden zwei Applikationsschnittstellen als Datenquellen in ``stock simulator'' eingebunden.
+Um eine Simulation mit echten Kursdaten zu ermöglichen, wurden zwei Applikationsschnittstellen als Datenquellen in "`stock simulator"' eingebunden.
 Sie verwenden, trotz ähnlicher Semantik, unterschiedlich repräsentierte Datenstrukturen, weshalb auch in unserem Code separate Modelle für diese Datenstrukturen implementiert werden mussten.
 Die API-spezifischen Antworten der Schnittstellen werden dann jedoch zu einem einheitlichen Datenmodell transformiert, so dass das Domänenmodell der App simpel und leichtgewichtig bleibt.
 Beide APIs erfordern Zuschreibungen, welche im Settings-Screen eingesehen werden können (siehe \autoref{subsec:functionality:settings}).
@@ -142,8 +145,7 @@ Im Folgenden werden die verwendeten Bibliotheken näher vorgestellt und ihre Vor
 
 \subsubsection{Android Jetpack}
 \label{subsubsec:technologies:bibs:jetpack}
-% TODO: was für "Elemente" werden dem Entwickler vorgegeben?
-Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Elemente vorgegeben werden, wodurch weniger Boilerplate-Code geschreiben werden muss und komplizierte Prozesse stark vereinfacht werden \cite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library in Code am Namespace \textit{androidx.*}. Die in Jetpack enthaltenen Libraries sind unabhängig von der Android Platform API verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und Ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomonenten für diesen Abwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
+Android Jetpack ist eine Sammlung von Bibliotheken, Programmen und Anleitungen. Ziel ist es, das Entwickeln von qualitativ hochwertigen Applikationen zu vereinfachen. Dies wird erreicht, indem dem Entwickler Komponenten vorgegeben werden, unter deren Verwendung weniger Boilerplate-Code geschrieben werden muss. Somit werden komplizierte Prozesse stark vereinfacht \autocite{android_jetpack}. Zu erkennen ist die Verwendung einer Jetpack Library in Code am Namespace \textit{androidx.*}. Die in Jetpack enthaltenen Libraries sind unabhängig von der Android Platform API verwendbar. Dadurch wird Abwärtskompatibilität zu älteren Android-Versionen gewährleistet und der Entwickler bekommt plattformunabhängige und häufigere Updates der Libraries. Die Android Jetpack Komponenten lassen sich in die vier Anwendungsgebiete \textit{Fundation}, \textit{Architecture}, \textit{Behavior} und \textit{UI} einteilen. \textit{Fundation} Komponenten stellen beispielweise die Abwärtskompatibilität sicher, beinhalten ein Testframework und ermöglichen das Arbeiten mit der Programmiersprache Kotlin. \textit{Architecture} Komponenten unterstützen den Programmierer, robusten, testbaren und wartbaren Quellcode zu schreiben. Beispielkomponenten für diesen Anwendungsbereich sind \textit{LiveData}, \textit{Data Binding}, \textit{Room} und der \textit{WorkManager}. \textit{Behavior} Komponenten ermöglichen den einfacheren Umgang mit Android Services, wie Benachrichtigungen, Kamera und Berechtigungen. \textit{UI} Komponenten erleichtern die Entwicklung der Benutzeroberfläche, beispielsweise durch \textit{Fragments}.
 
 Zusätzlich zu den Libraries, welche in diesem Abschnitt erläutert werden, wurden weitere Libraries aus Android Jetpack verwendet, die im Folgenden vorgestellt werden.
 
@@ -159,8 +161,8 @@ Zusätzlich zu den Libraries, welche in diesem Abschnitt erläutert werden, wurd
 \subsubsection{Room}
 \label{subsubsec:technologies:bibs:room}
 % https://developer.android.com/jetpack/androidx/releases/room
-Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite \footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "die volle Leistung von SQLite zu nutzen" \cite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
-Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank, um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \cite{android_room_data_storage}. Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
+Die Room-Persistenzbibliothek stellt eine Abstraktionsschicht über SQLite\footnote{Siehe \url{https://de.wikipedia.org/wiki/SQLite}} dar. Ihr Ziel ist es, Datenbankanfragen zu vereinfachen und "`die volle Leistung von SQLite zu nutzen"' \autocite{android_room_architecture}. Die Bibliothek hilft dabei, einen Cache der Anwendungsdaten auf dem Gerät zu erstellen. Dieser fungiert als Single Source of Truth und stellt sicher, dass eine konsistente Kopie der Anwendungsinformationen zur Verfügung steht. Durch die lokale Speicherung der Daten kann der Nutzer, auch offline, auf diese Inhalte zugreifen. Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Server synchronisiert, sobald das Gerät wieder online ist.\newline
+Room besteht im Wesentlichen aus drei Komponenten: \textit{Database}, \textit{Entity} und \textit{Dao}. \textit{Database} enthält den Datenbankinhaber und fungiert als Hauptzugriffspunkt für die Verbindung zu den persistenten Daten der Anwendung. \textit{Entity} entspricht einer Datenbanktabelle. \textit{Dao} beinhaltet die Methoden für den Zugriff auf die Datenbank. Die Anwendung nutzt die Room-Datenbank, um an die Data-Access-Objects (DAOs) zu gelangen. Anschließend werden die einzelnen DAOs verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben. Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \autocite{android_room_data_storage}. Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -199,7 +201,7 @@ Mit \textit{Retrofit}, einem typsicheren HTTP-Client für Android und Java, kön
 \subsubsection{Biometric-Auth}
 \label{subsubsec:technologies:bibs:biometricauth}
 % https://github.com/anitaa1990/Biometric-Auth-Sample
-Die Library \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Fingerabdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige Boilerplate-Code für den Entwickler. Mithilfe dieser Library wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
+Die Library \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Finger\-abdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige Boilerplate-Code für den Entwickler. Mithilfe dieser Library wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
 
 
 \subsubsection{Picasso}
@@ -227,8 +229,7 @@ Log-Nachrichten werden von Timber nur während der Entwicklung und nicht in der 
 \subsubsection{Dokka}
 \label{subsubsec:technologies:bibs:dokka}
 % https://github.com/Kotlin/dokka
-% TODO: Quelle für das Zitat
-\textit{Dokka} ist eine "`documentation engine"' und wird zum Generieren von Quelltextdokumentationen verwendet.
+\textit{Dokka} ist eine "`documentation engine"' \autocite{dokka} und wird zum Generieren von Quelltextdokumentationen verwendet.
 Es handelt sich also nicht um eine Bibliothek, die von der App verwendet wird, sondern um ein Entwicklungswerkzeug.
 Mit \textit{Dokka}  wird die Dokumentation des Quelltextes dieser App generiert\footnote{Siehe \url{https://deryeger.github.io/stock-simulator/app/}}.
 
@@ -243,12 +244,10 @@ Im Folgenden wird die Funktionalität der App, nach Screens aufgeteilt, vorgeste
 
 \subsection{Navigation}
 \label{subsec:functionality:navigation}
-% TODO: welche "modernen Designempfehlungen"?
-%TODO: Toolbar = Action Bar?
-Über die \textit{Bottom Navigation} \autocite{bottom_navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln (siehe \autoref{fig:functionality:navigation:screens}).
-Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
+Über die \textit{Bottom Navigation} können Nutzer zwischen den Hauptfeatures Account, Suche, Transaktionsverlauf, Stockbrot und Errungenschaften wechseln.
+Diese Art der Navigation wurde gewählt, da sie modernen Designempfehlungen \autocite{bottom_navigation} entspricht und bessere Kompatibilität mit Android 10 Gesten aufweist als beispielsweise ein \textit{Hamburger Menü}.
 
-Das Einstellungsmenü ist über das Zahnrad in der Toolbar aller Screens, au"ser den Einstellungen selbst, erreichbar (siehe \autoref{fig:functionality:navigation:screens}).
+Das Einstellungsmenü ist über das Zahnrad in der Toolbar aller Screens, au"ser den Einstellungen selbst, erreichbar.
 
 Weitere Navigation, wie zu den News oder zur Detailansicht einer Anlage, ist über Bedienelemente in Form von Buttons an entsprechenden Stellen möglich.
 
@@ -268,8 +267,6 @@ Im Account-Screen bekommt der Benutzer alle Informationen angezeigt, welche sein
 Im oberen Teil des Bildschirms wird der aktuelle Kontostand in US-Dollar angezeigt. Darunter stellt ein Diagramm den Verlauf des Kontostands dar (siehe \autoref{fig:functionality:account:balance}).
 
 Unter diesem Abschnitt wird der aktuelle Wert des Depots, sowie ein Diagramm über dessen Verlauf angezeigt (siehe \autoref{fig:functionality:account:depot}).
-Falls keine Daten für die Darstellung der Diagramme vorliegen sollten, werden entsprechende Platzhalter verwendet.
-%TODO: was sind "entsprechende" Platzhalter? Bei "Suche" (unten) wird ein Bild dazu gezeigt.
 
 Die Performance des Gesamtdepots wird unter den Diagrammen angezeigt (siehe \autoref{fig:functionality:account:performance}). Sie misst, wie gut die Leistung des Investors war, das Startkapital zu vergrößern. Um diesen Wert deutlicher darzustellen, wird eine negative Performance in roter Schrift und einem absteigenden Pfeil, sowie eine positive Performance in grüner Schrift und einem aufsteigenden Pfeil gekennzeichnet.
 
@@ -381,7 +378,7 @@ Durch Klicken auf ein Suchergebnis können Nutzer zur Detailansicht dieses Anlag
 
 \subsection{Transaktionshistorie}
 \label{subsec:functionality:history}
-Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag ``History'' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
+Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkäufe von Aktien und Cryptowährungen, werden im History-Screen dargestellt. Dieser wird über den Eintrag "`History"' der Bottom Navigation erreicht. \autoref{fig:functionality:history:list_closed} zeigt den Aufbau des History-Screens. Transaktionen werden in Form von ausklappbaren Karten dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -389,13 +386,13 @@ Eine Übersicht über alle getätigten Transaktionen, das heißt Ein- und Verkä
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/history_list.png}
         \caption{geschlossen}
-        \label{fig:functionality:history:list:closed}
+        \label{fig:functionality:history:list_closed}
     \end{subfigure}
     \begin{subfigure}{.49\textwidth}
         \centering
         \includegraphics[height=8cm,keepaspectratio]{./images/history_list_open.png}
         \caption{geöffnet}
-        \label{fig:functionality:history:list:open}
+        \label{fig:functionality:history:list_open}
     \end{subfigure}
 	\caption{Historie}
 	\label{fig:functionality:history:list}
@@ -571,7 +568,7 @@ Der News-Screen zeigt alle aktuellen Nachrichten an, die mit einer Anlage zusamm
 
 \subsection{Einstellungen}
 \label{subsec:functionality:settings}
-Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagen sowie Hinzufügen und Entfernen einer Fingerabdruck-Sperre.
+Der \textit{Settings-Screen} beinhaltet Optionen zum Zurücksetzen von Spieldaten, Aktualisieren der verfügbaren Anlagen sowie Hinzufügen und Entfernen einer Fin\-ger\-abdruck-Sperre.
 Wie in \autoref{fig:functionality:settings} zu sehen sind Buttons der zuvor beschriebenen Optionen vertikal angeordnet.
 
 \begin{figure}[H]
@@ -705,14 +702,14 @@ Um die Funktionen und die Handhabung der Applikation zu demonstrieren, werden im
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[height=8cm,keepaspectratio]{./images/demo/search_a.png}
-		\caption{Suche - Filter nach 'a'}
+		\caption{Suche - Filter nach "`a"'}
 		\label{fig:demo:search_a}
 	\end{subfigure}
 	\caption{Suche}
 	\label{fig:demo:search}
 \end{figure}
 
-\autoref{fig:demo:search_screen} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben 'a' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit 'A' oder 'a' beginnt oder deren Namen eine 'A' bzw. 'a' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch 'A' dargestellt ist, aus und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
+\autoref{fig:demo:search_screen} zeigt den Search-Bildschirm. In diesem werden, nach einer kurzen Aktualisierung, zunächst alle Anlagemöglichkeiten, d. h. Aktien und Kryptowährungen, in alphabetischer Reihenfolge angezeigt. Um die gewünschte Aktie zu finden, geben wir in das Suchfeld den Buchstaben "`a"' ein. Hierauf werden alle Anlagemöglichkeiten gefiltert und nur diejenigen angezeigt, deren Symbol (Abkürzung) mit "`A"' oder "`a"' beginnt oder deren Namen eine "`A"' bzw. "`a"' enthalten. Dies wird in \autoref{fig:demo:search_a} dargestellt. Wir wählen die erste Wertanlage, die durch "`A"' dargestellt ist, aus und gelangen zum Quote-Bildschirm. Dieser bietet eine Detailansicht über die ausgewählte Aktie und ist in \autoref{fig:demo:quote} zu sehen. Hier werden uns die Wertentwicklung der Aktie im letzten Monat in Form eines Diagramms, der aktuelle Wert der Aktie sowie die Veränderung des Kurses gegenüber dem Vortag angezeigt.
 
 \begin{figure}[H]
 	\centering
@@ -769,7 +766,7 @@ Des Weiteren können wir uns im Quote-Bildschirm aktuelle Nachrichten zum Aktien
 	\label{fig:demo:news}
 \end{figure}
 
-Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl '3' im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen ist.
+Als nächstes wollen wir drei der erworbenen Aktien manuell wieder verkaufen, um über mehr ungebundenes Kapital zu verfügen. Hierfür geben wir im Quote-Bildschirm die Zahl "`3"' im dafür vorgesehenen Eingabefeld ein, siehe \autoref{fig:demo:sell_a_three}. Erneut müssen wir die Transaktion bestätigen, wie in \autoref{fig:demo:sell_a_confirmation} zu sehen ist.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -808,7 +805,7 @@ Einen Überblick über alle bisherigen Transaktionen erhalten wir im History-Bil
 \end{figure}
 
 Wie in \autoref{fig:demo:history_closed} zu sehen, werden unser Kauf und Verkauf in Form von ausklappbaren Karten dargestellt. Das Verkaufssymbol (Dollar) zeichnet einen Verkauf aus und das Kaufsymbol (Einkaufswagen) weist Anlagekäufe aus. Nachdem wir beide Karten öffnen, können wir uns die Details dieser Transaktionen anschauen, siehe \autoref{fig:demo:history_open}. Bei Verkäufen wird zusätzlich die Gewinn- bzw. Verlusthöhe durch diesen Verkauf aufgeführt.\newline
-Durch unsere bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften ''Eine Aktie im Depot'', ''Zwei Aktien im Depot'' und ''Zehn Aktien im Depot'' freigespielt. Durch Öffnen der einzelnen Karten wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen ist.
+Durch die bisherigen Aktiengeschäfte haben wir bereits einige Errungenschaften im Spiel erreicht. Um diese zu betrachten, wechseln wir über die Bottom-Navigation zum Achievements-Bildschirm, wie in \autoref{fig:demo:achievements_closed} zu sehen. So haben wir bereits die Errungenschaften "`Eine Aktie im Depot"', "`Zwei Aktien im Depot"' und "`Zehn Aktien im Depot"' freigespielt. Durch Öffnen der einzelnen Karten wird eine Beschreibung der jeweiligen Errungenschaft angezeigt, wie in  \autoref{fig:demo:achievements_open} zu sehen ist.
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -870,7 +867,7 @@ Bereits im Verlauf der Woche konnten wir alle gestellten Mindestanforderungen an
 
 \section{Fazit}
 \label{sec:conclusion}
-Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Projekt, wodurch die ''Lernkurve'' zu Beginn recht steil verlief. Durch unsere gute Zusammenarbeit und unseren Einsatz für das Projekt konnten wir diese Veranstaltung dazu nutzen, neue Kenntnisse der Android-Entwicklung zu erwerben und zu vertiefen. Insgesamt waren alle Teammitglieder vom Android-''Ökosystem'' positiv überrascht. Wir fühlen uns gut für zukünftige Android-App-Entwicklung gerüstet.
+Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Projekt, wodurch die "`Lernkurve"' zu Beginn recht steil verlief. Durch unsere gute Zusammenarbeit und unseren Einsatz für das Projekt konnten wir diese Veranstaltung dazu nutzen, neue Kenntnisse der Android-Entwicklung zu erwerben und zu vertiefen. Insgesamt waren alle Teammitglieder vom Android-"`Ökosystem"' positiv überrascht. Wir fühlen uns gut für zukünftige Android-App-Entwicklung gerüstet.
 
 
 \section{Ausblick}
@@ -878,8 +875,10 @@ Für die meisten Entwickler unseres Teams war dies das erste Android-Software-Pr
 % was kann man noch machen, was habt ihr nicht geschafft,..
 TODO
 
-
+\begingroup
+\raggedright
 \printbibliography[title={Referenzen}]
+\endgroup
 
 
 \end{document}
