@@ -86,7 +86,7 @@ Logik, welche von Benutzeroberflächen unabhängig ist, residiert in \textit{Rep
 Durch diese Trennung ist es möglich die MVVM-Schichten separat voneinander zu testen.
 Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen \textit{Fragments}, da sie keine Informationen über spezifische UI-Elemente halten.
 
-Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im \textit{Navigation Graph}, einem graphischen Editor, werden zwischen Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
+Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im \textit{Navigation Graph}, einem graphischen Editor, werden zwischen Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
 
 Mithilfe von \textit{Lifecycle}-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer \textit{Life\-cycle}-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den \textit{Lifecycle}-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
 
@@ -201,7 +201,7 @@ Mit \textit{Retrofit}, einem typsicheren HTTP-Client für Android und Java, kön
 \subsubsection{Biometric-Auth}
 \label{subsubsec:technologies:bibs:biometricauth}
 % https://github.com/anitaa1990/Biometric-Auth-Sample
-Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Finger\-abdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige \textit{Boilerplate}-Code für den Entwickler. Mithilfe dieser Bibliothek wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
+Die Bibliothek \textit{Biometric-Auth} \autocite{biometricauth} vereinfacht die Implementierung einer Fin\-gerabdruck-Authentifizierung erheblich. Durch die Nutzung entfällt der normalerweise notwendige \textit{Boilerplate}-Code für den Entwickler. Mithilfe dieser Bibliothek wurde die optionale Fingerabdruck-Authentifizierung implementiert, welche das Starten der Applikation ohne Authentifizierung verweigert (siehe \autoref{subsec:functionality:settings}).
 
 
 \subsubsection{Picasso}
@@ -669,7 +669,7 @@ Der unterste \textit{Button} "`ADD FINGERPRINT AUTHENTICATION"' ermöglicht das 
 \end{figure}
 
 
-Am unteren Ende des Bildschirms (siehe \autoref{fig:functionality:settings:attributions}) befinden sich die notwendigen Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
+Am unteren Ende des Bildschirms (siehe \autoref{fig:functionality:settings:attributions}) befinden sich notwendige Zuschreibungen an die verwendeten Schnittstellen (siehe \autoref{subsec:technologies:apis}).
 Durch Klicken auf einen der Links werden Nutzer zur Website der jeweiligen Schnittstelle weitergeleitet.
 
 \begin{figure}[H]
@@ -869,7 +869,7 @@ Bereits im Verlauf der Woche konnten wir alle gestellten Mindestanforderungen an
 \section{Fazit}
 \label{sec:conclusion}
 Zusätzlich zu den Mindestanforderungen, welche alle Hauptfeatures und ein Zusatzfeature umfassen, wurden noch weitere Funktionalitäten hinzugefügt.
-Um die Anwendung vor unberechtigtem Zugriff zu schützen, wurde eine Fingerabdruck\-Authentifizierung implementiert, die in den Einstellungen aktiviert werden kann und anschließend mit jedem Anwendungsstart abgefragt wird.
+Um die Anwendung vor unberechtigtem Zugriff zu schützen, wurde eine Finger"-abdruck-Authentifizierung implementiert, die in den Einstellungen aktivierbar ist und anschließend mit jedem Anwendungsstart abgefragt wird.
 Die in der Detailansicht der Anwendung vorhandenen News können zur Kauf- oder Verkaufsentscheidung beitragen, indem sie aktuelle Nachrichten zu der Anlage liefern.
 Der \textit{Account}-Bildschirm der Anwendung wurde um eine Gesamtperformanz-Anzeige erweitert, welche den prozentualen Gewinn darstellt.
 Die freizuschaltenden Errungenschaften stellen den Benutzer vor Herausforderungen und erhöhen das Spielerlebnis.
