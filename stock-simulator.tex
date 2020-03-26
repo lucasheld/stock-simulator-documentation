@@ -82,13 +82,13 @@ In diesem Abschnitt wird detaillierter auf die technischen Hintergründe der Anw
 Die App-Architektur folgt offiziellen Empfehlungen \autocite{google_recommendations} und basiert auf einer sog. \textit{Activity} sowie dem \textit{Model-View-ViewModel-Pattern} (MVVM).
 Bei diesem Entwurfsmuster werden Präsentation der Benutzeroberfläche, Logik und Datenquellen voneinander getrennt (siehe \autoref{fig:technologies:architecture:mvvm}).
 Benutzeroberflächen sind in dieser Anwendung durch \textit{Fragments} realisiert und ihre Logik in \textit{ViewModels} implementiert.
-Benutzeroberflächenunabhängige Logik residiert in \textit{Repositories}.
+Logik, welche von Benutzeroberflächen unabhängig ist, residiert in \textit{Repositories}.
 Durch diese Trennung ist es möglich die MVVM-Schichten separat voneinander zu testen.
-Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen Fragmenten, da sie keine Informationen über spezifische UI-Elemente halten.
+Das MVVM-Entwurfsmuster ermöglicht außerdem eine Wiederverwendung von \textit{ViewModels} und \textit{Models} in verschiedenen \textit{Fragments}, da sie keine Informationen über spezifische UI-Elemente halten.
 
-Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Libraries \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} in welche Richtung navigiert werden kann.
+Die Navigation zwischen einzelnen \textit{Fragments} innerhalb der \textit{Activity} wird durch die \textit{Navigation} Bibliotheken \autocite{android_navigation}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthaltenen sind, stark vereinfacht. Im Navigation Graph, einem graphischen Editor, werden zwischen den Elementen, den \textit{Fragments}, Verbindungen erstellt, um zu spezifizieren zwischen welchen \textit{Fragments} und in welche Richtung navigiert werden kann.
 
-Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer Life\-cycle-Komponenten zu reagieren. Dadurch wird strukturierterer und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den Lifecycle-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
+Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche in Android Jetpack (siehe \autoref{subsubsec:technologies:bibs:jetpack}) enthalten sind, ist es möglich auf Statusänderungen anderer Life\-cycle-Komponenten zu reagieren. Dadurch wird strukturierter und somit besser zu wartender Quellcode geschrieben. In dieser Anwendung wurde hauptsächlich von den Lifecycle-Komponenten \textit{LiveData}, \textit{MutableLiveData} und \textit{MediatorLiveData} Gebrauch gemacht.
 
 
 \begin{figure}[H]
@@ -98,8 +98,8 @@ Mithilfe von Lifecycle-Komponenten \autocite{android_lifecycle}, welche in Andro
 	\label{fig:technologies:architecture:mvvm}
 \end{figure}
 
-\textit{Fragmente} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
-Dabei handelt es sich um ein Feature des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
+\textit{Fragments} verwenden \textit{Databinding}, um von \textit{ViewModels} bereitgestellte Daten anzuzeigen.
+Bei \textit{Databinding} handelt es sich um ein Feature des Compilers, welches benötigten Quelltext automatisch generiert, wodurch Fehleranfälligkeit reduziert und die Entwicklung beschleunigt wird.
 Die Verwendung von \textit{LiveData} ermöglicht zudem eine automatische Aktualisierung von Benutzeroberflächen bei Veränderung des Datenbestandes.
 \textit{LiveData} ist nicht nur ein generischer \textit{Wrapper}, sondern verfügt über einen automatisierten Lebenszyklus und kann sog. \textit{Observer} über Änderungen informieren.
 
