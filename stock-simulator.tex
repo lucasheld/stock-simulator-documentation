@@ -218,7 +218,7 @@ Alle Inhaltsänderungen, die vom Benutzer vorgenommen werden, werden mit dem Ser
 Die Anwendung nutzt die \textit{Room}-Datenbank, um an die \textit{Data-Access-Objects} (\textit{DAOs}) zu gelangen.
 Anschließend werden die einzelnen \textit{DAOs} verwendet, um die Entitäten aus der Datenbank abzurufen und Änderungen in die Datenbank zu schreiben.
 Die Entitäten werden dazu verwendet, um die entsprechenden Werte der Datenbanktabellen abzurufen und zu schreiben \autocite{android_room_data_storage}.
-Die Beziehung zwischen den drei Komponenten wird in Abbildung \ref{fig:room} dargestellt.
+Die Beziehung zwischen den drei Komponenten wird in \autoref{fig:room} dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -551,13 +551,11 @@ Die Beschreibung ist für alle bereits erreichten Errungenschaften, mittels Pfei
     \label{fig:functionality:achievements:overview}
 \end{figure}
 
-Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des aktuellen Bildschirms eine \textit{Toast}-Benachrichtigung \autocite{android_toasts} (siehe \autoref{fig:functionality:achievements:reached}).
-%TODO: sollten wir hier ein Zitat statt einer Fußnote verwenden? Ist ja eigentlich keins.
+Sobald eine Errungenschaft freigeschaltet wird, erscheint im unteren Teil des aktuellen Bildschirms eine \textit{Toast}-Benachrichtigung \footnote{Siehe \url{https://developer.android.com/guide/topics/ui/notifiers/toasts}} (siehe \autoref{fig:functionality:achievements:reached}).
 Diese zeigt den Titel der Errungenschaft an.
 Beim nächsten Aufruf der Übersicht der Errungenschaften ist dieser soeben erreichte Erfolg nicht mehr ausgegraut und die Beschreibung lässt sich einsehen.
 Sollten mehrere Errungenschaften direkt hintereinander freigeschaltet werden, werden auch die Benachrichtigungen nacheinander angezeigt.
-Intern wird sichergestellt, dass kein Erfolgt mehrfach angezeigt wird, selbst wenn die Kriterien zur Freischaltung eines Erfolgs öfter erfüllt werden.
-%TODO: (grob) wie wird das sichergestellt?
+Intern wird sichergestellt, dass kein Erfolgt mehrfach angezeigt wird, selbst wenn die Kriterien zur Freischaltung eines Erfolgs öfter erfüllt werden. Dies wird erreicht, indem in der Datenbank gespeichert wird, welche Errungenschaften bereits angezeigt wurden.
 
 \begin{figure}[H]
     \centering
